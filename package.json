@@ -1,8 +1,9 @@
 {
   "name": "rgm",
   "version": "0.1.0",
-  "private": true,
+  "description": "Tiny but very powerful React Google Map",
   "author": "TrySound, istarkov, realadvisor",
+  "license": "MIT",
   "main": "dist/rgm.cjs.js",
   "module": "dist/rgm.esm.js",
   "files": [
