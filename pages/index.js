@@ -29,7 +29,7 @@ const MAP_OPTIONS = {
   clickableIcons: false,
 };
 
-export default function Performance() {
+export default function Rgm() {
   const api = useGoogleApiLoader();
 
   return (
