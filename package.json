@@ -13,7 +13,7 @@
     "dev": "next dev",
     "build:doc": "rimraf ./rgm && DOCUMENTATION=true next build && next export -o rgm",
     "start:doc": "echo 'open at http://localhost:3000/rgm' && serve ./ -p 3000",
-    "deploy:doc": "yarn build:doc && gh-pages -d out",
+    "deploy:doc": "yarn build:doc && gh-pages -d rgm",
     "build:code": "rollup -c",
     "build:flow": "echo \"// @flow\n\nexport * from '../src'\" > dist/rgm.cjs.js.flow",
     "build": "rimraf dist && npm run build:code && npm run build:flow"
