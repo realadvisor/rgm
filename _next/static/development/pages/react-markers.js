@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/performance.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/react-markers.js"],{
 
 /***/ "./dev-src/controls.js":
 /*!*****************************!*\
@@ -880,6 +880,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectWithoutPropertiesLoose; });
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
 }
 
 /***/ }),
@@ -2960,6 +2987,101 @@ var weakMemoize = function weakMemoize(func) {
 
 /***/ }),
 
+/***/ "./node_modules/facepaint/dist/index.es.js":
+/*!*************************************************!*\
+  !*** ./node_modules/facepaint/dist/index.es.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* eslint-disable no-param-reassign */
+var index = function (breakpoints) {
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      literal = _ref.literal,
+      overlap = _ref.overlap;
+
+  var mq = literal ? breakpoints : ['&'].concat(breakpoints);
+
+  function flatten(obj) {
+    if (typeof obj !== 'object' || obj == null) {
+      return [];
+    }
+
+    if (Array.isArray(obj)) {
+      return obj.map(flatten);
+    }
+
+    var slots = {};
+    var objects = {};
+    var props = {};
+    Object.keys(obj).forEach(function (key) {
+      // Check if value is an array, but skip if it looks like a selector.
+      // key.indexOf('&') === 0
+
+      var item = obj[key];
+      if (!Array.isArray(item) && literal) item = [item];
+
+      if ((literal || Array.isArray(item)) && key.charCodeAt(0) !== 38) {
+        var prior = void 0;
+        item.forEach(function (v, index) {
+          // Optimize by removing duplicated media query entries
+          // when they are explicitly known to overlap.
+          if (overlap && prior === v) {
+            return;
+          }
+
+          if (v == null) {
+            // Do not create entries for undefined values as this will
+            // generate empty media media quries
+            return;
+          }
+
+          prior = v;
+
+          if (index === 0 && !literal) {
+            props[key] = v;
+          } else if (slots[mq[index]] === undefined) {
+            var _slots$mq$index;
+
+            slots[mq[index]] = (_slots$mq$index = {}, _slots$mq$index[key] = v, _slots$mq$index);
+          } else {
+            slots[mq[index]][key] = v;
+          }
+        });
+      } else if (typeof item === 'object') {
+        objects[key] = flatten(item);
+      } else {
+        props[key] = item;
+      }
+    });
+
+    // Ensure that all slots and then child objects are pushed to the end
+    mq.forEach(function (el) {
+      if (slots[el]) {
+        props[el] = slots[el];
+      }
+    });
+    Object.assign(props, objects);
+    return props;
+  }
+
+  return function () {
+    for (var _len = arguments.length, values = Array(_len), _key = 0; _key < _len; _key++) {
+      values[_key] = arguments[_key];
+    }
+
+    return values.map(flatten);
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+//# sourceMappingURL=index.es.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/function-bind/implementation.js":
 /*!******************************************************!*\
   !*** ./node_modules/function-bind/implementation.js ***!
@@ -3124,23 +3246,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freact-markers&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Freact-markers.js&hotRouterUpdates=true!./":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freact-markers&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Freact-markers.js&hotRouterUpdates=true ***!
+  \***********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/performance",
+      "/react-markers",
       function () {
-        var mod = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
+        var mod = __webpack_require__(/*! ./pages/react-markers.js */ "./pages/react-markers.js");
         if (true) {
-          module.hot.accept(/*! ./pages/performance.js */ "./pages/performance.js", function () {
-            if (!next.router.components["/performance"]) return;
-            var updatedPage = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
-            next.router.update("/performance", updatedPage);
+          module.hot.accept(/*! ./pages/react-markers.js */ "./pages/react-markers.js", function () {
+            if (!next.router.components["/react-markers"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/react-markers.js */ "./pages/react-markers.js");
+            next.router.update("/react-markers", updatedPage);
           });
         }
         return mod;
@@ -10222,6 +10344,514 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-system/dist/system.esm.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-system/dist/system.esm.js ***!
+  \******************************************************/
+/*! exports provided: Box, Flex, SystemProvider, useResponsive, useSystem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Box", function() { return Box; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Flex", function() { return Flex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SystemProvider", function() { return SystemProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useResponsive", function() { return useResponsive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSystem", function() { return useSystem; });
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var facepaint__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! facepaint */ "./node_modules/facepaint/dist/index.es.js");
+
+
+
+
+
+
+var defaultTheme = {
+  // mobile, desktop and large screens
+  breakpoints: [768, 1280, 1920],
+  // degrees of 2 except insignificant 2
+  spaces: [0, 4, 8, 16, 32, 64, 128, 256]
+};
+var SystemContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["createContext"])(defaultTheme);
+
+var makeQuery = function makeQuery(value) {
+  var convertedValue = typeof value === "number" ? Math.ceil(value / 16) + "em" : value;
+  return "screen and (min-width: " + convertedValue + ")";
+};
+
+var makeMediaRules = function makeMediaRules(queries) {
+  return function (styles) {
+    var result = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, styles[0]);
+
+    styles.slice(1).forEach(function (style, index) {
+      result[queries[index]] = style;
+    });
+    return result;
+  };
+};
+
+var SystemProvider = SystemContext.Provider;
+
+var makeMedia = function makeMedia(context) {
+  var queries = context.breakpoints.map(function (bp) {
+    return "@media " + makeQuery(bp);
+  });
+  var fp = Object(facepaint__WEBPACK_IMPORTED_MODULE_4__["default"])(queries);
+  var mr = makeMediaRules(queries);
+  return function (styles) {
+    if (Array.isArray(styles)) {
+      return mr(styles);
+    } else {
+      return fp(styles);
+    }
+  };
+};
+/* system hook */
+
+
+var useResponsive = function useResponsive() {
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+
+  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+      index = _React$useState[0],
+      setIndex = _React$useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    var handleResize = function handleResize() {
+      var currentIndex = 0;
+      context.breakpoints.forEach(function (bp, i) {
+        if (window.matchMedia(makeQuery(bp)).matches) {
+          // one more for smallest value
+          currentIndex = i + 1;
+        }
+      });
+      setIndex(currentIndex);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return function () {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [context]);
+
+  var responsive = function responsive(values) {
+    return values[Math.max(0, Math.min(index, values.length - 1))];
+  };
+
+  return responsive;
+};
+var useSystem = function useSystem() {
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+  var media = Object(react__WEBPACK_IMPORTED_MODULE_2__["useMemo"])(function () {
+    return makeMedia(context);
+  }, [context]);
+
+  var toSpace = function toSpace(value) {
+    return Array.isArray(value) ? value.map(function (item) {
+      return getSpace(item, context);
+    }) : getSpace(value, context);
+  };
+
+  var pt = function pt(v) {
+    return media({
+      paddingTop: toSpace(v)
+    });
+  };
+
+  var pr = function pr(v) {
+    return media({
+      paddingRight: toSpace(v)
+    });
+  };
+
+  var pb = function pb(v) {
+    return media({
+      paddingBottom: toSpace(v)
+    });
+  };
+
+  var pl = function pl(v) {
+    return media({
+      paddingLeft: toSpace(v)
+    });
+  };
+
+  var px = function px(v) {
+    return [pl(v), pr(v)];
+  };
+
+  var py = function py(v) {
+    return [pt(v), pb(v)];
+  };
+
+  var p = function p(v) {
+    return [pt(v), pr(v), pb(v), pl(v)];
+  };
+
+  var mt = function mt(v) {
+    return media({
+      marginTop: toSpace(v)
+    });
+  };
+
+  var mr = function mr(v) {
+    return media({
+      marginRight: toSpace(v)
+    });
+  };
+
+  var mb = function mb(v) {
+    return media({
+      marginBottom: toSpace(v)
+    });
+  };
+
+  var ml = function ml(v) {
+    return media({
+      marginLeft: toSpace(v)
+    });
+  };
+
+  var mx = function mx(v) {
+    return [ml(v), mr(v)];
+  };
+
+  var my = function my(v) {
+    return [mt(v), mb(v)];
+  };
+
+  var m = function m(v) {
+    return [mt(v), mr(v), mb(v), ml(v)];
+  };
+
+  return {
+    media: media,
+    pt: pt,
+    pr: pr,
+    pb: pb,
+    pl: pl,
+    px: px,
+    py: py,
+    p: p,
+    mt: mt,
+    mr: mr,
+    mb: mb,
+    ml: ml,
+    mx: mx,
+    my: my,
+    m: m
+  };
+};
+/* Flex/Box */
+
+var id2 = function id2(first, second) {
+  return first;
+};
+
+var makePercent = function makePercent(value) {
+  return value === 0 ? 0 : value * 100 + "%";
+};
+
+var getSizeValue = function getSizeValue(value) {
+  return typeof value === "number" ? makePercent(Math.max(0, Math.min(value, 1))) : value;
+}; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign#Polyfill
+
+
+var sign = function sign(x) {
+  // If x is NaN, the result is NaN.
+  // If x is -0, the result is -0.
+  // If x is +0, the result is +0.
+  // If x is negative and not -0, the result is -1.
+  // If x is positive and not +0, the result is +1.
+  return Number(x > 0) - Number(x < 0) || +x; // A more aesthetical persuado-representation is shown below
+  //
+  // ( (x > 0) ? 0 : 1 )  // if x is negative then negative one
+  //          +           // else (because you cant be both - and +)
+  // ( (x < 0) ? 0 : -1 ) // if x is positive then positive one
+  //         ||           // if x is 0, -0, or NaN, or not a number,
+  //         +x           // Then the result will be x, (or) if x is
+  //                      // not a number, then x converts to number
+};
+
+var getSpace = function getSpace(value, _ref) {
+  var spaces = _ref.spaces;
+
+  if (typeof value === "number") {
+    var max = spaces.length - 1;
+    var bound = Math.max(-max, Math.min(value, max));
+    return sign(bound) * spaces[Math.abs(bound)];
+  } else {
+    return value;
+  }
+};
+
+var sizeStyles = [{
+  prop: "width",
+  transform: getSizeValue
+}, {
+  prop: "height",
+  transform: getSizeValue
+}];
+var spaceStyles = [{
+  prop: "p",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "p",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "p",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "p",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "ph",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "ph",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "px",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "px",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "pv",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "pv",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "py",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "py",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "pt",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "pr",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "pb",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "pl",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginLeft",
+  transform: getSpace
+}, {
+  prop: "mh",
+  cssProp: "marginLeft",
+  transform: getSpace
+}, {
+  prop: "mh",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "mx",
+  cssProp: "marginLeft",
+  transform: getSpace
+}, {
+  prop: "mx",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "mv",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "mv",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "my",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "my",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "mt",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "mr",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "mb",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "ml",
+  cssProp: "marginLeft",
+  transform: getSpace
+}];
+var flexItemStyles = [{
+  prop: "flexGrow"
+}, {
+  prop: "flexShrink"
+}, {
+  prop: "flexBasis"
+}, {
+  prop: "justifySelf"
+}, {
+  prop: "alignSelf"
+}, {
+  prop: "order"
+}];
+var flexBoxStyles = [{
+  prop: "alignItems"
+}, {
+  prop: "alignContent"
+}, {
+  prop: "justifyItems"
+}, {
+  prop: "justifyContent"
+}, {
+  prop: "flexWrap"
+}, {
+  prop: "flexDirection"
+}];
+
+var omit = function omit(obj, blacklist) {
+  var next = {};
+
+  for (var key in obj) {
+    if (blacklist.indexOf(key) === -1) {
+      next[key] = obj[key];
+    }
+  }
+
+  return next;
+};
+
+var getStylePropName = function getStylePropName(style) {
+  return style.prop;
+};
+
+var transformValues = function transformValues(props, context, styles) {
+  var generated = {};
+
+  var _loop = function _loop(i) {
+    var _styles$i = styles[i],
+        prop = _styles$i.prop,
+        _styles$i$cssProp = _styles$i.cssProp,
+        cssProp = _styles$i$cssProp === void 0 ? prop : _styles$i$cssProp,
+        _styles$i$transform = _styles$i.transform,
+        transform = _styles$i$transform === void 0 ? id2 : _styles$i$transform;
+    var value = props[prop];
+
+    if (value != null) {
+      generated[cssProp] = Array.isArray(value) ? value.map(function (item) {
+        return transform(item, context);
+      }) : transform(value, context);
+    }
+  };
+
+  for (var i = 0; i < styles.length; i += 1) {
+    _loop(i);
+  }
+
+  return generated;
+};
+
+var Box = Object(react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(function (_ref2, ref) {
+  var _ref2$as = _ref2.as,
+      as = _ref2$as === void 0 ? "div" : _ref2$as,
+      cssProp = _ref2.css,
+      children = _ref2.children,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref2, ["as", "css", "children"]);
+
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+
+  var _useSystem = useSystem(),
+      media = _useSystem.media;
+
+  var styles = [].concat(sizeStyles, spaceStyles, flexItemStyles);
+  var generated = transformValues(props, context, styles);
+  var rest = omit(props, styles.map(getStylePropName));
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(as, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    ref: ref,
+    css: [{
+      boxSizing: "border-box",
+      minWidth: 0,
+      minHeight: 0
+    }, cssProp, media(generated)]
+  }, rest), children == null ? null : children);
+});
+Box.displayName = "Box";
+var Flex = Object(react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(function (_ref3, ref) {
+  var _ref3$as = _ref3.as,
+      as = _ref3$as === void 0 ? "div" : _ref3$as,
+      cssProp = _ref3.css,
+      children = _ref3.children,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref3, ["as", "css", "children"]);
+
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+
+  var _useSystem2 = useSystem(),
+      media = _useSystem2.media;
+
+  var styles = [].concat(sizeStyles, spaceStyles, flexItemStyles, flexBoxStyles);
+  var generated = transformValues(props, context, styles);
+  var rest = omit(props, styles.map(getStylePropName));
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(as, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    ref: ref,
+    css: [{
+      display: "flex",
+      boxSizing: "border-box",
+      minWidth: 0,
+      minHeight: 0
+    }, cssProp, media(generated)]
+  }, rest), children == null ? null : children);
+});
+Flex.displayName = "Flex";
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
   !*** delegated ./node_modules/react/index.js from dll-reference dll_2adc2403d89adc16ead0 ***!
@@ -11018,41 +11648,67 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/performance.js":
-/*!******************************!*\
-  !*** ./pages/performance.js ***!
-  \******************************/
+/***/ "./pages/react-markers.js":
+/*!********************************!*\
+  !*** ./pages/react-markers.js ***!
+  \********************************/
 /*! exports provided: __N_SSG, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Performance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MarkerPage; });
 /* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rgm */ "./src/index.js");
-/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
-/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var react_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-system */ "./node_modules/react-system/dist/system.esm.js");
+/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
+/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 
 
-var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/performance.js",
-    _this2 = undefined;
+var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/react-markers.js",
+    _this = undefined;
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
 /**
- * <!-- {"order": 8 } -->
+ * <!-- {"order": 6} -->
  *
- * # Thousand markers
+ * # React markers
  *
- * Example of drawing 1000 React markers.
+ * Superfast, can easily move/zoom thousands of markers on the map.
+ * Rerendering of markers is not occured during move/zoom operation
+ * _(if you dont update state on bounds, etc change events, [see idle quote](/events))_
+ *
+ * To add custom React marker on map, you need 2 controls _Overlay_ and _Marker_ overlay is the same
+ * as google map overlay, and allows to place _Markers_. It has just one prop _debug_, see below why.
+ *
+ * You can add any amount of _Overlays_ to the Map _(have no idea why but you can)_
+ *
+ * _Marker_ is a wrapper around your component
+ * and allows to pass _lat_, _lng_ into _Overlay_ in a type safe way wihout touching props of your component.
+ *
+ * Each marker is rendered inside placeholder with _{ width:0; height:0; display: grid }_ style.
+ * This allows to select origin point of marker using only its
+ * own css _place-self_, _align-self_, _justify-self_ properties.
+ * Also _{ position: absolute }_ on a holder allows everything if grid positioning is not enough.
+ *
+ * To simplify markers positioning you can use _debug_ propery of _Overlay_ element.
+ * It will show exact origin point position.
+ *
+ * See below how to use _Overlay_ and _Marker_.
+ *
+ * Also play with _debug_ property to see how you can use
+ * css _alignSelf_ , _justifySelf_, _placeSelf_ properties to align different kind of markers.
+ * _(For markers with "fun" shape use _position:relative_ and css left, right properties)_
+ *
+ * > _debug_ property won't work in production builds.
  *
  */
+
 
 
 
@@ -11065,97 +11721,295 @@ var MAP_OPTIONS = {
     lat: 59.936,
     lng: 30.314
   },
+  // disable cmd-zoom and 2 fingers zoom I personally dislike it
   gestureHandling: 'greedy',
   clickableIcons: false
 };
-
-var genRandomMarkers = function genRandomMarkers(n) {
-  return Array.from(Array(n), function () {
-    var r = Math.random() * 2 + 0.05;
-    var angle = Math.random() * 2 * Math.PI;
-    return {
-      lat: MAP_OPTIONS.center.lat + r * Math.cos(angle),
-      lng: MAP_OPTIONS.center.lng + r * Math.sin(angle)
-    };
-  });
-};
-
 var __N_SSG = true;
-function Performance() {
-  var _this = this;
+function MarkerPage() {
+  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_4__["useGoogleApiLoader"])();
 
-  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_3__["useGoogleApiLoader"])();
-  var INITIAL_MARKERS_COUNT = 1000;
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](true),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      debug = _React$useState2[0],
+      setDebug = _React$useState2[1];
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](function () {
-    return genRandomMarkers(INITIAL_MARKERS_COUNT);
-  }),
-      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 1),
-      markers = _React$useState2[0];
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_1__["useState"]('end'),
+      _React$useState4 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState3, 2),
+      alignSelf = _React$useState4[0],
+      setAlignSelf = _React$useState4[1];
 
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_4__["Ratio"], {
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_1__["useState"]('center'),
+      _React$useState6 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState5, 2),
+      justifySelf = _React$useState6[0],
+      setJustifySelf = _React$useState6[1];
+
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 5
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Flex"], {
+    p: 3,
+    alignItems: "baseline",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 7
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Checkbox"], {
+    id: "debug",
+    value: debug,
+    onChange: setDebug,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 9
+    }
+  }, "Debug"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+    width: '8px',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 9
+    }
+  }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Select"], {
+    value: alignSelf,
+    onChange: setAlignSelf,
+    options: ['start', 'center', 'end'],
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 9
+    }
+  }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+    width: '8px',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 9
+    }
+  }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Select"], {
+    value: justifySelf,
+    onChange: setJustifySelf,
+    options: ['start', 'center', 'end'],
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 9
+    }
+  })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Ratio"], {
     value: 3 / 4,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 5
+      lineNumber: 83,
+      columnNumber: 7
     }
-  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
     api: api,
     options: MAP_OPTIONS,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 9
+      lineNumber: 85,
+      columnNumber: 11
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
+    debug: debug,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 11
+      lineNumber: 86,
+      columnNumber: 13
     }
-  }, markers.map(function (m, index) {
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
-      key: index,
-      lat: m.lat,
-      lng: m.lng,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53,
-        columnNumber: 15
-      }
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(CircleMarker, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54,
-        columnNumber: 17
-      }
-    }));
-  }))));
-}
-
-var _ref = false ? undefined : {
-  name: "1bqw4t9-CircleMarker",
-  styles: "place-self:center center;width:10px;height:10px;border-radius:100%;background-color:white;border:2px solid red;;label:CircleMarker;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaUVZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogOCB9IC0tPlxuICpcbiAqICMgVGhvdXNhbmQgbWFya2Vyc1xuICpcbiAqIEV4YW1wbGUgb2YgZHJhd2luZyAxMDAwIFJlYWN0IG1hcmtlcnMuXG4gKlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyIH0gZnJvbSAncmdtJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbyB9IGZyb20gJy4uL2Rldi1zcmMvY29udHJvbHMnO1xuXG4vLyBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9tYXBzL2RvY3VtZW50YXRpb24vamF2YXNjcmlwdC9yZWZlcmVuY2UvbWFwI01hcE9wdGlvbnNcbmNvbnN0IE1BUF9PUFRJT05TID0ge1xuICB6b29tOiA5LFxuICBjZW50ZXI6IHtcbiAgICBsYXQ6IDU5LjkzNixcbiAgICBsbmc6IDMwLjMxNCxcbiAgfSxcbiAgZ2VzdHVyZUhhbmRsaW5nOiAnZ3JlZWR5JyxcbiAgY2xpY2thYmxlSWNvbnM6IGZhbHNlLFxufTtcblxuY29uc3QgZ2VuUmFuZG9tTWFya2VycyA9IG4gPT5cbiAgQXJyYXkuZnJvbShBcnJheShuKSwgKCkgPT4ge1xuICAgIGNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMiArIDAuMDU7XG4gICAgY29uc3QgYW5nbGUgPSBNYXRoLnJhbmRvbSgpICogMiAqIE1hdGguUEk7XG5cbiAgICByZXR1cm4ge1xuICAgICAgbGF0OiBNQVBfT1BUSU9OUy5jZW50ZXIubGF0ICsgciAqIE1hdGguY29zKGFuZ2xlKSxcbiAgICAgIGxuZzogTUFQX09QVElPTlMuY2VudGVyLmxuZyArIHIgKiBNYXRoLnNpbihhbmdsZSksXG4gICAgfTtcbiAgfSk7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFBlcmZvcm1hbmNlKCkge1xuICBjb25zdCBhcGkgPSB1c2VHb29nbGVBcGlMb2FkZXIoKTtcbiAgY29uc3QgSU5JVElBTF9NQVJLRVJTX0NPVU5UID0gMTAwMDtcbiAgY29uc3QgW21hcmtlcnNdID0gUmVhY3QudXNlU3RhdGUoKCkgPT5cbiAgICBnZW5SYW5kb21NYXJrZXJzKElOSVRJQUxfTUFSS0VSU19DT1VOVCksXG4gICk7XG5cbiAgcmV0dXJuIChcbiAgICA8UmF0aW8gdmFsdWU9ezMgLyA0fT5cbiAgICAgIHthcGkgJiYgKFxuICAgICAgICA8TWFwIGFwaT17YXBpfSBvcHRpb25zPXtNQVBfT1BUSU9OU30+XG4gICAgICAgICAgPE92ZXJsYXk+XG4gICAgICAgICAgICB7bWFya2Vycy5tYXAoKG0sIGluZGV4KSA9PiAoXG4gICAgICAgICAgICAgIDxNYXJrZXIga2V5PXtpbmRleH0gbGF0PXttLmxhdH0gbG5nPXttLmxuZ30+XG4gICAgICAgICAgICAgICAgPENpcmNsZU1hcmtlciAvPlxuICAgICAgICAgICAgICA8L01hcmtlcj5cbiAgICAgICAgICAgICkpfVxuICAgICAgICAgIDwvT3ZlcmxheT5cbiAgICAgICAgPC9NYXA+XG4gICAgICApfVxuICAgIDwvUmF0aW8+XG4gICk7XG59XG5cbmNvbnN0IENpcmNsZU1hcmtlciA9ICgpID0+IChcbiAgPGRpdlxuICAgIGNzcz17Y3NzYFxuICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgIHdpZHRoOiAxMHB4O1xuICAgICAgaGVpZ2h0OiAxMHB4O1xuICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgICAgYm9yZGVyOiAycHggc29saWQgcmVkO1xuICAgIGB9XG4gIC8+XG4pO1xuXG5leHBvcnQgY29uc3QgZ2V0U3RhdGljUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIC8vIFRoZSBiZXN0IGlzIHRvIHBsYWNlIHRoaXMgbWV0aG9kIGF0IF9hcHAuanMgYnV0IHRoaXMgZG9lc24ndCB3b3JrIG5vd1xuICBjb25zdCBkb2MgPSBhd2FpdCBpbXBvcnQoJy4uL2Rldi1zcmMvZG9jJyk7XG4gIHJldHVybiBkb2MuZ2V0U3RhdGljUHJvcHMoKTtcbn07XG4iXX0= */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
-};
-
-var CircleMarker = function CircleMarker() {
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])("div", {
-    css: _ref,
-    __self: _this2,
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
+    lat: MAP_OPTIONS.center.lat,
+    lng: MAP_OPTIONS.center.lng,
+    __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 87,
+      columnNumber: 15
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(MarkerBottom, {
+    style: {
+      alignSelf: alignSelf,
+      justifySelf: justifySelf // easier to use placeSelf
+
+    },
+    size: 48,
+    color: 'red',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88,
+      columnNumber: 17
+    }
+  })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
+    lat: MAP_OPTIONS.center.lat + 0.1,
+    lng: MAP_OPTIONS.center.lng + 0.3,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98,
+      columnNumber: 15
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(MarkerCentered, {
+    style: {
+      alignSelf: alignSelf,
+      justifySelf: justifySelf
+    },
+    size: 48,
+    color: 'Fuchsia',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102,
+      columnNumber: 17
+    }
+  })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
+    lat: MAP_OPTIONS.center.lat - 0.1,
+    lng: MAP_OPTIONS.center.lng - 0.3,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111,
+      columnNumber: 15
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(MarkerCorner, {
+    style: {
+      alignSelf: alignSelf,
+      justifySelf: justifySelf
+    },
+    size: 48,
+    color: 'OrangeRed',
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115,
+      columnNumber: 17
+    }
+  }))))));
+}
+
+var MarkerBottom = function MarkerBottom(_ref) {
+  var size = _ref.size,
+      color = _ref.color,
+      style = _ref.style;
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("svg", {
+    style: style,
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    width: size,
+    viewBox: "2 2 20 20",
+    fill: color,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
       columnNumber: 3
     }
-  });
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("path", {
+    d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 5
+    }
+  }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142,
+      columnNumber: 5
+    }
+  }));
+};
+
+var MarkerCentered = function MarkerCentered(_ref2) {
+  var size = _ref2.size,
+      color = _ref2.color,
+      style = _ref2.style;
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("svg", {
+    style: style,
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "0 0 24 24",
+    width: size,
+    fill: color,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147,
+      columnNumber: 3
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 5
+    }
+  }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("path", {
+    d: "M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 156,
+      columnNumber: 5
+    }
+  }));
+};
+
+var MarkerCorner = function MarkerCorner(_ref3) {
+  var size = _ref3.size,
+      color = _ref3.color,
+      style = _ref3.style;
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("svg", {
+    style: style,
+    xmlns: "http://www.w3.org/2000/svg",
+    height: size,
+    viewBox: "3 3 18 18",
+    width: size,
+    fill: color,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 161,
+      columnNumber: 3
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 169,
+      columnNumber: 5
+    }
+  }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("path", {
+    d: "M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 170,
+      columnNumber: 5
+    }
+  }));
 };
 
 /***/ }),
@@ -11476,14 +12330,14 @@ var Overlay = function Overlay(props) {
 
 /***/ }),
 
-/***/ 4:
-/*!***********************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
-  \***********************************************************************************************************************************************************/
+/***/ 2:
+/*!***************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Freact-markers&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Freact-markers.js&hotRouterUpdates=true ***!
+  \***************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Freact-markers&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Freact-markers.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Freact-markers&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Freact-markers.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -11499,5 +12353,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=performance.js.map
+},[[2,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=react-markers.js.map

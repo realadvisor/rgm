@@ -1,4 +1,15 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/performance.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/clusters.js"],{
+
+/***/ "./data/places.json":
+/*!**************************!*\
+  !*** ./data/places.json ***!
+  \**************************/
+/*! exports provided: type, features, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"scalerank\":2,\"name\":\"Niagara Falls\",\"comment\":null,\"name_alt\":null,\"lat_y\":43.087653,\"long_x\":-79.044073,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"waterfall\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-79.04411780507252,43.08771393436908]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":2,\"name\":\"Salto Angel\",\"comment\":null,\"name_alt\":\"Angel Falls\",\"lat_y\":5.686836,\"long_x\":-62.061848,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"waterfall\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-62.06181800038502,5.686896063275327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":2,\"name\":\"Iguazu Falls\",\"comment\":null,\"name_alt\":null,\"lat_y\":-25.568265,\"long_x\":-54.582842,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"waterfall\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-54.58299719960377,-25.568291925005923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Gees Gwardafuy\",\"comment\":null,\"name_alt\":null,\"lat_y\":11.812855,\"long_x\":51.235173,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[51.258313644180184,11.822028799226407]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Victoria Falls\",\"comment\":null,\"name_alt\":null,\"lat_y\":-17.77079,\"long_x\":25.460133,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"waterfall\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[25.852793816021233,-17.928033135943423]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Wright I.\",\"comment\":null,\"name_alt\":null,\"lat_y\":-50.959168,\"long_x\":-72.995002,\"region\":\"Antarctica\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-116.89262854726002,-74.06670501094342]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Grant I.\",\"comment\":null,\"name_alt\":null,\"lat_y\":-50.959168,\"long_x\":-72.995002,\"region\":\"Antarctica\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-131.48540198476002,-74.48272063594342]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Newman I.\",\"comment\":null,\"name_alt\":null,\"lat_y\":-50.959168,\"long_x\":-72.995002,\"region\":\"Antarctica\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-145.68681800038502,-75.59185149531842]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Dean I.\",\"comment\":null,\"name_alt\":null,\"lat_y\":-50.959168,\"long_x\":-72.995002,\"region\":\"Antarctica\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-127.63438880116627,-74.50066497188092]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape Canaveral\",\"comment\":null,\"name_alt\":null,\"lat_y\":28.483713,\"long_x\":-80.534941,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-80.53625603636821,28.473056814472134]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape Mendocino\",\"comment\":null,\"name_alt\":null,\"lat_y\":40.350222,\"long_x\":-124.323474,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-124.39201745043425,40.44222065537283]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cabo San Lucas\",\"comment\":null,\"name_alt\":null,\"lat_y\":22.887711,\"long_x\":-109.969843,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-109.96983801991627,22.887762762494077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape Churchill\",\"comment\":null,\"name_alt\":null,\"lat_y\":58.752014,\"long_x\":-93.182023,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-93.18211829335377,58.75208161015033]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape Cod\",\"comment\":null,\"name_alt\":null,\"lat_y\":41.734867,\"long_x\":-69.964865,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-70.03687833567446,41.9914589934385]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape May\",\"comment\":null,\"name_alt\":null,\"lat_y\":37.2017,\"long_x\":-75.926791,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-74.95121933164988,38.92969645987068]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cabo de Hornos\",\"comment\":null,\"name_alt\":\"Cape Horn\",\"lat_y\":-55.862824,\"long_x\":-67.169425,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-67.16942298085377,-55.86284758906842]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape of Good Hope\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.307311,\"long_x\":18.441206,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[18.441294792583733,-34.30718352656842]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape Palmas\",\"comment\":null,\"name_alt\":null,\"lat_y\":4.373924,\"long_x\":-7.457356,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-7.457386848041267,4.373968817181577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cape Verde\",\"comment\":null,\"name_alt\":null,\"lat_y\":14.732312,\"long_x\":-17.471776,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-17.471730109760017,14.732489324994077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Cap Bon\",\"comment\":null,\"name_alt\":null,\"lat_y\":37.073954,\"long_x\":11.024061,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[11.024180534771233,37.07398102421283]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"Oceanic pole of inaccessibility\",\"comment\":null,\"name_alt\":null,\"lat_y\":-48.865032,\"long_x\":-123.401986,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"South Pacific Ocean\",\"featureclass\":\"pole\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-123.40202796132252,-48.86504485469342]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"South Magnetic Pole 2005 (est)\",\"comment\":null,\"name_alt\":null,\"lat_y\":-48.865032,\"long_x\":-123.401986,\"region\":\"Antarctica\",\"subregion\":\"Southern Ocean\",\"featureclass\":\"pole\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[137.85425865977123,-64.51824309688092]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":3,\"name\":\"North Magnetic Pole 2005 (est)\",\"comment\":null,\"name_alt\":null,\"lat_y\":-48.865032,\"long_x\":-123.401986,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"Arctic Ocean\",\"featureclass\":\"pole\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-114.40569007069752,82.71008942265033]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Lands End\",\"comment\":null,\"name_alt\":null,\"lat_y\":50.069677,\"long_x\":-5.668629,\"region\":\"Europe\",\"subregion\":\"British Isles\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-5.668629523822517,50.06970856327533]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape York\",\"comment\":null,\"name_alt\":null,\"lat_y\":76.218919,\"long_x\":-68.218612,\"region\":\"North America\",\"subregion\":\"Greenland\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-68.21861731679127,76.21887848515033]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Nunap Isua\",\"comment\":null,\"name_alt\":\"Cape Farewell\",\"lat_y\":59.862583,\"long_x\":-43.90088,\"region\":\"North America\",\"subregion\":\"Greenland\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-43.90080725819752,59.86267731327533]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape Vohimena\",\"comment\":null,\"name_alt\":null,\"lat_y\":-25.546355,\"long_x\":45.158683,\"region\":\"Africa\",\"subregion\":\"Indian Ocean\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[45.15870201914623,-25.546319268755923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Vavau\",\"comment\":null,\"name_alt\":null,\"lat_y\":-18.590062,\"long_x\":-173.976769,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-173.97673499257252,-18.590020440630923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"I. de Pascua\",\"comment\":null,\"name_alt\":\"Easter I.\",\"lat_y\":-27.102117,\"long_x\":-109.367953,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-109.36790930897877,-27.102227471880923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape Agulhas\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.801182,\"long_x\":19.993472,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[19.993418816021233,-34.80108001094342]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Plain of Jars\",\"comment\":null,\"name_alt\":null,\"lat_y\":20.550709,\"long_x\":101.890532,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"plain\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[101.89063561289623,20.550909735150327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cabo Corrientes\",\"comment\":null,\"name_alt\":null,\"lat_y\":20.409471,\"long_x\":-105.683581,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-105.67795873874799,20.420365114940253]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Pt. Eugenia\",\"comment\":null,\"name_alt\":null,\"lat_y\":27.861925,\"long_x\":-115.07629,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-115.04623945046137,27.842887092585283]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Point Conception\",\"comment\":null,\"name_alt\":null,\"lat_y\":34.582313,\"long_x\":-120.659016,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-120.46360036202867,34.46027592467621]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape Hatteras\",\"comment\":null,\"name_alt\":null,\"lat_y\":35.437762,\"long_x\":-75.450543,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-75.54032952413311,35.24475263812895]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape Sable\",\"comment\":null,\"name_alt\":null,\"lat_y\":25.124896,\"long_x\":-81.090442,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-81.09044348866627,25.124762274212827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape Hope\",\"comment\":null,\"name_alt\":null,\"lat_y\":68.35638,\"long_x\":-166.815582,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-166.81321268769543,68.35380207543972]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Point Barrow\",\"comment\":null,\"name_alt\":null,\"lat_y\":71.372637,\"long_x\":-156.615894,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-156.4719492091668,71.40589128763096]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Punta Negra\",\"comment\":null,\"name_alt\":null,\"lat_y\":-5.948875,\"long_x\":-81.108252,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-81.10832678944752,-5.948663018755923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Punta Lavapié\",\"comment\":null,\"name_alt\":null,\"lat_y\":-37.262867,\"long_x\":-73.606377,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-73.60304396243782,-37.17120002933805]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Punta Galera\",\"comment\":null,\"name_alt\":null,\"lat_y\":0.731221,\"long_x\":-80.062205,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-80.06212317616627,0.731207586712827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cap Lopez\",\"comment\":null,\"name_alt\":null,\"lat_y\":-0.604761,\"long_x\":8.726423,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[8.727299789450319,-0.615086490513119]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cape Bobaomby\",\"comment\":null,\"name_alt\":null,\"lat_y\":-11.966598,\"long_x\":49.262904,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[49.26282799570873,-11.966485284380923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":4,\"name\":\"Cap Blanc\",\"comment\":null,\"name_alt\":null,\"lat_y\":20.822108,\"long_x\":-17.052856,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-17.052906867572517,20.822088934369077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"South West Cape\",\"comment\":null,\"name_alt\":null,\"lat_y\":-43.510984,\"long_x\":146.054227,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[146.03379804609568,-43.5404025683706]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Howe\",\"comment\":null,\"name_alt\":null,\"lat_y\":-37.488775,\"long_x\":149.95853,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[149.95838463633373,-37.48894622188092]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Otway\",\"comment\":null,\"name_alt\":null,\"lat_y\":-38.857622,\"long_x\":143.565403,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[143.537005108191,-38.85472383068997]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Jaffa\",\"comment\":null,\"name_alt\":null,\"lat_y\":-36.944244,\"long_x\":139.690866,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[139.68061977964746,-36.95624316107086]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Carnot\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.920233,\"long_x\":135.656027,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[135.65378326897053,-34.93870859313661]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Byron\",\"comment\":null,\"name_alt\":null,\"lat_y\":-28.658282,\"long_x\":153.632849,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[153.62799176015545,-28.66197417050363]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Manifold\",\"comment\":null,\"name_alt\":null,\"lat_y\":-22.702081,\"long_x\":150.811228,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[150.81116783945873,-22.702080987505923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape York\",\"comment\":null,\"name_alt\":null,\"lat_y\":-10.710859,\"long_x\":142.522018,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[142.52173912852123,-10.710747979693423]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Melville\",\"comment\":null,\"name_alt\":null,\"lat_y\":-14.163629,\"long_x\":144.506417,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[144.50660240977123,-14.163506768755923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Arnhem\",\"comment\":null,\"name_alt\":null,\"lat_y\":-12.337984,\"long_x\":136.952429,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[136.91481885262823,-12.295662864626316]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"West Cape Howe\",\"comment\":null,\"name_alt\":null,\"lat_y\":-35.104301,\"long_x\":117.597011,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[117.59693444102123,-35.10430266719342]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Leeuwin\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.297841,\"long_x\":115.10633,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[115.1280088910596,-34.328007092559645]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Pasley\",\"comment\":null,\"name_alt\":null,\"lat_y\":-33.929054,\"long_x\":123.517283,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[123.51722252695873,-33.92888762813092]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Londonderry\",\"comment\":null,\"name_alt\":null,\"lat_y\":-13.713856,\"long_x\":126.964514,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[126.94130045687105,-13.74290642667802]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Steep Point\",\"comment\":null,\"name_alt\":null,\"lat_y\":-26.16822,\"long_x\":113.169959,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[113.14519563289093,-26.157463616878637]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"North West Cape\",\"comment\":null,\"name_alt\":null,\"lat_y\":-21.809776,\"long_x\":114.117534,\"region\":\"Oceania\",\"subregion\":\"Australia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[114.16010761213809,-21.801474697071743]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Gracias a Dios\",\"comment\":null,\"name_alt\":null,\"lat_y\":14.994242,\"long_x\":-83.15866,\"region\":\"North America\",\"subregion\":\"Central America\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-83.15874182851002,14.994208074994077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Brewster\",\"comment\":null,\"name_alt\":null,\"lat_y\":70.150754,\"long_x\":-22.122616,\"region\":\"North America\",\"subregion\":\"Greenland\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-22.122731086322517,70.15088532108783]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Morris Jesup\",\"comment\":null,\"name_alt\":null,\"lat_y\":83.626331,\"long_x\":-32.491541,\"region\":\"North America\",\"subregion\":\"Greenland\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-32.49150550038502,83.62628815311908]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Grmsey\",\"comment\":null,\"name_alt\":null,\"lat_y\":66.669359,\"long_x\":-18.251096,\"region\":\"Europe\",\"subregion\":\"Iceland\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-18.251088019916267,66.66937897343158]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Surtsey\",\"comment\":null,\"name_alt\":null,\"lat_y\":63.217764,\"long_x\":-20.434929,\"region\":\"Europe\",\"subregion\":\"Iceland\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-20.434803840228767,63.21771881718158]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cap Est\",\"comment\":null,\"name_alt\":null,\"lat_y\":-15.274849,\"long_x\":50.499889,\"region\":\"Africa\",\"subregion\":\"Indian Ocean\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[50.49976647227123,-15.274956964068423]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Cretin\",\"comment\":null,\"name_alt\":null,\"lat_y\":-6.637492,\"long_x\":147.852392,\"region\":\"Oceania\",\"subregion\":\"Melanesia\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[147.85242760508373,-6.637261651568423]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Îles Chesterfield\",\"comment\":null,\"name_alt\":null,\"lat_y\":-19.20447,\"long_x\":159.95171,\"region\":\"Oceania\",\"subregion\":\"Melanesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[159.95167076914623,-19.204644464068423]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Pagan\",\"comment\":null,\"name_alt\":null,\"lat_y\":18.119631,\"long_x\":145.785087,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[145.78492272227123,18.119635321087827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Wake I.\",\"comment\":null,\"name_alt\":null,\"lat_y\":19.303497,\"long_x\":166.63626,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[166.63624108164623,19.303595282025327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Tabiteuea\",\"comment\":null,\"name_alt\":null,\"lat_y\":-1.201405,\"long_x\":174.755207,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[174.75513756602123,-1.201348565630923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Aranuka\",\"comment\":null,\"name_alt\":null,\"lat_y\":0.226766,\"long_x\":173.626286,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[173.62623131602123,0.226752020306577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Nauru\",\"comment\":null,\"name_alt\":null,\"lat_y\":-0.505856,\"long_x\":166.930778,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[166.93067467539623,-0.505791925005923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ebon\",\"comment\":null,\"name_alt\":null,\"lat_y\":4.59977,\"long_x\":168.736432,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[168.73633873789623,4.599798895306577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Jaluit\",\"comment\":null,\"name_alt\":null,\"lat_y\":5.964455,\"long_x\":169.682894,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[169.68299401133373,5.964483953900327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Mili\",\"comment\":null,\"name_alt\":null,\"lat_y\":6.107334,\"long_x\":171.725875,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[171.72584069102123,6.107489324994077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Majuro\",\"comment\":null,\"name_alt\":null,\"lat_y\":7.118009,\"long_x\":171.159743,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[171.15980065195873,7.117987371869077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ailinglapalap\",\"comment\":null,\"name_alt\":null,\"lat_y\":7.276392,\"long_x\":168.596926,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[168.59693444102123,7.276495672650327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Kwajalein\",\"comment\":null,\"name_alt\":null,\"lat_y\":8.746619,\"long_x\":167.735072,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[167.73511803477123,8.746710516400327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Rongelap\",\"comment\":null,\"name_alt\":null,\"lat_y\":11.164329,\"long_x\":166.869876,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[166.86988365977123,11.164496160931577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Bikini\",\"comment\":null,\"name_alt\":null,\"lat_y\":11.639231,\"long_x\":165.550698,\"region\":\"Oceania\",\"subregion\":\"Micronesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[165.55042565195873,11.639288641400327]}},{\"type\":\"Feature\",\"id\":737,\"properties\":{\"scalerank\":5,\"name\":\"Cape Reinga\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.432767,\"long_x\":172.7285,\"region\":\"Oceania\",\"subregion\":\"New Zealand\",\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[172.70558117137455,-34.42039113947056]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Kanton\",\"comment\":null,\"name_alt\":null,\"lat_y\":-2.757106,\"long_x\":-171.71703,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-171.71703040272877,-2.757134698443423]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Tabuaeran\",\"comment\":null,\"name_alt\":\"Fanning I.\",\"lat_y\":3.866545,\"long_x\":-159.326781,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-159.32683264882252,3.866705633587827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Malden\",\"comment\":null,\"name_alt\":null,\"lat_y\":-4.042491,\"long_x\":-154.983478,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-154.98350989491627,-4.042657159380923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Rarotonga\",\"comment\":null,\"name_alt\":null,\"lat_y\":-21.201867,\"long_x\":-159.797637,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-159.79771887929127,-21.201836846880923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Rangiroa\",\"comment\":null,\"name_alt\":null,\"lat_y\":-15.2046,\"long_x\":-147.773967,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-147.77403723866627,-15.204766534380923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Funafuti\",\"comment\":null,\"name_alt\":null,\"lat_y\":-8.491577,\"long_x\":179.19841,\"region\":\"Oceania\",\"subregion\":\"Polynesia\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[179.19837487070873,-8.491631768755923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"St. Croix\",\"comment\":null,\"name_alt\":null,\"lat_y\":17.762944,\"long_x\":-64.763088,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-64.76317298085377,17.763006903119077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Grand Cayman\",\"comment\":null,\"name_alt\":null,\"lat_y\":19.315829,\"long_x\":-81.271416,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-81.27159583241627,19.315802313275327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"San  Salvador\",\"comment\":null,\"name_alt\":null,\"lat_y\":24.052793,\"long_x\":-74.492848,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-74.49290930897877,24.052801824994077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Grenada\",\"comment\":null,\"name_alt\":null,\"lat_y\":12.105978,\"long_x\":-61.723079,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.72319495351002,12.105963446087827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Barbuda\",\"comment\":null,\"name_alt\":null,\"lat_y\":17.622525,\"long_x\":-61.789243,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.78929602772877,17.622626043744077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Antigua\",\"comment\":null,\"name_alt\":null,\"lat_y\":17.040441,\"long_x\":-61.775982,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.77592932851002,17.040594793744077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Guadeloupe\",\"comment\":null,\"name_alt\":null,\"lat_y\":16.180583,\"long_x\":-61.656947,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.65703284413502,16.180670477337827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Dominica\",\"comment\":null,\"name_alt\":null,\"lat_y\":15.452943,\"long_x\":-61.352652,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.35271155507252,15.452887274212827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Martinique\",\"comment\":null,\"name_alt\":null,\"lat_y\":14.672462,\"long_x\":-61.008715,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.00883948476002,14.672491766400327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Saint Lucia\",\"comment\":null,\"name_alt\":null,\"lat_y\":13.918332,\"long_x\":-60.982225,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-60.98222815663502,13.918280340619077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Saint Vincent\",\"comment\":null,\"name_alt\":null,\"lat_y\":13.270131,\"long_x\":-61.207143,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-61.20720374257252,13.270209051556577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Barbados\",\"comment\":null,\"name_alt\":null,\"lat_y\":13.164326,\"long_x\":-59.566742,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-59.56682288319752,13.164252020306577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Tobago\",\"comment\":null,\"name_alt\":null,\"lat_y\":11.259334,\"long_x\":-60.677992,\"region\":\"South America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-60.67808997304127,11.259283758587827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Margarita\",\"comment\":null,\"name_alt\":null,\"lat_y\":10.981467,\"long_x\":-64.051401,\"region\":\"South America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-64.05144202382252,10.981512762494077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Curaao\",\"comment\":null,\"name_alt\":null,\"lat_y\":12.185355,\"long_x\":-68.999109,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-68.99919593007252,12.185309149212827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Aruba\",\"comment\":null,\"name_alt\":null,\"lat_y\":12.502849,\"long_x\":-69.96488,\"region\":\"North America\",\"subregion\":\"West Indies\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-69.96501624257252,12.502752996869077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ras Banäs\",\"comment\":null,\"name_alt\":null,\"lat_y\":23.950592,\"long_x\":35.778059,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[35.77808678477123,23.950628973431577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ponta das Salinas\",\"comment\":null,\"name_alt\":null,\"lat_y\":-12.832908,\"long_x\":12.928991,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[12.968705086077254,-12.855718342716505]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ponta das Palmeirinhas\",\"comment\":null,\"name_alt\":null,\"lat_y\":-9.071387,\"long_x\":12.999549,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[13.033811372274608,-9.099938228394153]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Bojador\",\"comment\":null,\"name_alt\":null,\"lat_y\":26.157836,\"long_x\":-14.473111,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-14.473194953510017,26.157965399212827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Comorin\",\"comment\":null,\"name_alt\":null,\"lat_y\":8.143554,\"long_x\":77.471497,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[77.51210506924555,8.085338515340696]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Dondra Head\",\"comment\":null,\"name_alt\":null,\"lat_y\":5.947528,\"long_x\":80.616321,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[80.59180925571331,5.929580617022318]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Yelizavety\",\"comment\":null,\"name_alt\":null,\"lat_y\":54.416083,\"long_x\":142.720445,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[142.72059166758373,54.41620514530658]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Pt. Yuzhnyy\",\"comment\":null,\"name_alt\":null,\"lat_y\":57.733572,\"long_x\":156.796426,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[156.79664147227123,57.73346588749408]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Sata\",\"comment\":null,\"name_alt\":null,\"lat_y\":31.026941,\"long_x\":130.695089,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[130.69520104258373,31.026922918744077]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Aniva\",\"comment\":null,\"name_alt\":null,\"lat_y\":46.081706,\"long_x\":143.43487,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[143.43482506602123,46.08179352421283]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Terpeniya\",\"comment\":null,\"name_alt\":null,\"lat_y\":48.66928,\"long_x\":144.712582,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[144.71253502695873,48.66937897343158]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Lopatka\",\"comment\":null,\"name_alt\":null,\"lat_y\":50.914155,\"long_x\":156.651536,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[156.65162194102123,50.91412994999408]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Ozernoy\",\"comment\":null,\"name_alt\":null,\"lat_y\":57.7708,\"long_x\":163.246685,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[163.24683678477123,57.77088043827533]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Olyutorskiy\",\"comment\":null,\"name_alt\":null,\"lat_y\":59.960807,\"long_x\":170.31265,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[170.31287682383373,59.96082184452533]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Navarin\",\"comment\":null,\"name_alt\":null,\"lat_y\":62.327239,\"long_x\":179.074225,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[179.07422936289623,62.32727692265033]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Lopatka\",\"comment\":null,\"name_alt\":null,\"lat_y\":71.907853,\"long_x\":150.066042,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[150.06592858164623,71.90778229374408]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Ince\",\"comment\":null,\"name_alt\":null,\"lat_y\":42.084312,\"long_x\":34.983358,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[34.98328698008373,42.08417389530658]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ras Fartak\",\"comment\":null,\"name_alt\":null,\"lat_y\":15.677412,\"long_x\":52.229105,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[52.2389696999939,15.65795249845498]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ras Sharbatat\",\"comment\":null,\"name_alt\":null,\"lat_y\":18.164534,\"long_x\":56.56827,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[56.558165806017215,18.166986171245085]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ra's al Had\",\"comment\":null,\"name_alt\":null,\"lat_y\":22.530158,\"long_x\":59.849134,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[59.7995168175437,22.518675327148298]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Hachijjima\",\"comment\":null,\"name_alt\":null,\"lat_y\":33.109796,\"long_x\":139.804903,\"region\":\"Asia\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[139.80482018320873,33.10980866093158]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Nordkapp\",\"comment\":null,\"name_alt\":null,\"lat_y\":71.18337,\"long_x\":25.662398,\"region\":\"Europe\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[25.66067519711473,71.15450206702127]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo de São Vicentete\",\"comment\":null,\"name_alt\":null,\"lat_y\":37.038304,\"long_x\":-8.969391,\"region\":\"Europe\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-8.969410773822517,37.03827545780658]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Fisterra\",\"comment\":null,\"name_alt\":null,\"lat_y\":42.952418,\"long_x\":-9.267837,\"region\":\"Europe\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-9.26996282865152,42.92873605781255]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape San Blas\",\"comment\":null,\"name_alt\":null,\"lat_y\":29.713967,\"long_x\":-85.270961,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-85.27092444569752,29.713995672650327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Sable\",\"comment\":null,\"name_alt\":null,\"lat_y\":43.469097,\"long_x\":-65.610769,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-65.61082923085377,43.46900055546283]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Bauld\",\"comment\":null,\"name_alt\":null,\"lat_y\":51.568576,\"long_x\":-55.430306,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-55.43028723866627,51.56848786015033]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape Fear\",\"comment\":null,\"name_alt\":null,\"lat_y\":33.867949,\"long_x\":-77.990568,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-77.99058997304127,33.86798737186908]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"I. Guadalupe\",\"comment\":null,\"name_alt\":null,\"lat_y\":29.052552,\"long_x\":-118.317465,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"North Pacific Ocean\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-118.31749426991627,29.052496649212827]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Miquelon\",\"comment\":null,\"name_alt\":null,\"lat_y\":46.929526,\"long_x\":-56.329884,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-56.32988440663502,46.92938873905658]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"I. Robinson Crusoe\",\"comment\":null,\"name_alt\":null,\"lat_y\":-33.589852,\"long_x\":-78.872522,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"South Pacific Ocean\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-78.87254798085377,-33.58965422969342]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Orange\",\"comment\":null,\"name_alt\":null,\"lat_y\":4.125735,\"long_x\":-51.242144,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-51.26287766987179,4.135614177285231]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo de Santa Marta Grande\",\"comment\":null,\"name_alt\":null,\"lat_y\":-28.558078,\"long_x\":-48.735526,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-48.80338037734664,-28.57198267323537]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Punta del Este\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.975503,\"long_x\":-54.933154,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-54.94628769070382,-34.96658679840526]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo San Antonio\",\"comment\":null,\"name_alt\":null,\"lat_y\":-36.381052,\"long_x\":-56.655377,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-56.716792100626165,-36.40959917438929]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Corrientes\",\"comment\":null,\"name_alt\":null,\"lat_y\":-38.135985,\"long_x\":-57.546212,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-57.56252349612641,-38.066376942128464]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Punta Rasa\",\"comment\":null,\"name_alt\":null,\"lat_y\":-40.834718,\"long_x\":-62.282201,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-62.25911745789756,-40.72626411656719]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Dos Bahías\",\"comment\":null,\"name_alt\":null,\"lat_y\":-44.9887,\"long_x\":-65.615952,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-65.5438334451688,-44.89439847091873]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Delgado\",\"comment\":null,\"name_alt\":null,\"lat_y\":-10.670103,\"long_x\":40.624309,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[40.62440026133373,-10.670098565630923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ponta da Barra\",\"comment\":null,\"name_alt\":null,\"lat_y\":-23.829888,\"long_x\":35.515696,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[35.51563561289623,-23.830010675005923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ponta São Sebastio\",\"comment\":null,\"name_alt\":null,\"lat_y\":-22.118899,\"long_x\":35.480417,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[35.48023522227123,-22.118829034380923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ras Cantin\",\"comment\":null,\"name_alt\":null,\"lat_y\":32.581636,\"long_x\":-9.273918,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-9.273915168353767,32.58161041874408]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ras Kasr\",\"comment\":null,\"name_alt\":null,\"lat_y\":18.076817,\"long_x\":38.573746,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[38.58027735871919,18.075167704493374]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ponta de Jericoacoara\",\"comment\":null,\"name_alt\":null,\"lat_y\":-2.85044,\"long_x\":-40.067208,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-39.991649927946355,-2.851822991583529]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo de São Roque\",\"comment\":null,\"name_alt\":null,\"lat_y\":-5.193476,\"long_x\":-35.447654,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-35.50994900651512,-5.156866121305913]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Ponta da Baleia\",\"comment\":null,\"name_alt\":null,\"lat_y\":-17.710136,\"long_x\":-39.157619,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-39.14557867836578,-17.678753845220847]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo de São Tomé\",\"comment\":null,\"name_alt\":null,\"lat_y\":-21.996382,\"long_x\":-41.009692,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-40.98763990313761,-21.971754611783773]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Frio\",\"comment\":null,\"name_alt\":null,\"lat_y\":-22.869501,\"long_x\":-41.962188,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-41.89015627474056,-22.759730815669258]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo San Diego\",\"comment\":null,\"name_alt\":null,\"lat_y\":-54.6406,\"long_x\":-65.21365,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-65.21361243397877,-54.64067962031842]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cabo Tres Puntas\",\"comment\":null,\"name_alt\":null,\"lat_y\":-47.237629,\"long_x\":-65.774707,\"region\":\"South America\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-65.74439816328368,-47.328778975372465]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cap Saint André\",\"comment\":null,\"name_alt\":null,\"lat_y\":-16.174457,\"long_x\":44.467405,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[44.46729576914623,-16.174493096880923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape St. Lucia\",\"comment\":null,\"name_alt\":null,\"lat_y\":-28.552694,\"long_x\":32.367221,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[32.36732018320873,-28.552666925005923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Cape St. Francis\",\"comment\":null,\"name_alt\":null,\"lat_y\":-34.171766,\"long_x\":24.817688,\"region\":\"Africa\",\"subregion\":null,\"featureclass\":\"cape\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[24.84143613032799,-34.18861022316314]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Minamitori-shima\",\"comment\":null,\"name_alt\":\"Marcus I.\",\"lat_y\":24.319813,\"long_x\":153.958899,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"North Pacific Ocean\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[153.95887291758373,24.319769598431577]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Is. Martin Vaz\",\"comment\":null,\"name_alt\":null,\"lat_y\":-20.559422,\"long_x\":-29.338439,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"Southern Atlantic Ocean\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-29.338429328510017,-20.559502862505923]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Rockall\",\"comment\":null,\"name_alt\":null,\"lat_y\":58.163524,\"long_x\":-12.408715,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"North Atlantic Ocean\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-12.408741828510017,58.16339752811908]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"I. de Cozumel\",\"comment\":null,\"name_alt\":null,\"lat_y\":20.444687,\"long_x\":-86.880555,\"region\":\"North America\",\"subregion\":null,\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-86.88060462147877,20.444708563275327]}},{\"type\":\"Feature\",\"properties\":{\"scalerank\":5,\"name\":\"Bermuda Islands\",\"comment\":null,\"name_alt\":null,\"lat_y\":32.317339,\"long_x\":-64.742895,\"region\":\"Seven seas (open ocean)\",\"subregion\":\"North Atlantic Ocean\",\"featureclass\":\"island\"},\"geometry\":{\"type\":\"Point\",\"coordinates\":[-64.74290930897877,32.31726715702533]}},{\"type\":\"Feature\",\"properties\":{\"name\":\"Null Island\"},\"geometry\":null}]}");
+
+/***/ }),
 
 /***/ "./dev-src/controls.js":
 /*!*****************************!*\
@@ -509,6 +520,57 @@ var MenuLink = function MenuLink(props) {
     }
   }, props.children)));
 };
+
+/***/ }),
+
+/***/ "./dev-src/geo-utils.js":
+/*!******************************!*\
+  !*** ./dev-src/geo-utils.js ***!
+  \******************************/
+/*! exports provided: latLng2World, world2LatLng, getScreenOffset */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "latLng2World", function() { return latLng2World; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "world2LatLng", function() { return world2LatLng; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getScreenOffset", function() { return getScreenOffset; });
+var GOOGLE_TILE_SIZE = 256;
+function latLng2World(_ref) {
+  var lat = _ref.lat,
+      lng = _ref.lng;
+  var sin = Math.sin(lat * Math.PI / 180);
+  var x = lng / 360 + 0.5;
+  var y = 0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI;
+  y = y < 0 ? 0 : y > 1 ? 1 : y;
+  return {
+    x: x,
+    y: y
+  };
+}
+
+var mod = function mod(a, m) {
+  return (a % m + m) % m;
+};
+
+function world2LatLng(_ref2) {
+  var x = _ref2.x,
+      y = _ref2.y;
+  var n = Math.PI - 2 * Math.PI * y;
+  return {
+    lat: 180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))),
+    lng: mod(x * 360, 360) - 180
+  };
+}
+function getScreenOffset(a, b, zoom) {
+  var wA = latLng2World(a);
+  var wB = latLng2World(b);
+  var scale = Math.pow(2, zoom);
+  return {
+    x: (wB.x - wA.x) * scale * GOOGLE_TILE_SIZE,
+    y: (wB.y - wA.y) * scale * GOOGLE_TILE_SIZE
+  };
+}
 
 /***/ }),
 
@@ -3058,6 +3120,253 @@ module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 /***/ }),
 
+/***/ "./node_modules/kdbush/src/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/kdbush/src/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return KDBush; });
+/* harmony import */ var _sort__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sort */ "./node_modules/kdbush/src/sort.js");
+/* harmony import */ var _range__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./range */ "./node_modules/kdbush/src/range.js");
+/* harmony import */ var _within__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./within */ "./node_modules/kdbush/src/within.js");
+
+
+
+
+
+const defaultGetX = p => p[0];
+const defaultGetY = p => p[1];
+
+class KDBush {
+    constructor(points, getX = defaultGetX, getY = defaultGetY, nodeSize = 64, ArrayType = Float64Array) {
+        this.nodeSize = nodeSize;
+        this.points = points;
+
+        const IndexArrayType = points.length < 65536 ? Uint16Array : Uint32Array;
+
+        const ids = this.ids = new IndexArrayType(points.length);
+        const coords = this.coords = new ArrayType(points.length * 2);
+
+        for (let i = 0; i < points.length; i++) {
+            ids[i] = i;
+            coords[2 * i] = getX(points[i]);
+            coords[2 * i + 1] = getY(points[i]);
+        }
+
+        Object(_sort__WEBPACK_IMPORTED_MODULE_0__["default"])(ids, coords, nodeSize, 0, ids.length - 1, 0);
+    }
+
+    range(minX, minY, maxX, maxY) {
+        return Object(_range__WEBPACK_IMPORTED_MODULE_1__["default"])(this.ids, this.coords, minX, minY, maxX, maxY, this.nodeSize);
+    }
+
+    within(x, y, r) {
+        return Object(_within__WEBPACK_IMPORTED_MODULE_2__["default"])(this.ids, this.coords, x, y, r, this.nodeSize);
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/kdbush/src/range.js":
+/*!******************************************!*\
+  !*** ./node_modules/kdbush/src/range.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return range; });
+
+function range(ids, coords, minX, minY, maxX, maxY, nodeSize) {
+    const stack = [0, ids.length - 1, 0];
+    const result = [];
+    let x, y;
+
+    while (stack.length) {
+        const axis = stack.pop();
+        const right = stack.pop();
+        const left = stack.pop();
+
+        if (right - left <= nodeSize) {
+            for (let i = left; i <= right; i++) {
+                x = coords[2 * i];
+                y = coords[2 * i + 1];
+                if (x >= minX && x <= maxX && y >= minY && y <= maxY) result.push(ids[i]);
+            }
+            continue;
+        }
+
+        const m = Math.floor((left + right) / 2);
+
+        x = coords[2 * m];
+        y = coords[2 * m + 1];
+
+        if (x >= minX && x <= maxX && y >= minY && y <= maxY) result.push(ids[m]);
+
+        const nextAxis = (axis + 1) % 2;
+
+        if (axis === 0 ? minX <= x : minY <= y) {
+            stack.push(left);
+            stack.push(m - 1);
+            stack.push(nextAxis);
+        }
+        if (axis === 0 ? maxX >= x : maxY >= y) {
+            stack.push(m + 1);
+            stack.push(right);
+            stack.push(nextAxis);
+        }
+    }
+
+    return result;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/kdbush/src/sort.js":
+/*!*****************************************!*\
+  !*** ./node_modules/kdbush/src/sort.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sortKD; });
+
+function sortKD(ids, coords, nodeSize, left, right, depth) {
+    if (right - left <= nodeSize) return;
+
+    const m = (left + right) >> 1;
+
+    select(ids, coords, m, left, right, depth % 2);
+
+    sortKD(ids, coords, nodeSize, left, m - 1, depth + 1);
+    sortKD(ids, coords, nodeSize, m + 1, right, depth + 1);
+}
+
+function select(ids, coords, k, left, right, inc) {
+
+    while (right > left) {
+        if (right - left > 600) {
+            const n = right - left + 1;
+            const m = k - left + 1;
+            const z = Math.log(n);
+            const s = 0.5 * Math.exp(2 * z / 3);
+            const sd = 0.5 * Math.sqrt(z * s * (n - s) / n) * (m - n / 2 < 0 ? -1 : 1);
+            const newLeft = Math.max(left, Math.floor(k - m * s / n + sd));
+            const newRight = Math.min(right, Math.floor(k + (n - m) * s / n + sd));
+            select(ids, coords, k, newLeft, newRight, inc);
+        }
+
+        const t = coords[2 * k + inc];
+        let i = left;
+        let j = right;
+
+        swapItem(ids, coords, left, k);
+        if (coords[2 * right + inc] > t) swapItem(ids, coords, left, right);
+
+        while (i < j) {
+            swapItem(ids, coords, i, j);
+            i++;
+            j--;
+            while (coords[2 * i + inc] < t) i++;
+            while (coords[2 * j + inc] > t) j--;
+        }
+
+        if (coords[2 * left + inc] === t) swapItem(ids, coords, left, j);
+        else {
+            j++;
+            swapItem(ids, coords, j, right);
+        }
+
+        if (j <= k) left = j + 1;
+        if (k <= j) right = j - 1;
+    }
+}
+
+function swapItem(ids, coords, i, j) {
+    swap(ids, i, j);
+    swap(coords, 2 * i, 2 * j);
+    swap(coords, 2 * i + 1, 2 * j + 1);
+}
+
+function swap(arr, i, j) {
+    const tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/kdbush/src/within.js":
+/*!*******************************************!*\
+  !*** ./node_modules/kdbush/src/within.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return within; });
+
+function within(ids, coords, qx, qy, r, nodeSize) {
+    const stack = [0, ids.length - 1, 0];
+    const result = [];
+    const r2 = r * r;
+
+    while (stack.length) {
+        const axis = stack.pop();
+        const right = stack.pop();
+        const left = stack.pop();
+
+        if (right - left <= nodeSize) {
+            for (let i = left; i <= right; i++) {
+                if (sqDist(coords[2 * i], coords[2 * i + 1], qx, qy) <= r2) result.push(ids[i]);
+            }
+            continue;
+        }
+
+        const m = Math.floor((left + right) / 2);
+
+        const x = coords[2 * m];
+        const y = coords[2 * m + 1];
+
+        if (sqDist(x, y, qx, qy) <= r2) result.push(ids[m]);
+
+        const nextAxis = (axis + 1) % 2;
+
+        if (axis === 0 ? qx - r <= x : qy - r <= y) {
+            stack.push(left);
+            stack.push(m - 1);
+            stack.push(nextAxis);
+        }
+        if (axis === 0 ? qx + r >= x : qy + r >= y) {
+            stack.push(m + 1);
+            stack.push(right);
+            stack.push(nextAxis);
+        }
+    }
+
+    return result;
+}
+
+function sqDist(ax, ay, bx, by) {
+    const dx = ax - bx;
+    const dy = ay - by;
+    return dx * dx + dy * dy;
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/nanoevents/index.js":
 /*!******************************************!*\
   !*** ./node_modules/nanoevents/index.js ***!
@@ -3124,23 +3433,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fclusters&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fclusters.js&hotRouterUpdates=true!./":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fclusters&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fclusters.js&hotRouterUpdates=true ***!
+  \*************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/performance",
+      "/clusters",
       function () {
-        var mod = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
+        var mod = __webpack_require__(/*! ./pages/clusters.js */ "./pages/clusters.js");
         if (true) {
-          module.hot.accept(/*! ./pages/performance.js */ "./pages/performance.js", function () {
-            if (!next.router.components["/performance"]) return;
-            var updatedPage = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
-            next.router.update("/performance", updatedPage);
+          module.hot.accept(/*! ./pages/clusters.js */ "./pages/clusters.js", function () {
+            if (!next.router.components["/clusters"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/clusters.js */ "./pages/clusters.js");
+            next.router.update("/clusters", updatedPage);
           });
         }
         return mod;
@@ -10973,6 +11282,403 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/supercluster/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/supercluster/index.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Supercluster; });
+/* harmony import */ var kdbush__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! kdbush */ "./node_modules/kdbush/src/index.js");
+
+
+
+const defaultOptions = {
+    minZoom: 0,   // min zoom to generate clusters on
+    maxZoom: 16,  // max zoom level to cluster the points on
+    radius: 40,   // cluster radius in pixels
+    extent: 512,  // tile extent (radius is calculated relative to it)
+    nodeSize: 64, // size of the KD-tree leaf node, affects performance
+    log: false,   // whether to log timing info
+
+    // whether to generate numeric ids for input features that don't have them
+    generateId: false,
+
+    // a reduce function for calculating custom cluster properties
+    reduce: null, // (accumulated, props) => { accumulated.sum += props.sum; }
+
+    // properties to use for individual points when running the reducer
+    map: props => props // props => ({sum: props.my_value})
+};
+
+class Supercluster {
+    constructor(options) {
+        this.options = extend(Object.create(defaultOptions), options);
+        this.trees = new Array(this.options.maxZoom + 1);
+    }
+
+    load(points) {
+        const {log, minZoom, maxZoom, nodeSize} = this.options;
+
+        if (log) console.time('total time');
+
+        const timerId = `prepare ${  points.length  } points`;
+        if (log) console.time(timerId);
+
+        this.points = points;
+
+        // generate a cluster object for each point and index input points into a KD-tree
+        let clusters = [];
+        for (let i = 0; i < points.length; i++) {
+            if (!points[i].geometry) continue;
+            clusters.push(createPointCluster(points[i], i));
+        }
+        this.trees[maxZoom + 1] = new kdbush__WEBPACK_IMPORTED_MODULE_0__["default"](clusters, getX, getY, nodeSize, Float32Array);
+
+        if (log) console.timeEnd(timerId);
+
+        // cluster points on max zoom, then cluster the results on previous zoom, etc.;
+        // results in a cluster hierarchy across zoom levels
+        for (let z = maxZoom; z >= minZoom; z--) {
+            const now = +Date.now();
+
+            // create a new set of clusters for the zoom and index them with a KD-tree
+            clusters = this._cluster(clusters, z);
+            this.trees[z] = new kdbush__WEBPACK_IMPORTED_MODULE_0__["default"](clusters, getX, getY, nodeSize, Float32Array);
+
+            if (log) console.log('z%d: %d clusters in %dms', z, clusters.length, +Date.now() - now);
+        }
+
+        if (log) console.timeEnd('total time');
+
+        return this;
+    }
+
+    getClusters(bbox, zoom) {
+        let minLng = ((bbox[0] + 180) % 360 + 360) % 360 - 180;
+        const minLat = Math.max(-90, Math.min(90, bbox[1]));
+        let maxLng = bbox[2] === 180 ? 180 : ((bbox[2] + 180) % 360 + 360) % 360 - 180;
+        const maxLat = Math.max(-90, Math.min(90, bbox[3]));
+
+        if (bbox[2] - bbox[0] >= 360) {
+            minLng = -180;
+            maxLng = 180;
+        } else if (minLng > maxLng) {
+            const easternHem = this.getClusters([minLng, minLat, 180, maxLat], zoom);
+            const westernHem = this.getClusters([-180, minLat, maxLng, maxLat], zoom);
+            return easternHem.concat(westernHem);
+        }
+
+        const tree = this.trees[this._limitZoom(zoom)];
+        const ids = tree.range(lngX(minLng), latY(maxLat), lngX(maxLng), latY(minLat));
+        const clusters = [];
+        for (const id of ids) {
+            const c = tree.points[id];
+            clusters.push(c.numPoints ? getClusterJSON(c) : this.points[c.index]);
+        }
+        return clusters;
+    }
+
+    getChildren(clusterId) {
+        const originId = this._getOriginId(clusterId);
+        const originZoom = this._getOriginZoom(clusterId);
+        const errorMsg = 'No cluster with the specified id.';
+
+        const index = this.trees[originZoom];
+        if (!index) throw new Error(errorMsg);
+
+        const origin = index.points[originId];
+        if (!origin) throw new Error(errorMsg);
+
+        const r = this.options.radius / (this.options.extent * Math.pow(2, originZoom - 1));
+        const ids = index.within(origin.x, origin.y, r);
+        const children = [];
+        for (const id of ids) {
+            const c = index.points[id];
+            if (c.parentId === clusterId) {
+                children.push(c.numPoints ? getClusterJSON(c) : this.points[c.index]);
+            }
+        }
+
+        if (children.length === 0) throw new Error(errorMsg);
+
+        return children;
+    }
+
+    getLeaves(clusterId, limit, offset) {
+        limit = limit || 10;
+        offset = offset || 0;
+
+        const leaves = [];
+        this._appendLeaves(leaves, clusterId, limit, offset, 0);
+
+        return leaves;
+    }
+
+    getTile(z, x, y) {
+        const tree = this.trees[this._limitZoom(z)];
+        const z2 = Math.pow(2, z);
+        const {extent, radius} = this.options;
+        const p = radius / extent;
+        const top = (y - p) / z2;
+        const bottom = (y + 1 + p) / z2;
+
+        const tile = {
+            features: []
+        };
+
+        this._addTileFeatures(
+            tree.range((x - p) / z2, top, (x + 1 + p) / z2, bottom),
+            tree.points, x, y, z2, tile);
+
+        if (x === 0) {
+            this._addTileFeatures(
+                tree.range(1 - p / z2, top, 1, bottom),
+                tree.points, z2, y, z2, tile);
+        }
+        if (x === z2 - 1) {
+            this._addTileFeatures(
+                tree.range(0, top, p / z2, bottom),
+                tree.points, -1, y, z2, tile);
+        }
+
+        return tile.features.length ? tile : null;
+    }
+
+    getClusterExpansionZoom(clusterId) {
+        let expansionZoom = this._getOriginZoom(clusterId) - 1;
+        while (expansionZoom <= this.options.maxZoom) {
+            const children = this.getChildren(clusterId);
+            expansionZoom++;
+            if (children.length !== 1) break;
+            clusterId = children[0].properties.cluster_id;
+        }
+        return expansionZoom;
+    }
+
+    _appendLeaves(result, clusterId, limit, offset, skipped) {
+        const children = this.getChildren(clusterId);
+
+        for (const child of children) {
+            const props = child.properties;
+
+            if (props && props.cluster) {
+                if (skipped + props.point_count <= offset) {
+                    // skip the whole cluster
+                    skipped += props.point_count;
+                } else {
+                    // enter the cluster
+                    skipped = this._appendLeaves(result, props.cluster_id, limit, offset, skipped);
+                    // exit the cluster
+                }
+            } else if (skipped < offset) {
+                // skip a single point
+                skipped++;
+            } else {
+                // add a single point
+                result.push(child);
+            }
+            if (result.length === limit) break;
+        }
+
+        return skipped;
+    }
+
+    _addTileFeatures(ids, points, x, y, z2, tile) {
+        for (const i of ids) {
+            const c = points[i];
+            const isCluster = c.numPoints;
+            const f = {
+                type: 1,
+                geometry: [[
+                    Math.round(this.options.extent * (c.x * z2 - x)),
+                    Math.round(this.options.extent * (c.y * z2 - y))
+                ]],
+                tags: isCluster ? getClusterProperties(c) : this.points[c.index].properties
+            };
+
+            // assign id
+            let id;
+            if (isCluster) {
+                id = c.id;
+            } else if (this.options.generateId) {
+                // optionally generate id
+                id = c.index;
+            } else if (this.points[c.index].id) {
+                // keep id if already assigned
+                id = this.points[c.index].id;
+            }
+
+            if (id !== undefined) f.id = id;
+
+            tile.features.push(f);
+        }
+    }
+
+    _limitZoom(z) {
+        return Math.max(this.options.minZoom, Math.min(z, this.options.maxZoom + 1));
+    }
+
+    _cluster(points, zoom) {
+        const clusters = [];
+        const {radius, extent, reduce} = this.options;
+        const r = radius / (extent * Math.pow(2, zoom));
+
+        // loop through each point
+        for (let i = 0; i < points.length; i++) {
+            const p = points[i];
+            // if we've already visited the point at this zoom level, skip it
+            if (p.zoom <= zoom) continue;
+            p.zoom = zoom;
+
+            // find all nearby points
+            const tree = this.trees[zoom + 1];
+            const neighborIds = tree.within(p.x, p.y, r);
+
+            let numPoints = p.numPoints || 1;
+            let wx = p.x * numPoints;
+            let wy = p.y * numPoints;
+
+            let clusterProperties = reduce && numPoints > 1 ? this._map(p, true) : null;
+
+            // encode both zoom and point index on which the cluster originated -- offset by total length of features
+            const id = (i << 5) + (zoom + 1) + this.points.length;
+
+            for (const neighborId of neighborIds) {
+                const b = tree.points[neighborId];
+                // filter out neighbors that are already processed
+                if (b.zoom <= zoom) continue;
+                b.zoom = zoom; // save the zoom (so it doesn't get processed twice)
+
+                const numPoints2 = b.numPoints || 1;
+                wx += b.x * numPoints2; // accumulate coordinates for calculating weighted center
+                wy += b.y * numPoints2;
+
+                numPoints += numPoints2;
+                b.parentId = id;
+
+                if (reduce) {
+                    if (!clusterProperties) clusterProperties = this._map(p, true);
+                    reduce(clusterProperties, this._map(b));
+                }
+            }
+
+            if (numPoints === 1) {
+                clusters.push(p);
+            } else {
+                p.parentId = id;
+                clusters.push(createCluster(wx / numPoints, wy / numPoints, id, numPoints, clusterProperties));
+            }
+        }
+
+        return clusters;
+    }
+
+    // get index of the point from which the cluster originated
+    _getOriginId(clusterId) {
+        return (clusterId - this.points.length) >> 5;
+    }
+
+    // get zoom of the point from which the cluster originated
+    _getOriginZoom(clusterId) {
+        return (clusterId - this.points.length) % 32;
+    }
+
+    _map(point, clone) {
+        if (point.numPoints) {
+            return clone ? extend({}, point.properties) : point.properties;
+        }
+        const original = this.points[point.index].properties;
+        const result = this.options.map(original);
+        return clone && result === original ? extend({}, result) : result;
+    }
+}
+
+function createCluster(x, y, id, numPoints, properties) {
+    return {
+        x, // weighted cluster center
+        y,
+        zoom: Infinity, // the last zoom the cluster was processed at
+        id, // encodes index of the first child of the cluster and its zoom level
+        parentId: -1, // parent cluster id
+        numPoints,
+        properties
+    };
+}
+
+function createPointCluster(p, id) {
+    const [x, y] = p.geometry.coordinates;
+    return {
+        x: lngX(x), // projected point coordinates
+        y: latY(y),
+        zoom: Infinity, // the last zoom the point was processed at
+        index: id, // index of the source feature in the original input array,
+        parentId: -1 // parent cluster id
+    };
+}
+
+function getClusterJSON(cluster) {
+    return {
+        type: 'Feature',
+        id: cluster.id,
+        properties: getClusterProperties(cluster),
+        geometry: {
+            type: 'Point',
+            coordinates: [xLng(cluster.x), yLat(cluster.y)]
+        }
+    };
+}
+
+function getClusterProperties(cluster) {
+    const count = cluster.numPoints;
+    const abbrev =
+        count >= 10000 ? `${Math.round(count / 1000)  }k` :
+        count >= 1000 ? `${Math.round(count / 100) / 10  }k` : count;
+    return extend(extend({}, cluster.properties), {
+        cluster: true,
+        cluster_id: cluster.id,
+        point_count: count,
+        point_count_abbreviated: abbrev
+    });
+}
+
+// longitude/latitude to spherical mercator in [0..1] range
+function lngX(lng) {
+    return lng / 360 + 0.5;
+}
+function latY(lat) {
+    const sin = Math.sin(lat * Math.PI / 180);
+    const y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
+    return y < 0 ? 0 : y > 1 ? 1 : y;
+}
+
+// spherical mercator to longitude/latitude
+function xLng(x) {
+    return (x - 0.5) * 360;
+}
+function yLat(y) {
+    const y2 = (180 - y * 360) * Math.PI / 180;
+    return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
+}
+
+function extend(dest, src) {
+    for (const id in src) dest[id] = src[id];
+    return dest;
+}
+
+function getX(p) {
+    return p.x;
+}
+function getY(p) {
+    return p.y;
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/typography/dist/index.js":
 /*!***********************************************!*\
   !*** ./node_modules/typography/dist/index.js ***!
@@ -11018,27 +11724,31 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/performance.js":
-/*!******************************!*\
-  !*** ./pages/performance.js ***!
-  \******************************/
+/***/ "./pages/clusters.js":
+/*!***************************!*\
+  !*** ./pages/clusters.js ***!
+  \***************************/
 /*! exports provided: __N_SSG, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Performance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Clusters; });
 /* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rgm */ "./src/index.js");
-/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
-/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var supercluster__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! supercluster */ "./node_modules/supercluster/index.js");
+/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
+/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
+/* harmony import */ var _dev_src_geo_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dev-src/geo-utils */ "./dev-src/geo-utils.js");
+/* harmony import */ var _data_places_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../data/places.json */ "./data/places.json");
+var _data_places_json__WEBPACK_IMPORTED_MODULE_8___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data/places.json */ "./data/places.json", 1);
 
 
-var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/performance.js",
+var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/clusters.js",
     _this2 = undefined;
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
@@ -11046,116 +11756,204 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
 /**
- * <!-- {"order": 8 } -->
+ * <!-- {"order": 7} -->
  *
- * # Thousand markers
+ * # Clusters example
  *
- * Example of drawing 1000 React markers.
+ * Real life example. _(clusters, zoom on marker click)_
  *
  */
 
 
+ // $FlowFixMe
 
- // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 
+
+
+ // $FlowFixMe
+
+
+
+var superclusterIndex = new supercluster__WEBPACK_IMPORTED_MODULE_4__["default"]({
+  log: false,
+  radius: 60,
+  extent: 256,
+  maxZoom: 17
+}).load(_data_places_json__WEBPACK_IMPORTED_MODULE_8__.features); // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 
 var MAP_OPTIONS = {
-  zoom: 9,
+  zoom: 1,
+  maxZoom: 17,
   center: {
-    lat: 59.936,
-    lng: 30.314
+    lat: 0,
+    lng: 30.304
   },
+  // disable cmd-zoom and 2 fingers zoom I personally dislike it
   gestureHandling: 'greedy',
   clickableIcons: false
 };
 
-var genRandomMarkers = function genRandomMarkers(n) {
-  return Array.from(Array(n), function () {
-    var r = Math.random() * 2 + 0.05;
-    var angle = Math.random() * 2 * Math.PI;
-    return {
-      lat: MAP_OPTIONS.center.lat + r * Math.cos(angle),
-      lng: MAP_OPTIONS.center.lng + r * Math.sin(angle)
-    };
-  });
+// Google has no "zoom at point" method
+var zoomAt = function zoomAt(map, pt, zoom) {
+  var center = map.getCenter();
+  var centerLatLng = {
+    lat: center.lat(),
+    lng: center.lng()
+  };
+  var offsetA = Object(_dev_src_geo_utils__WEBPACK_IMPORTED_MODULE_7__["getScreenOffset"])(pt, centerLatLng, map.getZoom());
+  var offsetB = Object(_dev_src_geo_utils__WEBPACK_IMPORTED_MODULE_7__["getScreenOffset"])(pt, centerLatLng, zoom);
+  var x = offsetA.x - offsetB.x;
+  var y = offsetA.y - offsetB.y;
+  map.setZoom(zoom);
+  map.panBy(x, y);
 };
 
 var __N_SSG = true;
-function Performance() {
+function Clusters() {
   var _this = this;
 
-  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_3__["useGoogleApiLoader"])();
-  var INITIAL_MARKERS_COUNT = 1000;
+  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_5__["useGoogleApiLoader"])();
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](function () {
-    return genRandomMarkers(INITIAL_MARKERS_COUNT);
-  }),
-      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 1),
-      markers = _React$useState2[0];
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](null),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      map = _React$useState2[0],
+      setMap = _React$useState2[1];
 
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_4__["Ratio"], {
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_1__["useState"]([]),
+      _React$useState4 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState3, 2),
+      clusters = _React$useState4[0],
+      setClusters = _React$useState4[1];
+
+  react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
+    if (map != null) {
+      var boundsChangedListener = map.addListener('idle', function () {
+        var bounds = map.getBounds();
+        var zoom = map.getZoom();
+        var sw = bounds.getSouthWest();
+        var ne = bounds.getNorthEast();
+        var swA = [sw.lng(), sw.lat()];
+        var neA = [ne.lng(), ne.lat()]; // Supercluster don't work in some cases, fix it
+
+        if (swA[0] > neA[0] && swA[0] - neA[0] < 0.00001) {
+          swA[0] = -180;
+          neA[0] = 180;
+        }
+
+        var clusters = superclusterIndex.getClusters([].concat(swA, neA), zoom);
+        setClusters(clusters);
+      });
+      return function () {
+        boundsChangedListener.remove();
+      };
+    }
+  }, [map]);
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_6__["Ratio"], {
     value: 3 / 4,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 103,
       columnNumber: 5
     }
-  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+    ref: setMap,
     api: api,
     options: MAP_OPTIONS,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 105,
       columnNumber: 9
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
+    debug: false,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 106,
       columnNumber: 11
     }
-  }, markers.map(function (m, index) {
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
-      key: index,
-      lat: m.lat,
-      lng: m.lng,
+  }, clusters.map(function (cluster) {
+    var _cluster$properties$p;
+
+    var _cluster$geometry$coo = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(cluster.geometry.coordinates, 2),
+        lng = _cluster$geometry$coo[0],
+        lat = _cluster$geometry$coo[1];
+
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
+      key: "".concat(lng, " - ").concat(lat),
+      lng: lng,
+      lat: lat,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53,
-        columnNumber: 15
-      }
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(CircleMarker, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 110,
         columnNumber: 17
+      }
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(ClusterMarker, {
+      count: (_cluster$properties$p = cluster.properties.point_count) !== null && _cluster$properties$p !== void 0 ? _cluster$properties$p : null,
+      onClick: function onClick() {
+        if (map && cluster.id != null) {
+          zoomAt(map, {
+            lng: lng,
+            lat: lat
+          }, superclusterIndex.getClusterExpansionZoom(cluster.id));
+        }
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 111,
+        columnNumber: 19
       }
     }));
   }))));
-}
+} // css is awesome!
 
 var _ref = false ? undefined : {
-  name: "1bqw4t9-CircleMarker",
-  styles: "place-self:center center;width:10px;height:10px;border-radius:100%;background-color:white;border:2px solid red;;label:CircleMarker;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBaUVZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogOCB9IC0tPlxuICpcbiAqICMgVGhvdXNhbmQgbWFya2Vyc1xuICpcbiAqIEV4YW1wbGUgb2YgZHJhd2luZyAxMDAwIFJlYWN0IG1hcmtlcnMuXG4gKlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyIH0gZnJvbSAncmdtJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbyB9IGZyb20gJy4uL2Rldi1zcmMvY29udHJvbHMnO1xuXG4vLyBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9tYXBzL2RvY3VtZW50YXRpb24vamF2YXNjcmlwdC9yZWZlcmVuY2UvbWFwI01hcE9wdGlvbnNcbmNvbnN0IE1BUF9PUFRJT05TID0ge1xuICB6b29tOiA5LFxuICBjZW50ZXI6IHtcbiAgICBsYXQ6IDU5LjkzNixcbiAgICBsbmc6IDMwLjMxNCxcbiAgfSxcbiAgZ2VzdHVyZUhhbmRsaW5nOiAnZ3JlZWR5JyxcbiAgY2xpY2thYmxlSWNvbnM6IGZhbHNlLFxufTtcblxuY29uc3QgZ2VuUmFuZG9tTWFya2VycyA9IG4gPT5cbiAgQXJyYXkuZnJvbShBcnJheShuKSwgKCkgPT4ge1xuICAgIGNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMiArIDAuMDU7XG4gICAgY29uc3QgYW5nbGUgPSBNYXRoLnJhbmRvbSgpICogMiAqIE1hdGguUEk7XG5cbiAgICByZXR1cm4ge1xuICAgICAgbGF0OiBNQVBfT1BUSU9OUy5jZW50ZXIubGF0ICsgciAqIE1hdGguY29zKGFuZ2xlKSxcbiAgICAgIGxuZzogTUFQX09QVElPTlMuY2VudGVyLmxuZyArIHIgKiBNYXRoLnNpbihhbmdsZSksXG4gICAgfTtcbiAgfSk7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFBlcmZvcm1hbmNlKCkge1xuICBjb25zdCBhcGkgPSB1c2VHb29nbGVBcGlMb2FkZXIoKTtcbiAgY29uc3QgSU5JVElBTF9NQVJLRVJTX0NPVU5UID0gMTAwMDtcbiAgY29uc3QgW21hcmtlcnNdID0gUmVhY3QudXNlU3RhdGUoKCkgPT5cbiAgICBnZW5SYW5kb21NYXJrZXJzKElOSVRJQUxfTUFSS0VSU19DT1VOVCksXG4gICk7XG5cbiAgcmV0dXJuIChcbiAgICA8UmF0aW8gdmFsdWU9ezMgLyA0fT5cbiAgICAgIHthcGkgJiYgKFxuICAgICAgICA8TWFwIGFwaT17YXBpfSBvcHRpb25zPXtNQVBfT1BUSU9OU30+XG4gICAgICAgICAgPE92ZXJsYXk+XG4gICAgICAgICAgICB7bWFya2Vycy5tYXAoKG0sIGluZGV4KSA9PiAoXG4gICAgICAgICAgICAgIDxNYXJrZXIga2V5PXtpbmRleH0gbGF0PXttLmxhdH0gbG5nPXttLmxuZ30+XG4gICAgICAgICAgICAgICAgPENpcmNsZU1hcmtlciAvPlxuICAgICAgICAgICAgICA8L01hcmtlcj5cbiAgICAgICAgICAgICkpfVxuICAgICAgICAgIDwvT3ZlcmxheT5cbiAgICAgICAgPC9NYXA+XG4gICAgICApfVxuICAgIDwvUmF0aW8+XG4gICk7XG59XG5cbmNvbnN0IENpcmNsZU1hcmtlciA9ICgpID0+IChcbiAgPGRpdlxuICAgIGNzcz17Y3NzYFxuICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgIHdpZHRoOiAxMHB4O1xuICAgICAgaGVpZ2h0OiAxMHB4O1xuICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgICAgYm9yZGVyOiAycHggc29saWQgcmVkO1xuICAgIGB9XG4gIC8+XG4pO1xuXG5leHBvcnQgY29uc3QgZ2V0U3RhdGljUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIC8vIFRoZSBiZXN0IGlzIHRvIHBsYWNlIHRoaXMgbWV0aG9kIGF0IF9hcHAuanMgYnV0IHRoaXMgZG9lc24ndCB3b3JrIG5vd1xuICBjb25zdCBkb2MgPSBhd2FpdCBpbXBvcnQoJy4uL2Rldi1zcmMvZG9jJyk7XG4gIHJldHVybiBkb2MuZ2V0U3RhdGljUHJvcHMoKTtcbn07XG4iXX0= */",
+  name: "1mdt7p4-ClusterMarker",
+  styles: "height:0;overflow:hidden;;label:ClusterMarker;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvY2x1c3RlcnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBdUtnQiIsImZpbGUiOiIvVXNlcnMvaWNlL2V4dC9ucG0vcmdtL3BhZ2VzL2NsdXN0ZXJzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZsb3dcblxuLyoqXG4gKiA8IS0tIHtcIm9yZGVyXCI6IDd9IC0tPlxuICpcbiAqICMgQ2x1c3RlcnMgZXhhbXBsZVxuICpcbiAqIFJlYWwgbGlmZSBleGFtcGxlLiBfKGNsdXN0ZXJzLCB6b29tIG9uIG1hcmtlciBjbGljaylfXG4gKlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyIH0gZnJvbSAncmdtJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuLy8gJEZsb3dGaXhNZVxuaW1wb3J0IFN1cGVyY2x1c3RlciBmcm9tICdzdXBlcmNsdXN0ZXInO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbyB9IGZyb20gJy4uL2Rldi1zcmMvY29udHJvbHMnO1xuaW1wb3J0IHsgZ2V0U2NyZWVuT2Zmc2V0IH0gZnJvbSAnLi4vZGV2LXNyYy9nZW8tdXRpbHMnO1xuLy8gJEZsb3dGaXhNZVxuaW1wb3J0IHBsYWNlcyBmcm9tICcuLi9kYXRhL3BsYWNlcy5qc29uJztcblxuY29uc3Qgc3VwZXJjbHVzdGVySW5kZXggPSBuZXcgU3VwZXJjbHVzdGVyKHtcbiAgbG9nOiBmYWxzZSxcbiAgcmFkaXVzOiA2MCxcbiAgZXh0ZW50OiAyNTYsXG4gIG1heFpvb206IDE3LFxufSkubG9hZChwbGFjZXMuZmVhdHVyZXMpO1xuXG4vLyBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9tYXBzL2RvY3VtZW50YXRpb24vamF2YXNjcmlwdC9yZWZlcmVuY2UvbWFwI01hcE9wdGlvbnNcbmNvbnN0IE1BUF9PUFRJT05TID0ge1xuICB6b29tOiAxLFxuICBtYXhab29tOiAxNyxcbiAgY2VudGVyOiB7XG4gICAgbGF0OiAwLFxuICAgIGxuZzogMzAuMzA0LFxuICB9LFxuICAvLyBkaXNhYmxlIGNtZC16b29tIGFuZCAyIGZpbmdlcnMgem9vbSBJIHBlcnNvbmFsbHkgZGlzbGlrZSBpdFxuICBnZXN0dXJlSGFuZGxpbmc6ICdncmVlZHknLFxuICBjbGlja2FibGVJY29uczogZmFsc2UsXG59O1xuXG50eXBlIENsdXN0ZXIgPSB7fFxuICBnZW9tZXRyeToge3xcbiAgICBjb29yZGluYXRlczogW251bWJlciwgbnVtYmVyXSxcbiAgfH0sXG4gIGlkPzogbnVtYmVyLFxuICBwcm9wZXJ0aWVzOiB7fFxuICAgIGNsdXN0ZXI/OiBib29sZWFuLFxuICAgIGNsdXN0ZXJfaWQ/OiBudW1iZXIsXG4gICAgcG9pbnRfY291bnQ/OiBudW1iZXIsXG4gIHx9LFxufH07XG5cbi8vIEdvb2dsZSBoYXMgbm8gXCJ6b29tIGF0IHBvaW50XCIgbWV0aG9kXG5jb25zdCB6b29tQXQgPSAobWFwLCBwdCwgem9vbSkgPT4ge1xuICBjb25zdCBjZW50ZXIgPSBtYXAuZ2V0Q2VudGVyKCk7XG4gIGNvbnN0IGNlbnRlckxhdExuZyA9IHtcbiAgICBsYXQ6IGNlbnRlci5sYXQoKSxcbiAgICBsbmc6IGNlbnRlci5sbmcoKSxcbiAgfTtcbiAgY29uc3Qgb2Zmc2V0QSA9IGdldFNjcmVlbk9mZnNldChwdCwgY2VudGVyTGF0TG5nLCBtYXAuZ2V0Wm9vbSgpKTtcbiAgY29uc3Qgb2Zmc2V0QiA9IGdldFNjcmVlbk9mZnNldChwdCwgY2VudGVyTGF0TG5nLCB6b29tKTtcbiAgY29uc3QgeCA9IG9mZnNldEEueCAtIG9mZnNldEIueDtcbiAgY29uc3QgeSA9IG9mZnNldEEueSAtIG9mZnNldEIueTtcbiAgbWFwLnNldFpvb20oem9vbSk7XG4gIG1hcC5wYW5CeSh4LCB5KTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIENsdXN0ZXJzKCkge1xuICBjb25zdCBhcGkgPSB1c2VHb29nbGVBcGlMb2FkZXIoKTtcbiAgY29uc3QgW21hcCwgc2V0TWFwXSA9IFJlYWN0LnVzZVN0YXRlKG51bGwpO1xuICBjb25zdCBbY2x1c3RlcnMsIHNldENsdXN0ZXJzXSA9IFJlYWN0LnVzZVN0YXRlPCRSZWFkT25seUFycmF5PENsdXN0ZXI+PihbXSk7XG5cbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAobWFwICE9IG51bGwpIHtcbiAgICAgIGNvbnN0IGJvdW5kc0NoYW5nZWRMaXN0ZW5lciA9IG1hcC5hZGRMaXN0ZW5lcignaWRsZScsICgpID0+IHtcbiAgICAgICAgY29uc3QgYm91bmRzID0gbWFwLmdldEJvdW5kcygpO1xuICAgICAgICBjb25zdCB6b29tID0gbWFwLmdldFpvb20oKTtcbiAgICAgICAgY29uc3Qgc3cgPSBib3VuZHMuZ2V0U291dGhXZXN0KCk7XG4gICAgICAgIGNvbnN0IG5lID0gYm91bmRzLmdldE5vcnRoRWFzdCgpO1xuXG4gICAgICAgIGNvbnN0IHN3QSA9IFtzdy5sbmcoKSwgc3cubGF0KCldO1xuICAgICAgICBjb25zdCBuZUEgPSBbbmUubG5nKCksIG5lLmxhdCgpXTtcbiAgICAgICAgLy8gU3VwZXJjbHVzdGVyIGRvbid0IHdvcmsgaW4gc29tZSBjYXNlcywgZml4IGl0XG4gICAgICAgIGlmIChzd0FbMF0gPiBuZUFbMF0gJiYgc3dBWzBdIC0gbmVBWzBdIDwgMC4wMDAwMSkge1xuICAgICAgICAgIHN3QVswXSA9IC0xODA7XG4gICAgICAgICAgbmVBWzBdID0gMTgwO1xuICAgICAgICB9XG5cbiAgICAgICAgY29uc3QgY2x1c3RlcnMgPSBzdXBlcmNsdXN0ZXJJbmRleC5nZXRDbHVzdGVycyhbLi4uc3dBLCAuLi5uZUFdLCB6b29tKTtcblxuICAgICAgICBzZXRDbHVzdGVycyhjbHVzdGVycyk7XG4gICAgICB9KTtcblxuICAgICAgcmV0dXJuICgpID0+IHtcbiAgICAgICAgYm91bmRzQ2hhbmdlZExpc3RlbmVyLnJlbW92ZSgpO1xuICAgICAgfTtcbiAgICB9XG4gIH0sIFttYXBdKTtcblxuICByZXR1cm4gKFxuICAgIDxSYXRpbyB2YWx1ZT17MyAvIDR9PlxuICAgICAge2FwaSAmJiAoXG4gICAgICAgIDxNYXAgcmVmPXtzZXRNYXB9IGFwaT17YXBpfSBvcHRpb25zPXtNQVBfT1BUSU9OU30+XG4gICAgICAgICAgPE92ZXJsYXkgZGVidWc9e2ZhbHNlfT5cbiAgICAgICAgICAgIHtjbHVzdGVycy5tYXAoY2x1c3RlciA9PiB7XG4gICAgICAgICAgICAgIGNvbnN0IFtsbmcsIGxhdF0gPSBjbHVzdGVyLmdlb21ldHJ5LmNvb3JkaW5hdGVzO1xuICAgICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAgIDxNYXJrZXIga2V5PXtgJHtsbmd9IC0gJHtsYXR9YH0gbG5nPXtsbmd9IGxhdD17bGF0fT5cbiAgICAgICAgICAgICAgICAgIDxDbHVzdGVyTWFya2VyXG4gICAgICAgICAgICAgICAgICAgIGNvdW50PXtjbHVzdGVyLnByb3BlcnRpZXMucG9pbnRfY291bnQgPz8gbnVsbH1cbiAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4ge1xuICAgICAgICAgICAgICAgICAgICAgIGlmIChtYXAgJiYgY2x1c3Rlci5pZCAhPSBudWxsKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICB6b29tQXQoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIG1hcCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxuZyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYXQsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHN1cGVyY2x1c3RlckluZGV4LmdldENsdXN0ZXJFeHBhbnNpb25ab29tKGNsdXN0ZXIuaWQpLFxuICAgICAgICAgICAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgIDwvTWFya2VyPlxuICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgfSl9XG4gICAgICAgICAgPC9PdmVybGF5PlxuICAgICAgICA8L01hcD5cbiAgICAgICl9XG4gICAgPC9SYXRpbz5cbiAgKTtcbn1cblxuLy8gY3NzIGlzIGF3ZXNvbWUhXG5jb25zdCBDbHVzdGVyTWFya2VyID0gKHsgY291bnQsIG9uQ2xpY2sgfSkgPT4ge1xuICBjb25zdCB0ZXh0ID0gY291bnQgPz8gJyc7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2XG4gICAgICBvbkNsaWNrPXtvbkNsaWNrfVxuICAgICAgY3NzPXtjc3NgXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgICAgYm9yZGVyOiAzcHggc29saWQgI2VlZTtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gICAgICAgIHBhZGRpbmc6ICR7Y291bnQgPT0gbnVsbCA/IDIgOiA4fXB4O1xuICAgICAgICBib3gtc2hhZG93OiAwIDAgMCAycHggI2ZlNGEwZCwgMCAwIDAgNHB4IHdoaXRlO1xuICAgICAgICAmOmFmdGVyIHtcbiAgICAgICAgICBwYWRkaW5nLXRvcDogMTAwJTtcbiAgICAgICAgICBjb250ZW50OiAnICc7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgIH1cbiAgICAgICAgZm9udC1zaXplOiAxcmVtO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIHBhZGRpbmc6ICR7Y291bnQgPT0gbnVsbCA/IDMgOiAxMH1weDtcbiAgICAgICAgICB0cmFuc2l0aW9uOiBwYWRkaW5nIDAuMDdzIGVhc2Utb3V0O1xuICAgICAgICAgIHotaW5kZXg6IDE7XG4gICAgICAgIH1cbiAgICAgICAgdHJhbnNpdGlvbjogcGFkZGluZyAwLjA3cyBlYXNlLWluO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICBgfVxuICAgID5cbiAgICAgIDxkaXZcbiAgICAgICAgY3NzPXtjc3NgXG4gICAgICAgICAgaGVpZ2h0OiAwO1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgIGB9XG4gICAgICA+XG4gICAgICAgIHt0ZXh0fVxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2XG4gICAgICAgIGNzcz17Y3NzYFxuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBgfVxuICAgICAgPlxuICAgICAgICB7dGV4dH1cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApO1xufTtcblxuZXhwb3J0IGNvbnN0IGdldFN0YXRpY1Byb3BzID0gYXN5bmMgKCkgPT4ge1xuICAvLyBUaGUgYmVzdCBpcyB0byBwbGFjZSB0aGlzIG1ldGhvZCBhdCBfYXBwLmpzIGJ1dCB0aGlzIGRvZXNuJ3Qgd29yayBub3dcbiAgY29uc3QgZG9jID0gYXdhaXQgaW1wb3J0KCcuLi9kZXYtc3JjL2RvYycpO1xuICByZXR1cm4gZG9jLmdldFN0YXRpY1Byb3BzKCk7XG59O1xuIl19 */",
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__
 };
 
-var CircleMarker = function CircleMarker() {
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])("div", {
+var _ref2 = false ? undefined : {
+  name: "dcigyb-ClusterMarker",
+  styles: "position:absolute;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;;label:ClusterMarker;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvY2x1c3RlcnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0tnQiIsImZpbGUiOiIvVXNlcnMvaWNlL2V4dC9ucG0vcmdtL3BhZ2VzL2NsdXN0ZXJzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQGZsb3dcblxuLyoqXG4gKiA8IS0tIHtcIm9yZGVyXCI6IDd9IC0tPlxuICpcbiAqICMgQ2x1c3RlcnMgZXhhbXBsZVxuICpcbiAqIFJlYWwgbGlmZSBleGFtcGxlLiBfKGNsdXN0ZXJzLCB6b29tIG9uIG1hcmtlciBjbGljaylfXG4gKlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyIH0gZnJvbSAncmdtJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuLy8gJEZsb3dGaXhNZVxuaW1wb3J0IFN1cGVyY2x1c3RlciBmcm9tICdzdXBlcmNsdXN0ZXInO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbyB9IGZyb20gJy4uL2Rldi1zcmMvY29udHJvbHMnO1xuaW1wb3J0IHsgZ2V0U2NyZWVuT2Zmc2V0IH0gZnJvbSAnLi4vZGV2LXNyYy9nZW8tdXRpbHMnO1xuLy8gJEZsb3dGaXhNZVxuaW1wb3J0IHBsYWNlcyBmcm9tICcuLi9kYXRhL3BsYWNlcy5qc29uJztcblxuY29uc3Qgc3VwZXJjbHVzdGVySW5kZXggPSBuZXcgU3VwZXJjbHVzdGVyKHtcbiAgbG9nOiBmYWxzZSxcbiAgcmFkaXVzOiA2MCxcbiAgZXh0ZW50OiAyNTYsXG4gIG1heFpvb206IDE3LFxufSkubG9hZChwbGFjZXMuZmVhdHVyZXMpO1xuXG4vLyBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9tYXBzL2RvY3VtZW50YXRpb24vamF2YXNjcmlwdC9yZWZlcmVuY2UvbWFwI01hcE9wdGlvbnNcbmNvbnN0IE1BUF9PUFRJT05TID0ge1xuICB6b29tOiAxLFxuICBtYXhab29tOiAxNyxcbiAgY2VudGVyOiB7XG4gICAgbGF0OiAwLFxuICAgIGxuZzogMzAuMzA0LFxuICB9LFxuICAvLyBkaXNhYmxlIGNtZC16b29tIGFuZCAyIGZpbmdlcnMgem9vbSBJIHBlcnNvbmFsbHkgZGlzbGlrZSBpdFxuICBnZXN0dXJlSGFuZGxpbmc6ICdncmVlZHknLFxuICBjbGlja2FibGVJY29uczogZmFsc2UsXG59O1xuXG50eXBlIENsdXN0ZXIgPSB7fFxuICBnZW9tZXRyeToge3xcbiAgICBjb29yZGluYXRlczogW251bWJlciwgbnVtYmVyXSxcbiAgfH0sXG4gIGlkPzogbnVtYmVyLFxuICBwcm9wZXJ0aWVzOiB7fFxuICAgIGNsdXN0ZXI/OiBib29sZWFuLFxuICAgIGNsdXN0ZXJfaWQ/OiBudW1iZXIsXG4gICAgcG9pbnRfY291bnQ/OiBudW1iZXIsXG4gIHx9LFxufH07XG5cbi8vIEdvb2dsZSBoYXMgbm8gXCJ6b29tIGF0IHBvaW50XCIgbWV0aG9kXG5jb25zdCB6b29tQXQgPSAobWFwLCBwdCwgem9vbSkgPT4ge1xuICBjb25zdCBjZW50ZXIgPSBtYXAuZ2V0Q2VudGVyKCk7XG4gIGNvbnN0IGNlbnRlckxhdExuZyA9IHtcbiAgICBsYXQ6IGNlbnRlci5sYXQoKSxcbiAgICBsbmc6IGNlbnRlci5sbmcoKSxcbiAgfTtcbiAgY29uc3Qgb2Zmc2V0QSA9IGdldFNjcmVlbk9mZnNldChwdCwgY2VudGVyTGF0TG5nLCBtYXAuZ2V0Wm9vbSgpKTtcbiAgY29uc3Qgb2Zmc2V0QiA9IGdldFNjcmVlbk9mZnNldChwdCwgY2VudGVyTGF0TG5nLCB6b29tKTtcbiAgY29uc3QgeCA9IG9mZnNldEEueCAtIG9mZnNldEIueDtcbiAgY29uc3QgeSA9IG9mZnNldEEueSAtIG9mZnNldEIueTtcbiAgbWFwLnNldFpvb20oem9vbSk7XG4gIG1hcC5wYW5CeSh4LCB5KTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIENsdXN0ZXJzKCkge1xuICBjb25zdCBhcGkgPSB1c2VHb29nbGVBcGlMb2FkZXIoKTtcbiAgY29uc3QgW21hcCwgc2V0TWFwXSA9IFJlYWN0LnVzZVN0YXRlKG51bGwpO1xuICBjb25zdCBbY2x1c3RlcnMsIHNldENsdXN0ZXJzXSA9IFJlYWN0LnVzZVN0YXRlPCRSZWFkT25seUFycmF5PENsdXN0ZXI+PihbXSk7XG5cbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAobWFwICE9IG51bGwpIHtcbiAgICAgIGNvbnN0IGJvdW5kc0NoYW5nZWRMaXN0ZW5lciA9IG1hcC5hZGRMaXN0ZW5lcignaWRsZScsICgpID0+IHtcbiAgICAgICAgY29uc3QgYm91bmRzID0gbWFwLmdldEJvdW5kcygpO1xuICAgICAgICBjb25zdCB6b29tID0gbWFwLmdldFpvb20oKTtcbiAgICAgICAgY29uc3Qgc3cgPSBib3VuZHMuZ2V0U291dGhXZXN0KCk7XG4gICAgICAgIGNvbnN0IG5lID0gYm91bmRzLmdldE5vcnRoRWFzdCgpO1xuXG4gICAgICAgIGNvbnN0IHN3QSA9IFtzdy5sbmcoKSwgc3cubGF0KCldO1xuICAgICAgICBjb25zdCBuZUEgPSBbbmUubG5nKCksIG5lLmxhdCgpXTtcbiAgICAgICAgLy8gU3VwZXJjbHVzdGVyIGRvbid0IHdvcmsgaW4gc29tZSBjYXNlcywgZml4IGl0XG4gICAgICAgIGlmIChzd0FbMF0gPiBuZUFbMF0gJiYgc3dBWzBdIC0gbmVBWzBdIDwgMC4wMDAwMSkge1xuICAgICAgICAgIHN3QVswXSA9IC0xODA7XG4gICAgICAgICAgbmVBWzBdID0gMTgwO1xuICAgICAgICB9XG5cbiAgICAgICAgY29uc3QgY2x1c3RlcnMgPSBzdXBlcmNsdXN0ZXJJbmRleC5nZXRDbHVzdGVycyhbLi4uc3dBLCAuLi5uZUFdLCB6b29tKTtcblxuICAgICAgICBzZXRDbHVzdGVycyhjbHVzdGVycyk7XG4gICAgICB9KTtcblxuICAgICAgcmV0dXJuICgpID0+IHtcbiAgICAgICAgYm91bmRzQ2hhbmdlZExpc3RlbmVyLnJlbW92ZSgpO1xuICAgICAgfTtcbiAgICB9XG4gIH0sIFttYXBdKTtcblxuICByZXR1cm4gKFxuICAgIDxSYXRpbyB2YWx1ZT17MyAvIDR9PlxuICAgICAge2FwaSAmJiAoXG4gICAgICAgIDxNYXAgcmVmPXtzZXRNYXB9IGFwaT17YXBpfSBvcHRpb25zPXtNQVBfT1BUSU9OU30+XG4gICAgICAgICAgPE92ZXJsYXkgZGVidWc9e2ZhbHNlfT5cbiAgICAgICAgICAgIHtjbHVzdGVycy5tYXAoY2x1c3RlciA9PiB7XG4gICAgICAgICAgICAgIGNvbnN0IFtsbmcsIGxhdF0gPSBjbHVzdGVyLmdlb21ldHJ5LmNvb3JkaW5hdGVzO1xuICAgICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAgIDxNYXJrZXIga2V5PXtgJHtsbmd9IC0gJHtsYXR9YH0gbG5nPXtsbmd9IGxhdD17bGF0fT5cbiAgICAgICAgICAgICAgICAgIDxDbHVzdGVyTWFya2VyXG4gICAgICAgICAgICAgICAgICAgIGNvdW50PXtjbHVzdGVyLnByb3BlcnRpZXMucG9pbnRfY291bnQgPz8gbnVsbH1cbiAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4ge1xuICAgICAgICAgICAgICAgICAgICAgIGlmIChtYXAgJiYgY2x1c3Rlci5pZCAhPSBudWxsKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICB6b29tQXQoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIG1hcCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxuZyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYXQsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHN1cGVyY2x1c3RlckluZGV4LmdldENsdXN0ZXJFeHBhbnNpb25ab29tKGNsdXN0ZXIuaWQpLFxuICAgICAgICAgICAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgIDwvTWFya2VyPlxuICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgfSl9XG4gICAgICAgICAgPC9PdmVybGF5PlxuICAgICAgICA8L01hcD5cbiAgICAgICl9XG4gICAgPC9SYXRpbz5cbiAgKTtcbn1cblxuLy8gY3NzIGlzIGF3ZXNvbWUhXG5jb25zdCBDbHVzdGVyTWFya2VyID0gKHsgY291bnQsIG9uQ2xpY2sgfSkgPT4ge1xuICBjb25zdCB0ZXh0ID0gY291bnQgPz8gJyc7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2XG4gICAgICBvbkNsaWNrPXtvbkNsaWNrfVxuICAgICAgY3NzPXtjc3NgXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgICAgYm9yZGVyOiAzcHggc29saWQgI2VlZTtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gICAgICAgIHBhZGRpbmc6ICR7Y291bnQgPT0gbnVsbCA/IDIgOiA4fXB4O1xuICAgICAgICBib3gtc2hhZG93OiAwIDAgMCAycHggI2ZlNGEwZCwgMCAwIDAgNHB4IHdoaXRlO1xuICAgICAgICAmOmFmdGVyIHtcbiAgICAgICAgICBwYWRkaW5nLXRvcDogMTAwJTtcbiAgICAgICAgICBjb250ZW50OiAnICc7XG4gICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgIH1cbiAgICAgICAgZm9udC1zaXplOiAxcmVtO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIHBhZGRpbmc6ICR7Y291bnQgPT0gbnVsbCA/IDMgOiAxMH1weDtcbiAgICAgICAgICB0cmFuc2l0aW9uOiBwYWRkaW5nIDAuMDdzIGVhc2Utb3V0O1xuICAgICAgICAgIHotaW5kZXg6IDE7XG4gICAgICAgIH1cbiAgICAgICAgdHJhbnNpdGlvbjogcGFkZGluZyAwLjA3cyBlYXNlLWluO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICBgfVxuICAgID5cbiAgICAgIDxkaXZcbiAgICAgICAgY3NzPXtjc3NgXG4gICAgICAgICAgaGVpZ2h0OiAwO1xuICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgIGB9XG4gICAgICA+XG4gICAgICAgIHt0ZXh0fVxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2XG4gICAgICAgIGNzcz17Y3NzYFxuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBgfVxuICAgICAgPlxuICAgICAgICB7dGV4dH1cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApO1xufTtcblxuZXhwb3J0IGNvbnN0IGdldFN0YXRpY1Byb3BzID0gYXN5bmMgKCkgPT4ge1xuICAvLyBUaGUgYmVzdCBpcyB0byBwbGFjZSB0aGlzIG1ldGhvZCBhdCBfYXBwLmpzIGJ1dCB0aGlzIGRvZXNuJ3Qgd29yayBub3dcbiAgY29uc3QgZG9jID0gYXdhaXQgaW1wb3J0KCcuLi9kZXYtc3JjL2RvYycpO1xuICByZXR1cm4gZG9jLmdldFN0YXRpY1Byb3BzKCk7XG59O1xuIl19 */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
+};
+
+var ClusterMarker = function ClusterMarker(_ref3) {
+  var count = _ref3.count,
+      onClick = _ref3.onClick;
+  var text = count !== null && count !== void 0 ? count : '';
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("div", {
+    onClick: onClick,
+    css: /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["css"])("position:relative;place-self:center center;border-radius:100%;border:3px solid #eee;background-color:white;padding:", count == null ? 2 : 8, "px;box-shadow:0 0 0 2px #fe4a0d,0 0 0 4px white;&:after{padding-top:100%;content:' ';display:block;}font-size:1rem;&:hover{padding:", count == null ? 3 : 10, "px;transition:padding 0.07s ease-out;z-index:1;}transition:padding 0.07s ease-in;cursor:pointer;;label:ClusterMarker;" + (false ? undefined : "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvY2x1c3RlcnMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBOEljIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvY2x1c3RlcnMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogN30gLS0+XG4gKlxuICogIyBDbHVzdGVycyBleGFtcGxlXG4gKlxuICogUmVhbCBsaWZlIGV4YW1wbGUuIF8oY2x1c3RlcnMsIHpvb20gb24gbWFya2VyIGNsaWNrKV9cbiAqXG4gKi9cblxuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgTWFwLCBPdmVybGF5LCBNYXJrZXIgfSBmcm9tICdyZ20nO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG4vLyAkRmxvd0ZpeE1lXG5pbXBvcnQgU3VwZXJjbHVzdGVyIGZyb20gJ3N1cGVyY2x1c3Rlcic7XG5pbXBvcnQgeyB1c2VHb29nbGVBcGlMb2FkZXIgfSBmcm9tICcuLi9kZXYtc3JjL2hvb2tzJztcbmltcG9ydCB7IFJhdGlvIH0gZnJvbSAnLi4vZGV2LXNyYy9jb250cm9scyc7XG5pbXBvcnQgeyBnZXRTY3JlZW5PZmZzZXQgfSBmcm9tICcuLi9kZXYtc3JjL2dlby11dGlscyc7XG4vLyAkRmxvd0ZpeE1lXG5pbXBvcnQgcGxhY2VzIGZyb20gJy4uL2RhdGEvcGxhY2VzLmpzb24nO1xuXG5jb25zdCBzdXBlcmNsdXN0ZXJJbmRleCA9IG5ldyBTdXBlcmNsdXN0ZXIoe1xuICBsb2c6IGZhbHNlLFxuICByYWRpdXM6IDYwLFxuICBleHRlbnQ6IDI1NixcbiAgbWF4Wm9vbTogMTcsXG59KS5sb2FkKHBsYWNlcy5mZWF0dXJlcyk7XG5cbi8vIGh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL21hcHMvZG9jdW1lbnRhdGlvbi9qYXZhc2NyaXB0L3JlZmVyZW5jZS9tYXAjTWFwT3B0aW9uc1xuY29uc3QgTUFQX09QVElPTlMgPSB7XG4gIHpvb206IDEsXG4gIG1heFpvb206IDE3LFxuICBjZW50ZXI6IHtcbiAgICBsYXQ6IDAsXG4gICAgbG5nOiAzMC4zMDQsXG4gIH0sXG4gIC8vIGRpc2FibGUgY21kLXpvb20gYW5kIDIgZmluZ2VycyB6b29tIEkgcGVyc29uYWxseSBkaXNsaWtlIGl0XG4gIGdlc3R1cmVIYW5kbGluZzogJ2dyZWVkeScsXG4gIGNsaWNrYWJsZUljb25zOiBmYWxzZSxcbn07XG5cbnR5cGUgQ2x1c3RlciA9IHt8XG4gIGdlb21ldHJ5OiB7fFxuICAgIGNvb3JkaW5hdGVzOiBbbnVtYmVyLCBudW1iZXJdLFxuICB8fSxcbiAgaWQ/OiBudW1iZXIsXG4gIHByb3BlcnRpZXM6IHt8XG4gICAgY2x1c3Rlcj86IGJvb2xlYW4sXG4gICAgY2x1c3Rlcl9pZD86IG51bWJlcixcbiAgICBwb2ludF9jb3VudD86IG51bWJlcixcbiAgfH0sXG58fTtcblxuLy8gR29vZ2xlIGhhcyBubyBcInpvb20gYXQgcG9pbnRcIiBtZXRob2RcbmNvbnN0IHpvb21BdCA9IChtYXAsIHB0LCB6b29tKSA9PiB7XG4gIGNvbnN0IGNlbnRlciA9IG1hcC5nZXRDZW50ZXIoKTtcbiAgY29uc3QgY2VudGVyTGF0TG5nID0ge1xuICAgIGxhdDogY2VudGVyLmxhdCgpLFxuICAgIGxuZzogY2VudGVyLmxuZygpLFxuICB9O1xuICBjb25zdCBvZmZzZXRBID0gZ2V0U2NyZWVuT2Zmc2V0KHB0LCBjZW50ZXJMYXRMbmcsIG1hcC5nZXRab29tKCkpO1xuICBjb25zdCBvZmZzZXRCID0gZ2V0U2NyZWVuT2Zmc2V0KHB0LCBjZW50ZXJMYXRMbmcsIHpvb20pO1xuICBjb25zdCB4ID0gb2Zmc2V0QS54IC0gb2Zmc2V0Qi54O1xuICBjb25zdCB5ID0gb2Zmc2V0QS55IC0gb2Zmc2V0Qi55O1xuICBtYXAuc2V0Wm9vbSh6b29tKTtcbiAgbWFwLnBhbkJ5KHgsIHkpO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQ2x1c3RlcnMoKSB7XG4gIGNvbnN0IGFwaSA9IHVzZUdvb2dsZUFwaUxvYWRlcigpO1xuICBjb25zdCBbbWFwLCBzZXRNYXBdID0gUmVhY3QudXNlU3RhdGUobnVsbCk7XG4gIGNvbnN0IFtjbHVzdGVycywgc2V0Q2x1c3RlcnNdID0gUmVhY3QudXNlU3RhdGU8JFJlYWRPbmx5QXJyYXk8Q2x1c3Rlcj4+KFtdKTtcblxuICBSZWFjdC51c2VFZmZlY3QoKCkgPT4ge1xuICAgIGlmIChtYXAgIT0gbnVsbCkge1xuICAgICAgY29uc3QgYm91bmRzQ2hhbmdlZExpc3RlbmVyID0gbWFwLmFkZExpc3RlbmVyKCdpZGxlJywgKCkgPT4ge1xuICAgICAgICBjb25zdCBib3VuZHMgPSBtYXAuZ2V0Qm91bmRzKCk7XG4gICAgICAgIGNvbnN0IHpvb20gPSBtYXAuZ2V0Wm9vbSgpO1xuICAgICAgICBjb25zdCBzdyA9IGJvdW5kcy5nZXRTb3V0aFdlc3QoKTtcbiAgICAgICAgY29uc3QgbmUgPSBib3VuZHMuZ2V0Tm9ydGhFYXN0KCk7XG5cbiAgICAgICAgY29uc3Qgc3dBID0gW3N3LmxuZygpLCBzdy5sYXQoKV07XG4gICAgICAgIGNvbnN0IG5lQSA9IFtuZS5sbmcoKSwgbmUubGF0KCldO1xuICAgICAgICAvLyBTdXBlcmNsdXN0ZXIgZG9uJ3Qgd29yayBpbiBzb21lIGNhc2VzLCBmaXggaXRcbiAgICAgICAgaWYgKHN3QVswXSA+IG5lQVswXSAmJiBzd0FbMF0gLSBuZUFbMF0gPCAwLjAwMDAxKSB7XG4gICAgICAgICAgc3dBWzBdID0gLTE4MDtcbiAgICAgICAgICBuZUFbMF0gPSAxODA7XG4gICAgICAgIH1cblxuICAgICAgICBjb25zdCBjbHVzdGVycyA9IHN1cGVyY2x1c3RlckluZGV4LmdldENsdXN0ZXJzKFsuLi5zd0EsIC4uLm5lQV0sIHpvb20pO1xuXG4gICAgICAgIHNldENsdXN0ZXJzKGNsdXN0ZXJzKTtcbiAgICAgIH0pO1xuXG4gICAgICByZXR1cm4gKCkgPT4ge1xuICAgICAgICBib3VuZHNDaGFuZ2VkTGlzdGVuZXIucmVtb3ZlKCk7XG4gICAgICB9O1xuICAgIH1cbiAgfSwgW21hcF0pO1xuXG4gIHJldHVybiAoXG4gICAgPFJhdGlvIHZhbHVlPXszIC8gNH0+XG4gICAgICB7YXBpICYmIChcbiAgICAgICAgPE1hcCByZWY9e3NldE1hcH0gYXBpPXthcGl9IG9wdGlvbnM9e01BUF9PUFRJT05TfT5cbiAgICAgICAgICA8T3ZlcmxheSBkZWJ1Zz17ZmFsc2V9PlxuICAgICAgICAgICAge2NsdXN0ZXJzLm1hcChjbHVzdGVyID0+IHtcbiAgICAgICAgICAgICAgY29uc3QgW2xuZywgbGF0XSA9IGNsdXN0ZXIuZ2VvbWV0cnkuY29vcmRpbmF0ZXM7XG4gICAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgICAgPE1hcmtlciBrZXk9e2Ake2xuZ30gLSAke2xhdH1gfSBsbmc9e2xuZ30gbGF0PXtsYXR9PlxuICAgICAgICAgICAgICAgICAgPENsdXN0ZXJNYXJrZXJcbiAgICAgICAgICAgICAgICAgICAgY291bnQ9e2NsdXN0ZXIucHJvcGVydGllcy5wb2ludF9jb3VudCA/PyBudWxsfVxuICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgaWYgKG1hcCAmJiBjbHVzdGVyLmlkICE9IG51bGwpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHpvb21BdChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgbWFwLFxuICAgICAgICAgICAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgbG5nLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhdCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgc3VwZXJjbHVzdGVySW5kZXguZ2V0Q2x1c3RlckV4cGFuc2lvblpvb20oY2x1c3Rlci5pZCksXG4gICAgICAgICAgICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPC9NYXJrZXI+XG4gICAgICAgICAgICAgICk7XG4gICAgICAgICAgICB9KX1cbiAgICAgICAgICA8L092ZXJsYXk+XG4gICAgICAgIDwvTWFwPlxuICAgICAgKX1cbiAgICA8L1JhdGlvPlxuICApO1xufVxuXG4vLyBjc3MgaXMgYXdlc29tZSFcbmNvbnN0IENsdXN0ZXJNYXJrZXIgPSAoeyBjb3VudCwgb25DbGljayB9KSA9PiB7XG4gIGNvbnN0IHRleHQgPSBjb3VudCA/PyAnJztcblxuICByZXR1cm4gKFxuICAgIDxkaXZcbiAgICAgIG9uQ2xpY2s9e29uQ2xpY2t9XG4gICAgICBjc3M9e2Nzc2BcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICBwbGFjZS1zZWxmOiBjZW50ZXIgY2VudGVyO1xuICAgICAgICBib3JkZXItcmFkaXVzOiAxMDAlO1xuICAgICAgICBib3JkZXI6IDNweCBzb2xpZCAjZWVlO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICAgICAgcGFkZGluZzogJHtjb3VudCA9PSBudWxsID8gMiA6IDh9cHg7XG4gICAgICAgIGJveC1zaGFkb3c6IDAgMCAwIDJweCAjZmU0YTBkLCAwIDAgMCA0cHggd2hpdGU7XG4gICAgICAgICY6YWZ0ZXIge1xuICAgICAgICAgIHBhZGRpbmctdG9wOiAxMDAlO1xuICAgICAgICAgIGNvbnRlbnQ6ICcgJztcbiAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgfVxuICAgICAgICBmb250LXNpemU6IDFyZW07XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgcGFkZGluZzogJHtjb3VudCA9PSBudWxsID8gMyA6IDEwfXB4O1xuICAgICAgICAgIHRyYW5zaXRpb246IHBhZGRpbmcgMC4wN3MgZWFzZS1vdXQ7XG4gICAgICAgICAgei1pbmRleDogMTtcbiAgICAgICAgfVxuICAgICAgICB0cmFuc2l0aW9uOiBwYWRkaW5nIDAuMDdzIGVhc2UtaW47XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgIGB9XG4gICAgPlxuICAgICAgPGRpdlxuICAgICAgICBjc3M9e2Nzc2BcbiAgICAgICAgICBoZWlnaHQ6IDA7XG4gICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgYH1cbiAgICAgID5cbiAgICAgICAge3RleHR9XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXZcbiAgICAgICAgY3NzPXtjc3NgXG4gICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgIGxlZnQ6IDA7XG4gICAgICAgICAgdG9wOiAwO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIGB9XG4gICAgICA+XG4gICAgICAgIHt0ZXh0fVxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gICk7XG59O1xuXG5leHBvcnQgY29uc3QgZ2V0U3RhdGljUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIC8vIFRoZSBiZXN0IGlzIHRvIHBsYWNlIHRoaXMgbWV0aG9kIGF0IF9hcHAuanMgYnV0IHRoaXMgZG9lc24ndCB3b3JrIG5vd1xuICBjb25zdCBkb2MgPSBhd2FpdCBpbXBvcnQoJy4uL2Rldi1zcmMvZG9jJyk7XG4gIHJldHVybiBkb2MuZ2V0U3RhdGljUHJvcHMoKTtcbn07XG4iXX0= */")),
+    __self: _this2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 5
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("div", {
     css: _ref,
     __self: _this2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 3
+      lineNumber: 167,
+      columnNumber: 7
     }
-  });
+  }, text), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])("div", {
+    css: _ref2,
+    __self: _this2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 175,
+      columnNumber: 7
+    }
+  }, text));
 };
 
 /***/ }),
@@ -11476,14 +12274,14 @@ var Overlay = function Overlay(props) {
 
 /***/ }),
 
-/***/ 4:
-/*!***********************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
-  \***********************************************************************************************************************************************************/
+/***/ 3:
+/*!*****************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fclusters&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fclusters.js&hotRouterUpdates=true ***!
+  \*****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fclusters&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fclusters.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fclusters&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fclusters.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -11499,5 +12297,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=performance.js.map
+},[[3,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=clusters.js.map
