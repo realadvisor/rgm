@@ -68,6 +68,10 @@ _returns:_
 
 - { api, map } object, where _api_ is equal to _window.google.maps_ and _map_ is instance of [google.maps.Map](https://developers.google.com/maps/documentation/javascript/reference/map)
 
+## Types
+
+Fully covered with flowtype. Help with typescript is needed.
+
 ## Contribute
 
 Get your api key at [Google](https://developers.google.com/maps/documentation/javascript/get-api-key)
