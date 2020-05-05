@@ -1,0 +1,62 @@
+{
+  "name": "rgm",
+  "version": "0.1.0",
+  "private": true,
+  "author": "TrySound, istarkov, realadvisor",
+  "main": "dist/rgm.cjs.js",
+  "module": "dist/rgm.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build:doc": "rimraf ./rgm && DOCUMENTATION=true next build && next export -o rgm",
+    "start:doc": "echo 'open at http://localhost:3000/rgm' && serve ./ -p 3000",
+    "deploy:doc": "yarn build:doc && gh-pages -d out",
+    "build:code": "rollup -c",
+    "build:flow": "echo \"// @flow\n\nexport * from '../src'\" > dist/rgm.cjs.js.flow",
+    "build": "rimraf dist && npm run build:code && npm run build:flow"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=16.13",
+    "react-dom": ">=16.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-flow": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.28",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-emotion": "^10.0.33",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "flow-bin": "^0.123.0",
+    "gh-pages": "^2.2.0",
+    "nanoevents": "^5.1.5",
+    "next": "^9.3.6",
+    "prettier": "^2.0.5",
+    "prism-react-renderer": "^1.1.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-system": "^0.16.0-beta.1",
+    "remarkable": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.7.6",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-size-snapshot": "^0.11.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "serve": "^11.3.0",
+    "supercluster": "^7.0.0",
+    "typography": "^0.16.19"
+  }
+}

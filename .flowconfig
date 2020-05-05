@@ -1,0 +1,24 @@
+[ignore]
+
+[untyped]
+.*/node_modules/@emotion/cache/src
+
+[include]
+
+[libs]
+
+[lints]
+all=error
+
+[options]
+module.name_mapper='^rgm$' -> '<PROJECT_ROOT>/src'
+esproposal.optional_chaining=enable
+include_warnings=true
+babel_loose_array_spread=true
+module.file_ext=.mjs
+module.file_ext=.cjs
+module.file_ext=.json
+module.file_ext=.js
+
+
+[strict]

@@ -1,0 +1,30 @@
+{
+  "dist/rgm.esm.js": {
+    "bundled": 6824,
+    "minified": 3076,
+    "gzipped": 1326,
+    "treeshaked": {
+      "rollup": {
+        "code": 598,
+        "import_statements": 170
+      },
+      "webpack": {
+        "code": 1684
+      }
+    }
+  },
+  "dist/rgm.esm.production.js": {
+    "bundled": 5567,
+    "minified": 2288,
+    "gzipped": 997,
+    "treeshaked": {
+      "rollup": {
+        "code": 598,
+        "import_statements": 170
+      },
+      "webpack": {
+        "code": 1675
+      }
+    }
+  }
+}
