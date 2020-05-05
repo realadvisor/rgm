@@ -1,6 +1,5 @@
 // @flow
 
-// $ FlowFixMe have no idea wtf happening with flowtype and cannot resolve module
 import { createNanoEvents } from 'nanoevents';
 import * as React from 'react';
 import type { GoogleMapsApi } from 'rgm';
