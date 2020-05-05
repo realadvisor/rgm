@@ -29,14 +29,14 @@ const MAP_OPTIONS = {
 
 export default function Imperative() {
   const api = useGoogleApiLoader();
-  const mapRef = React.useRef(null);
+  const [map, setMap] = React.useState(null);
 
   return (
     <div>
       <Flex p={3}>
         <button
           onClick={() => {
-            mapRef.current?.panBy(
+            map?.panBy(
               200 * (Math.random() - 0.5),
               200 * (Math.random() - 0.5),
             );
@@ -47,7 +47,7 @@ export default function Imperative() {
         <Box width={'16px'} />
         <button
           onClick={() => {
-            mapRef.current?.setOptions({
+            map?.setOptions({
               disableDefaultUI: true,
             });
           }}
@@ -57,7 +57,7 @@ export default function Imperative() {
         <Box width={'16px'} />
         <button
           onClick={() => {
-            mapRef.current?.setOptions({
+            map?.setOptions({
               disableDefaultUI: false,
             });
           }}
@@ -66,7 +66,7 @@ export default function Imperative() {
         </button>
       </Flex>
       <Ratio value={3 / 4}>
-        {api && <Map ref={mapRef} api={api} options={MAP_OPTIONS}></Map>}
+        {api && <Map ref={setMap} api={api} options={MAP_OPTIONS}></Map>}
       </Ratio>
     </div>
   );

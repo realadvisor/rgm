@@ -9,12 +9,12 @@
  * Rerendering of markers is not occured during move/zoom operation
  * _(if you dont update state on bounds, etc change events, [see idle quote](/events))_
  *
- * To add custom React marker on map, you need 2 controls _Overlay_ and _ReactMarker_ overlay is the same
- * as google map overlay, and allows to place _ReactMarkers_. It has just one prop _debug_, see below why.
+ * To add custom React marker on map, you need 2 controls _Overlay_ and _Marker_ overlay is the same
+ * as google map overlay, and allows to place _Markers_. It has just one prop _debug_, see below why.
  *
  * You can add any amount of _Overlays_ to the Map _(have no idea why but you can)_
  *
- * _ReactMarker_ is a wrapper around your component
+ * _Marker_ is a wrapper around your component
  * and allows to pass _lat_, _lng_ into _Overlay_ in a type safe way wihout touching props of your component.
  *
  * Each marker is rendered inside placeholder with _{ width:0; height:0; display: grid }_ style.
@@ -25,7 +25,7 @@
  * To simplify markers positioning you can use _debug_ propery of _Overlay_ element.
  * It will show exact origin point position.
  *
- * See below how to use _Overlay_ and _ReactMarker_.
+ * See below how to use _Overlay_ and _Marker_.
  *
  * Also play with _debug_ property to see how you can use
  * css _alignSelf_ , _justifySelf_, _placeSelf_ properties to align different kind of markers.
@@ -36,7 +36,7 @@
  */
 
 import * as React from 'react';
-import { Map, Overlay, ReactMarker } from 'rgm';
+import { Map, Overlay, Marker } from 'rgm';
 import { Flex, Box } from 'react-system';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio, Checkbox, Select } from '../dev-src/controls';
@@ -53,7 +53,7 @@ const MAP_OPTIONS = {
   clickableIcons: false,
 };
 
-export default function ReactMarkerPage() {
+export default function MarkerPage() {
   const api = useGoogleApiLoader();
 
   const [debug, setDebug] = React.useState(true);
@@ -84,11 +84,8 @@ export default function ReactMarkerPage() {
         {api && (
           <Map api={api} options={MAP_OPTIONS}>
             <Overlay debug={debug}>
-              <ReactMarker
-                lat={MAP_OPTIONS.center.lat}
-                lng={MAP_OPTIONS.center.lng}
-              >
-                <Marker
+              <Marker lat={MAP_OPTIONS.center.lat} lng={MAP_OPTIONS.center.lng}>
+                <MarkerBottom
                   style={{
                     alignSelf,
                     justifySelf,
@@ -97,8 +94,8 @@ export default function ReactMarkerPage() {
                   size={48}
                   color={'red'}
                 />
-              </ReactMarker>
-              <ReactMarker
+              </Marker>
+              <Marker
                 lat={MAP_OPTIONS.center.lat + 0.1}
                 lng={MAP_OPTIONS.center.lng + 0.3}
               >
@@ -110,8 +107,8 @@ export default function ReactMarkerPage() {
                   size={48}
                   color={'Fuchsia'}
                 />
-              </ReactMarker>
-              <ReactMarker
+              </Marker>
+              <Marker
                 lat={MAP_OPTIONS.center.lat - 0.1}
                 lng={MAP_OPTIONS.center.lng - 0.3}
               >
@@ -123,7 +120,7 @@ export default function ReactMarkerPage() {
                   size={48}
                   color={'OrangeRed'}
                 />
-              </ReactMarker>
+              </Marker>
             </Overlay>
           </Map>
         )}
@@ -132,7 +129,7 @@ export default function ReactMarkerPage() {
   );
 }
 
-const Marker = ({ size, color, style }) => (
+const MarkerBottom = ({ size, color, style }) => (
   <svg
     style={style}
     xmlns="http://www.w3.org/2000/svg"

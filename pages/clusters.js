@@ -10,7 +10,7 @@
  */
 
 import * as React from 'react';
-import { Map, Overlay, ReactMarker } from 'rgm';
+import { Map, Overlay, Marker } from 'rgm';
 import { css } from '@emotion/core';
 // $FlowFixMe
 import Supercluster from 'supercluster';
@@ -107,8 +107,8 @@ export default function Clusters() {
             {clusters.map(cluster => {
               const [lng, lat] = cluster.geometry.coordinates;
               return (
-                <ReactMarker key={`${lng} - ${lat}`} lng={lng} lat={lat}>
-                  <Marker
+                <Marker key={`${lng} - ${lat}`} lng={lng} lat={lat}>
+                  <ClusterMarker
                     count={cluster.properties.point_count ?? null}
                     onClick={() => {
                       if (map && cluster.id != null) {
@@ -123,7 +123,7 @@ export default function Clusters() {
                       }
                     }}
                   />
-                </ReactMarker>
+                </Marker>
               );
             })}
           </Overlay>
@@ -134,7 +134,7 @@ export default function Clusters() {
 }
 
 // css is awesome!
-const Marker = ({ count, onClick }) => {
+const ClusterMarker = ({ count, onClick }) => {
   const text = count ?? '';
 
   return (

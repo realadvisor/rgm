@@ -4,20 +4,18 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { useMap } from './google-map';
 
-type ReactMarkerProps = {|
+type MarkerProps = {|
   lat: number,
   lng: number,
   children: React.Node,
 |};
 
-export const ReactMarker = (props: ReactMarkerProps) => {
+export const Marker = (props: MarkerProps) => {
   return props.children;
 };
 
 type OverlayProps = {|
-  children?: React.ChildrenArray<
-    null | boolean | React.Element<typeof ReactMarker>,
-  >,
+  children?: React.ChildrenArray<null | boolean | React.Element<typeof Marker>>,
   // Debug is used to center markers right
   debug?: boolean,
 |};
@@ -29,9 +27,7 @@ export const Overlay = (props: OverlayProps) => {
   // $FlowFixMe no block level $FlowFixMe so splitted on 2 lines
   const anyChildren = (React.Children.toArray(props.children ?? []): any);
 
-  const children: $ReadOnlyArray<
-    React.Element<typeof ReactMarker>,
-  > = anyChildren;
+  const children: $ReadOnlyArray<React.Element<typeof Marker>> = anyChildren;
 
   const [overlay, setOverlay] = React.useState(null);
 

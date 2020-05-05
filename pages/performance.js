@@ -10,7 +10,7 @@
  */
 
 import * as React from 'react';
-import { Map, Overlay, ReactMarker } from 'rgm';
+import { Map, Overlay, Marker } from 'rgm';
 import { css } from '@emotion/core';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio } from '../dev-src/controls';
@@ -50,9 +50,9 @@ export default function Performance() {
         <Map api={api} options={MAP_OPTIONS}>
           <Overlay>
             {markers.map((m, index) => (
-              <ReactMarker key={index} lat={m.lat} lng={m.lng}>
-                <Marker />
-              </ReactMarker>
+              <Marker key={index} lat={m.lat} lng={m.lng}>
+                <CircleMarker />
+              </Marker>
             ))}
           </Overlay>
         </Map>
@@ -61,7 +61,7 @@ export default function Performance() {
   );
 }
 
-const Marker = () => (
+const CircleMarker = () => (
   <div
     css={css`
       place-self: center center;

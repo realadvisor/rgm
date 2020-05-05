@@ -18,7 +18,7 @@
  */
 
 import * as React from 'react';
-import { Map, Overlay, ReactMarker } from 'rgm';
+import { Map, Overlay, Marker } from 'rgm';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio } from '../dev-src/controls';
 
@@ -94,8 +94,8 @@ export default function TestUniq() {
         <Map api={api} options={MAP_OPTIONS}>
           <Overlay>
             {markers.map(m => (
-              <ReactMarker key={m.key} lat={m.lat} lng={m.lng}>
-                <Marker
+              <Marker key={m.key} lat={m.lat} lng={m.lng}>
+                <SvgMarker
                   style={{
                     alignSelf: 'end',
                     justifySelf: 'center',
@@ -104,7 +104,7 @@ export default function TestUniq() {
                   size={18}
                   color={'red'}
                 />
-              </ReactMarker>
+              </Marker>
             ))}
           </Overlay>
         </Map>
@@ -113,7 +113,7 @@ export default function TestUniq() {
   );
 }
 
-const Marker = ({ size, color, style }) => (
+const SvgMarker = ({ size, color, style }) => (
   <svg
     style={style}
     xmlns="http://www.w3.org/2000/svg"
