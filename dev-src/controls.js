@@ -494,7 +494,7 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
             </div>
           </div>
 
-          <a href="http://github.com">
+          <a href="https://github.com/realadvisor/rgm">
             <GithubIcon size={32} />
           </a>
         </header>

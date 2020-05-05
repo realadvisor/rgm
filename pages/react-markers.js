@@ -5,17 +5,16 @@
  *
  * # React markers
  *
- * Superfast, can easily move/zoom thousands of markers on the map.
- * Rerendering of markers is not occured during move/zoom operation
+ * Fast, rerendering of markers is not occured during move/zoom operation
  * _(if you dont update state on bounds, etc change events, [see idle quote](/events))_
  *
- * To add custom React marker on map, you need 2 controls _Overlay_ and _Marker_ overlay is the same
- * as google map overlay, and allows to place _Markers_. It has just one prop _debug_, see below why.
+ * To add custom React marker on map, you need 2 controls _Overlay_ and _Marker_.
  *
- * You can add any amount of _Overlays_ to the Map _(have no idea why but you can)_
+ * [Overlay](https://developers.google.com/maps/documentation/javascript/examples/overlay-simple)
+ * is needed to place React components inside.
  *
  * _Marker_ is a wrapper around your component
- * and allows to pass _lat_, _lng_ into _Overlay_ in a type safe way wihout touching props of your component.
+ * to pass _lat_, _lng_ into _Overlay_ in a type safe way wihout touching props of your component.
  *
  * Each marker is rendered inside placeholder with _{ width:0; height:0; display: grid }_ style.
  * This allows to select origin point of marker using only its
