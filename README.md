@@ -4,7 +4,7 @@ Tiny [1kb](.size-snapshot.json#L19) but very powerful React Google Map.
 
 It allows you to render any React component on the Google Map, and provides easy access to native google map api.
 
-[examples](https://github.com/realadvisor/rgm)
+[examples](https://realadvisor.github.io/rgm), [examples source](pages)
 
 ## Example
 
