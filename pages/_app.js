@@ -16,10 +16,10 @@ const App = ({
 }: {
   Component: React.AbstractComponent<{||}>,
   pageProps: Props,
-  router: {| pathname: string |},
+  router: {| pathname: string, basePath: string |},
 }) => {
-  const doc =
-    pageProps.pageDocs?.find(pd => pd.pathname === router.pathname) ?? null;
+  const pathname = router.pathname.replace(router.basePath, '');
+  const doc = pageProps.pageDocs?.find(pd => pathname === pd.pathname) ?? null;
 
   return (
     <Layout
