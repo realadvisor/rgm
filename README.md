@@ -21,6 +21,14 @@ import { Map, Overlay, Marker } from 'rgm';
 </Map>
 ```
 
+## Install
+
+```bash
+yarn add rgm
+# or
+npm install rgm
+```
+
 ## API
 
 ### Map
