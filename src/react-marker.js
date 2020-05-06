@@ -60,12 +60,6 @@ export const Overlay = (props: OverlayProps) => {
 
       overlayView.onAdd = () => {
         elt = document.createElement('div');
-        elt.style.position = 'absolute';
-        elt.style.width = '0';
-        elt.style.height = '0';
-        elt.style.left = '0';
-        elt.style.top = '0';
-
         var panes = overlayView.getPanes();
         // on all other panes there is issues with events like hover etc
         panes.floatPane.appendChild(elt);
