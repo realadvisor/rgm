@@ -1,8 +1,8 @@
 {
   "dist/rgm.esm.js": {
-    "bundled": 6927,
-    "minified": 3129,
-    "gzipped": 1336,
+    "bundled": 6764,
+    "minified": 3031,
+    "gzipped": 1310,
     "treeshaked": {
       "rollup": {
         "code": 631,
@@ -14,9 +14,9 @@
     }
   },
   "dist/rgm.esm.production.js": {
-    "bundled": 5631,
-    "minified": 2311,
-    "gzipped": 999,
+    "bundled": 5468,
+    "minified": 2213,
+    "gzipped": 973,
     "treeshaked": {
       "rollup": {
         "code": 631,
