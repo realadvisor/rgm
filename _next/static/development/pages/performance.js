@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/performance.js"],{
 
 /***/ "./dev-src/controls.js":
 /*!*****************************!*\
@@ -879,6 +879,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectWithoutPropertiesLoose; });
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
 }
 
 /***/ }),
@@ -2959,6 +2986,101 @@ var weakMemoize = function weakMemoize(func) {
 
 /***/ }),
 
+/***/ "./node_modules/facepaint/dist/index.es.js":
+/*!*************************************************!*\
+  !*** ./node_modules/facepaint/dist/index.es.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* eslint-disable no-param-reassign */
+var index = function (breakpoints) {
+  var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      literal = _ref.literal,
+      overlap = _ref.overlap;
+
+  var mq = literal ? breakpoints : ['&'].concat(breakpoints);
+
+  function flatten(obj) {
+    if (typeof obj !== 'object' || obj == null) {
+      return [];
+    }
+
+    if (Array.isArray(obj)) {
+      return obj.map(flatten);
+    }
+
+    var slots = {};
+    var objects = {};
+    var props = {};
+    Object.keys(obj).forEach(function (key) {
+      // Check if value is an array, but skip if it looks like a selector.
+      // key.indexOf('&') === 0
+
+      var item = obj[key];
+      if (!Array.isArray(item) && literal) item = [item];
+
+      if ((literal || Array.isArray(item)) && key.charCodeAt(0) !== 38) {
+        var prior = void 0;
+        item.forEach(function (v, index) {
+          // Optimize by removing duplicated media query entries
+          // when they are explicitly known to overlap.
+          if (overlap && prior === v) {
+            return;
+          }
+
+          if (v == null) {
+            // Do not create entries for undefined values as this will
+            // generate empty media media quries
+            return;
+          }
+
+          prior = v;
+
+          if (index === 0 && !literal) {
+            props[key] = v;
+          } else if (slots[mq[index]] === undefined) {
+            var _slots$mq$index;
+
+            slots[mq[index]] = (_slots$mq$index = {}, _slots$mq$index[key] = v, _slots$mq$index);
+          } else {
+            slots[mq[index]][key] = v;
+          }
+        });
+      } else if (typeof item === 'object') {
+        objects[key] = flatten(item);
+      } else {
+        props[key] = item;
+      }
+    });
+
+    // Ensure that all slots and then child objects are pushed to the end
+    mq.forEach(function (el) {
+      if (slots[el]) {
+        props[el] = slots[el];
+      }
+    });
+    Object.assign(props, objects);
+    return props;
+  }
+
+  return function () {
+    for (var _len = arguments.length, values = Array(_len), _key = 0; _key < _len; _key++) {
+      values[_key] = arguments[_key];
+    }
+
+    return values.map(flatten);
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+//# sourceMappingURL=index.es.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/function-bind/implementation.js":
 /*!******************************************************!*\
   !*** ./node_modules/function-bind/implementation.js ***!
@@ -3123,23 +3245,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true!./":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true ***!
-  \**************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/",
+      "/performance",
       function () {
-        var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js");
+        var mod = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
         if (true) {
-          module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function () {
-            if (!next.router.components["/"]) return;
-            var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js");
-            next.router.update("/", updatedPage);
+          module.hot.accept(/*! ./pages/performance.js */ "./pages/performance.js", function () {
+            if (!next.router.components["/performance"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
+            next.router.update("/performance", updatedPage);
           });
         }
         return mod;
@@ -10221,6 +10343,514 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-system/dist/system.esm.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-system/dist/system.esm.js ***!
+  \******************************************************/
+/*! exports provided: Box, Flex, SystemProvider, useResponsive, useSystem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Box", function() { return Box; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Flex", function() { return Flex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SystemProvider", function() { return SystemProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useResponsive", function() { return useResponsive; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSystem", function() { return useSystem; });
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var facepaint__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! facepaint */ "./node_modules/facepaint/dist/index.es.js");
+
+
+
+
+
+
+var defaultTheme = {
+  // mobile, desktop and large screens
+  breakpoints: [768, 1280, 1920],
+  // degrees of 2 except insignificant 2
+  spaces: [0, 4, 8, 16, 32, 64, 128, 256]
+};
+var SystemContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["createContext"])(defaultTheme);
+
+var makeQuery = function makeQuery(value) {
+  var convertedValue = typeof value === "number" ? Math.ceil(value / 16) + "em" : value;
+  return "screen and (min-width: " + convertedValue + ")";
+};
+
+var makeMediaRules = function makeMediaRules(queries) {
+  return function (styles) {
+    var result = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, styles[0]);
+
+    styles.slice(1).forEach(function (style, index) {
+      result[queries[index]] = style;
+    });
+    return result;
+  };
+};
+
+var SystemProvider = SystemContext.Provider;
+
+var makeMedia = function makeMedia(context) {
+  var queries = context.breakpoints.map(function (bp) {
+    return "@media " + makeQuery(bp);
+  });
+  var fp = Object(facepaint__WEBPACK_IMPORTED_MODULE_4__["default"])(queries);
+  var mr = makeMediaRules(queries);
+  return function (styles) {
+    if (Array.isArray(styles)) {
+      return mr(styles);
+    } else {
+      return fp(styles);
+    }
+  };
+};
+/* system hook */
+
+
+var useResponsive = function useResponsive() {
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+
+  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+      index = _React$useState[0],
+      setIndex = _React$useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    var handleResize = function handleResize() {
+      var currentIndex = 0;
+      context.breakpoints.forEach(function (bp, i) {
+        if (window.matchMedia(makeQuery(bp)).matches) {
+          // one more for smallest value
+          currentIndex = i + 1;
+        }
+      });
+      setIndex(currentIndex);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return function () {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [context]);
+
+  var responsive = function responsive(values) {
+    return values[Math.max(0, Math.min(index, values.length - 1))];
+  };
+
+  return responsive;
+};
+var useSystem = function useSystem() {
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+  var media = Object(react__WEBPACK_IMPORTED_MODULE_2__["useMemo"])(function () {
+    return makeMedia(context);
+  }, [context]);
+
+  var toSpace = function toSpace(value) {
+    return Array.isArray(value) ? value.map(function (item) {
+      return getSpace(item, context);
+    }) : getSpace(value, context);
+  };
+
+  var pt = function pt(v) {
+    return media({
+      paddingTop: toSpace(v)
+    });
+  };
+
+  var pr = function pr(v) {
+    return media({
+      paddingRight: toSpace(v)
+    });
+  };
+
+  var pb = function pb(v) {
+    return media({
+      paddingBottom: toSpace(v)
+    });
+  };
+
+  var pl = function pl(v) {
+    return media({
+      paddingLeft: toSpace(v)
+    });
+  };
+
+  var px = function px(v) {
+    return [pl(v), pr(v)];
+  };
+
+  var py = function py(v) {
+    return [pt(v), pb(v)];
+  };
+
+  var p = function p(v) {
+    return [pt(v), pr(v), pb(v), pl(v)];
+  };
+
+  var mt = function mt(v) {
+    return media({
+      marginTop: toSpace(v)
+    });
+  };
+
+  var mr = function mr(v) {
+    return media({
+      marginRight: toSpace(v)
+    });
+  };
+
+  var mb = function mb(v) {
+    return media({
+      marginBottom: toSpace(v)
+    });
+  };
+
+  var ml = function ml(v) {
+    return media({
+      marginLeft: toSpace(v)
+    });
+  };
+
+  var mx = function mx(v) {
+    return [ml(v), mr(v)];
+  };
+
+  var my = function my(v) {
+    return [mt(v), mb(v)];
+  };
+
+  var m = function m(v) {
+    return [mt(v), mr(v), mb(v), ml(v)];
+  };
+
+  return {
+    media: media,
+    pt: pt,
+    pr: pr,
+    pb: pb,
+    pl: pl,
+    px: px,
+    py: py,
+    p: p,
+    mt: mt,
+    mr: mr,
+    mb: mb,
+    ml: ml,
+    mx: mx,
+    my: my,
+    m: m
+  };
+};
+/* Flex/Box */
+
+var id2 = function id2(first, second) {
+  return first;
+};
+
+var makePercent = function makePercent(value) {
+  return value === 0 ? 0 : value * 100 + "%";
+};
+
+var getSizeValue = function getSizeValue(value) {
+  return typeof value === "number" ? makePercent(Math.max(0, Math.min(value, 1))) : value;
+}; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign#Polyfill
+
+
+var sign = function sign(x) {
+  // If x is NaN, the result is NaN.
+  // If x is -0, the result is -0.
+  // If x is +0, the result is +0.
+  // If x is negative and not -0, the result is -1.
+  // If x is positive and not +0, the result is +1.
+  return Number(x > 0) - Number(x < 0) || +x; // A more aesthetical persuado-representation is shown below
+  //
+  // ( (x > 0) ? 0 : 1 )  // if x is negative then negative one
+  //          +           // else (because you cant be both - and +)
+  // ( (x < 0) ? 0 : -1 ) // if x is positive then positive one
+  //         ||           // if x is 0, -0, or NaN, or not a number,
+  //         +x           // Then the result will be x, (or) if x is
+  //                      // not a number, then x converts to number
+};
+
+var getSpace = function getSpace(value, _ref) {
+  var spaces = _ref.spaces;
+
+  if (typeof value === "number") {
+    var max = spaces.length - 1;
+    var bound = Math.max(-max, Math.min(value, max));
+    return sign(bound) * spaces[Math.abs(bound)];
+  } else {
+    return value;
+  }
+};
+
+var sizeStyles = [{
+  prop: "width",
+  transform: getSizeValue
+}, {
+  prop: "height",
+  transform: getSizeValue
+}];
+var spaceStyles = [{
+  prop: "p",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "p",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "p",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "p",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "ph",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "ph",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "px",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "px",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "pv",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "pv",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "py",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "py",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "pt",
+  cssProp: "paddingTop",
+  transform: getSpace
+}, {
+  prop: "pr",
+  cssProp: "paddingRight",
+  transform: getSpace
+}, {
+  prop: "pb",
+  cssProp: "paddingBottom",
+  transform: getSpace
+}, {
+  prop: "pl",
+  cssProp: "paddingLeft",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "m",
+  cssProp: "marginLeft",
+  transform: getSpace
+}, {
+  prop: "mh",
+  cssProp: "marginLeft",
+  transform: getSpace
+}, {
+  prop: "mh",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "mx",
+  cssProp: "marginLeft",
+  transform: getSpace
+}, {
+  prop: "mx",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "mv",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "mv",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "my",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "my",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "mt",
+  cssProp: "marginTop",
+  transform: getSpace
+}, {
+  prop: "mr",
+  cssProp: "marginRight",
+  transform: getSpace
+}, {
+  prop: "mb",
+  cssProp: "marginBottom",
+  transform: getSpace
+}, {
+  prop: "ml",
+  cssProp: "marginLeft",
+  transform: getSpace
+}];
+var flexItemStyles = [{
+  prop: "flexGrow"
+}, {
+  prop: "flexShrink"
+}, {
+  prop: "flexBasis"
+}, {
+  prop: "justifySelf"
+}, {
+  prop: "alignSelf"
+}, {
+  prop: "order"
+}];
+var flexBoxStyles = [{
+  prop: "alignItems"
+}, {
+  prop: "alignContent"
+}, {
+  prop: "justifyItems"
+}, {
+  prop: "justifyContent"
+}, {
+  prop: "flexWrap"
+}, {
+  prop: "flexDirection"
+}];
+
+var omit = function omit(obj, blacklist) {
+  var next = {};
+
+  for (var key in obj) {
+    if (blacklist.indexOf(key) === -1) {
+      next[key] = obj[key];
+    }
+  }
+
+  return next;
+};
+
+var getStylePropName = function getStylePropName(style) {
+  return style.prop;
+};
+
+var transformValues = function transformValues(props, context, styles) {
+  var generated = {};
+
+  var _loop = function _loop(i) {
+    var _styles$i = styles[i],
+        prop = _styles$i.prop,
+        _styles$i$cssProp = _styles$i.cssProp,
+        cssProp = _styles$i$cssProp === void 0 ? prop : _styles$i$cssProp,
+        _styles$i$transform = _styles$i.transform,
+        transform = _styles$i$transform === void 0 ? id2 : _styles$i$transform;
+    var value = props[prop];
+
+    if (value != null) {
+      generated[cssProp] = Array.isArray(value) ? value.map(function (item) {
+        return transform(item, context);
+      }) : transform(value, context);
+    }
+  };
+
+  for (var i = 0; i < styles.length; i += 1) {
+    _loop(i);
+  }
+
+  return generated;
+};
+
+var Box = Object(react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(function (_ref2, ref) {
+  var _ref2$as = _ref2.as,
+      as = _ref2$as === void 0 ? "div" : _ref2$as,
+      cssProp = _ref2.css,
+      children = _ref2.children,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref2, ["as", "css", "children"]);
+
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+
+  var _useSystem = useSystem(),
+      media = _useSystem.media;
+
+  var styles = [].concat(sizeStyles, spaceStyles, flexItemStyles);
+  var generated = transformValues(props, context, styles);
+  var rest = omit(props, styles.map(getStylePropName));
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(as, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    ref: ref,
+    css: [{
+      boxSizing: "border-box",
+      minWidth: 0,
+      minHeight: 0
+    }, cssProp, media(generated)]
+  }, rest), children == null ? null : children);
+});
+Box.displayName = "Box";
+var Flex = Object(react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(function (_ref3, ref) {
+  var _ref3$as = _ref3.as,
+      as = _ref3$as === void 0 ? "div" : _ref3$as,
+      cssProp = _ref3.css,
+      children = _ref3.children,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref3, ["as", "css", "children"]);
+
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(SystemContext);
+
+  var _useSystem2 = useSystem(),
+      media = _useSystem2.media;
+
+  var styles = [].concat(sizeStyles, spaceStyles, flexItemStyles, flexBoxStyles);
+  var generated = transformValues(props, context, styles);
+  var rest = omit(props, styles.map(getStylePropName));
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(as, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    ref: ref,
+    css: [{
+      display: "flex",
+      boxSizing: "border-box",
+      minWidth: 0,
+      minHeight: 0
+    }, cssProp, media(generated)]
+  }, rest), children == null ? null : children);
+});
+Flex.displayName = "Flex";
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
   !*** delegated ./node_modules/react/index.js from dll-reference dll_2adc2403d89adc16ead0 ***!
@@ -11017,41 +11647,43 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/performance.js":
+/*!******************************!*\
+  !*** ./pages/performance.js ***!
+  \******************************/
 /*! exports provided: __N_SSG, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Rgm; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rgm */ "./src/index.js");
-/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
-/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/index.js",
-    _this = undefined;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Performance; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rgm */ "./src/index.js");
+/* harmony import */ var react_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-system */ "./node_modules/react-system/dist/system.esm.js");
+/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
+/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
+
+var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/performance.js",
+    _this2 = undefined;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 
 function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
 /**
- * <!-- {"order": 1} -->
+ * <!-- {"order": 8 } -->
  *
- * # RGM - React Google Map
+ * # N markers
  *
- * Tiny but very powerful React Google Map.
- * It allows you to render any React component on the Google Map,
- * and provides easy access to native google map api.
+ * Example of drawing N React markers.
  *
- * minimal example.
  */
+
 
 
 
@@ -11067,69 +11699,130 @@ var MAP_OPTIONS = {
   gestureHandling: 'greedy',
   clickableIcons: false
 };
+
+var genRandomMarkers = function genRandomMarkers(n) {
+  return Array.from(Array(n), function () {
+    var r = Math.random() * 2 + 0.05;
+    var angle = Math.random() * 2 * Math.PI;
+    return {
+      lat: MAP_OPTIONS.center.lat + r * Math.cos(angle),
+      lng: MAP_OPTIONS.center.lng + r * Math.sin(angle)
+    };
+  });
+};
+
 var __N_SSG = true;
-function Rgm() {
-  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_2__["useGoogleApiLoader"])();
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_3__["Ratio"], {
+function Performance() {
+  var _this = this;
+
+  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_4__["useGoogleApiLoader"])();
+  var INITIAL_MARKERS_COUNT = 200;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](function () {
+    return genRandomMarkers(INITIAL_MARKERS_COUNT);
+  }),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      markers = _React$useState2[0],
+      setMarkers = _React$useState2[1];
+
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 5
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Flex"], {
+    p: 3,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 7
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+    pr: 2,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 9
+    }
+  }, "Count:"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Select"], {
+    options: ['100', '200', '300', '500', '1000', '2000'],
+    value: "".concat(markers.length),
+    onChange: function onChange(v) {
+      setMarkers(genRandomMarkers(Number.parseFloat(v)));
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 9
+    }
+  })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Ratio"], {
     value: 3 / 4,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 5
+      lineNumber: 60,
+      columnNumber: 7
     }
-  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_1__["Map"], {
+  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
     api: api,
     options: MAP_OPTIONS,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 9
-    }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_1__["Overlay"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 62,
       columnNumber: 11
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
-    lat: MAP_OPTIONS.center.lat,
-    lng: MAP_OPTIONS.center.lng,
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 63,
       columnNumber: 13
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(CircleMarker, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 15
-    }
+  }, markers.map(function (m, index) {
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
+      key: index,
+      lat: m.lat,
+      lng: m.lng,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65,
+        columnNumber: 17
+      }
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(CircleMarker, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66,
+        columnNumber: 19
+      }
+    }));
   })))));
 }
 
 var _ref = false ? undefined : {
-  name: "12b2mk0-CircleMarker",
-  styles: "place-self:center center;width:50px;height:50px;border-radius:100%;background-color:white;border:3px solid red;display:flex;align-items:center;justify-content:center;;label:CircleMarker;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbURZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogMX0gLS0+XG4gKlxuICogIyBSR00gLSBSZWFjdCBHb29nbGUgTWFwXG4gKlxuICogVGlueSBidXQgdmVyeSBwb3dlcmZ1bCBSZWFjdCBHb29nbGUgTWFwLlxuICogSXQgYWxsb3dzIHlvdSB0byByZW5kZXIgYW55IFJlYWN0IGNvbXBvbmVudCBvbiB0aGUgR29vZ2xlIE1hcCxcbiAqIGFuZCBwcm92aWRlcyBlYXN5IGFjY2VzcyB0byBuYXRpdmUgZ29vZ2xlIG1hcCBhcGkuXG4gKlxuICogbWluaW1hbCBleGFtcGxlLlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyIH0gZnJvbSAncmdtJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbyB9IGZyb20gJy4uL2Rldi1zcmMvY29udHJvbHMnO1xuXG4vLyBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9tYXBzL2RvY3VtZW50YXRpb24vamF2YXNjcmlwdC9yZWZlcmVuY2UvbWFwI01hcE9wdGlvbnNcbmNvbnN0IE1BUF9PUFRJT05TID0ge1xuICB6b29tOiA5LFxuICBjZW50ZXI6IHtcbiAgICBsYXQ6IDU5LjkzNixcbiAgICBsbmc6IDMwLjMxNCxcbiAgfSxcbiAgZ2VzdHVyZUhhbmRsaW5nOiAnZ3JlZWR5JyxcbiAgY2xpY2thYmxlSWNvbnM6IGZhbHNlLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUmdtKCkge1xuICBjb25zdCBhcGkgPSB1c2VHb29nbGVBcGlMb2FkZXIoKTtcblxuICByZXR1cm4gKFxuICAgIDxSYXRpbyB2YWx1ZT17MyAvIDR9PlxuICAgICAge2FwaSAmJiAoXG4gICAgICAgIDxNYXAgYXBpPXthcGl9IG9wdGlvbnM9e01BUF9PUFRJT05TfT5cbiAgICAgICAgICA8T3ZlcmxheT5cbiAgICAgICAgICAgIDxNYXJrZXIgbGF0PXtNQVBfT1BUSU9OUy5jZW50ZXIubGF0fSBsbmc9e01BUF9PUFRJT05TLmNlbnRlci5sbmd9PlxuICAgICAgICAgICAgICA8Q2lyY2xlTWFya2VyIC8+XG4gICAgICAgICAgICA8L01hcmtlcj5cbiAgICAgICAgICA8L092ZXJsYXk+XG4gICAgICAgIDwvTWFwPlxuICAgICAgKX1cbiAgICA8L1JhdGlvPlxuICApO1xufVxuXG5jb25zdCBDaXJjbGVNYXJrZXIgPSAoKSA9PiAoXG4gIDxkaXZcbiAgICBjc3M9e2Nzc2BcbiAgICAgIHBsYWNlLXNlbGY6IGNlbnRlciBjZW50ZXI7XG4gICAgICB3aWR0aDogNTBweDtcbiAgICAgIGhlaWdodDogNTBweDtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICAgIGJvcmRlcjogM3B4IHNvbGlkIHJlZDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYH1cbiAgPlxuICAgIFJHTVxuICA8L2Rpdj5cbik7XG5cbmV4cG9ydCBjb25zdCBnZXRTdGF0aWNQcm9wcyA9IGFzeW5jICgpID0+IHtcbiAgLy8gVGhlIGJlc3QgaXMgdG8gcGxhY2UgdGhpcyBtZXRob2QgYXQgX2FwcC5qcyBidXQgdGhpcyBkb2Vzbid0IHdvcmsgbm93XG4gIGNvbnN0IGRvYyA9IGF3YWl0IGltcG9ydCgnLi4vZGV2LXNyYy9kb2MnKTtcbiAgcmV0dXJuIGRvYy5nZXRTdGF0aWNQcm9wcygpO1xufTtcbiJdfQ== */",
+  name: "1bqw4t9-CircleMarker",
+  styles: "place-self:center center;width:10px;height:10px;border-radius:100%;background-color:white;border:2px solid red;;label:CircleMarker;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBOEVZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogOCB9IC0tPlxuICpcbiAqICMgTiBtYXJrZXJzXG4gKlxuICogRXhhbXBsZSBvZiBkcmF3aW5nIE4gUmVhY3QgbWFya2Vycy5cbiAqXG4gKi9cblxuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgTWFwLCBPdmVybGF5LCBNYXJrZXIgfSBmcm9tICdyZ20nO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgeyBGbGV4LCBCb3ggfSBmcm9tICdyZWFjdC1zeXN0ZW0nO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbywgU2VsZWN0IH0gZnJvbSAnLi4vZGV2LXNyYy9jb250cm9scyc7XG5cbi8vIGh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL21hcHMvZG9jdW1lbnRhdGlvbi9qYXZhc2NyaXB0L3JlZmVyZW5jZS9tYXAjTWFwT3B0aW9uc1xuY29uc3QgTUFQX09QVElPTlMgPSB7XG4gIHpvb206IDksXG4gIGNlbnRlcjoge1xuICAgIGxhdDogNTkuOTM2LFxuICAgIGxuZzogMzAuMzE0LFxuICB9LFxuICBnZXN0dXJlSGFuZGxpbmc6ICdncmVlZHknLFxuICBjbGlja2FibGVJY29uczogZmFsc2UsXG59O1xuXG5jb25zdCBnZW5SYW5kb21NYXJrZXJzID0gbiA9PlxuICBBcnJheS5mcm9tKEFycmF5KG4pLCAoKSA9PiB7XG4gICAgY29uc3QgciA9IE1hdGgucmFuZG9tKCkgKiAyICsgMC4wNTtcbiAgICBjb25zdCBhbmdsZSA9IE1hdGgucmFuZG9tKCkgKiAyICogTWF0aC5QSTtcblxuICAgIHJldHVybiB7XG4gICAgICBsYXQ6IE1BUF9PUFRJT05TLmNlbnRlci5sYXQgKyByICogTWF0aC5jb3MoYW5nbGUpLFxuICAgICAgbG5nOiBNQVBfT1BUSU9OUy5jZW50ZXIubG5nICsgciAqIE1hdGguc2luKGFuZ2xlKSxcbiAgICB9O1xuICB9KTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUGVyZm9ybWFuY2UoKSB7XG4gIGNvbnN0IGFwaSA9IHVzZUdvb2dsZUFwaUxvYWRlcigpO1xuICBjb25zdCBJTklUSUFMX01BUktFUlNfQ09VTlQgPSAyMDA7XG4gIGNvbnN0IFttYXJrZXJzLCBzZXRNYXJrZXJzXSA9IFJlYWN0LnVzZVN0YXRlKCgpID0+XG4gICAgZ2VuUmFuZG9tTWFya2VycyhJTklUSUFMX01BUktFUlNfQ09VTlQpLFxuICApO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxGbGV4IHA9ezN9PlxuICAgICAgICA8Qm94IHByPXsyfT5Db3VudDo8L0JveD5cbiAgICAgICAgPFNlbGVjdFxuICAgICAgICAgIG9wdGlvbnM9e1snMTAwJywgJzIwMCcsICczMDAnLCAnNTAwJywgJzEwMDAnLCAnMjAwMCddfVxuICAgICAgICAgIHZhbHVlPXtgJHttYXJrZXJzLmxlbmd0aH1gfVxuICAgICAgICAgIG9uQ2hhbmdlPXt2ID0+IHtcbiAgICAgICAgICAgIHNldE1hcmtlcnMoZ2VuUmFuZG9tTWFya2VycyhOdW1iZXIucGFyc2VGbG9hdCh2KSkpO1xuICAgICAgICAgIH19XG4gICAgICAgIC8+XG4gICAgICA8L0ZsZXg+XG4gICAgICA8UmF0aW8gdmFsdWU9ezMgLyA0fT5cbiAgICAgICAge2FwaSAmJiAoXG4gICAgICAgICAgPE1hcCBhcGk9e2FwaX0gb3B0aW9ucz17TUFQX09QVElPTlN9PlxuICAgICAgICAgICAgPE92ZXJsYXk+XG4gICAgICAgICAgICAgIHttYXJrZXJzLm1hcCgobSwgaW5kZXgpID0+IChcbiAgICAgICAgICAgICAgICA8TWFya2VyIGtleT17aW5kZXh9IGxhdD17bS5sYXR9IGxuZz17bS5sbmd9PlxuICAgICAgICAgICAgICAgICAgPENpcmNsZU1hcmtlciAvPlxuICAgICAgICAgICAgICAgIDwvTWFya2VyPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvT3ZlcmxheT5cbiAgICAgICAgICA8L01hcD5cbiAgICAgICAgKX1cbiAgICAgIDwvUmF0aW8+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cbmNvbnN0IENpcmNsZU1hcmtlciA9ICgpID0+IChcbiAgPGRpdlxuICAgIGNzcz17Y3NzYFxuICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgIHdpZHRoOiAxMHB4O1xuICAgICAgaGVpZ2h0OiAxMHB4O1xuICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgICAgYm9yZGVyOiAycHggc29saWQgcmVkO1xuICAgIGB9XG4gIC8+XG4pO1xuXG5leHBvcnQgY29uc3QgZ2V0U3RhdGljUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIC8vIFRoZSBiZXN0IGlzIHRvIHBsYWNlIHRoaXMgbWV0aG9kIGF0IF9hcHAuanMgYnV0IHRoaXMgZG9lc24ndCB3b3JrIG5vd1xuICBjb25zdCBkb2MgPSBhd2FpdCBpbXBvcnQoJy4uL2Rldi1zcmMvZG9jJyk7XG4gIHJldHVybiBkb2MuZ2V0U3RhdGljUHJvcHMoKTtcbn07XG4iXX0= */",
   toString: _EMOTION_STRINGIFIED_CSS_ERROR__
 };
 
 var CircleMarker = function CircleMarker() {
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("div", {
     css: _ref,
-    __self: _this,
+    __self: _this2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 78,
       columnNumber: 3
     }
-  }, "RGM");
+  });
 };
 
 /***/ }),
@@ -11450,14 +12143,14 @@ var Overlay = function Overlay(props) {
 
 /***/ }),
 
-/***/ 3:
-/*!******************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true ***!
-  \******************************************************************************************************************************************/
+/***/ 4:
+/*!***********************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
+  \***********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -11473,5 +12166,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[4,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=performance.js.map
