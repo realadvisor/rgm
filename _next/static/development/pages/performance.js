@@ -12035,11 +12035,6 @@ var Overlay = function Overlay(props) {
 
       overlayView.onAdd = function () {
         elt = document.createElement('div');
-        elt.style.position = 'absolute';
-        elt.style.width = '0';
-        elt.style.height = '0';
-        elt.style.left = '0';
-        elt.style.top = '0';
         var panes = overlayView.getPanes(); // on all other panes there is issues with events like hover etc
 
         panes.floatPane.appendChild(elt);
@@ -12114,7 +12109,7 @@ var Overlay = function Overlay(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 127,
           columnNumber: 11
         }
       }, ch, ( true) && props.debug === true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
@@ -12131,7 +12126,7 @@ var Overlay = function Overlay(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149,
+          lineNumber: 143,
           columnNumber: 17
         }
       }));
