@@ -3,17 +3,18 @@
 /**
  * <!-- {"order": 8 } -->
  *
- * # Thousand markers
+ * # N markers
  *
- * Example of drawing 1000 React markers.
+ * Example of drawing N React markers.
  *
  */
 
 import * as React from 'react';
 import { Map, Overlay, Marker } from 'rgm';
 import { css } from '@emotion/core';
+import { Flex, Box } from 'react-system';
 import { useGoogleApiLoader } from '../dev-src/hooks';
-import { Ratio } from '../dev-src/controls';
+import { Ratio, Select } from '../dev-src/controls';
 
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 const MAP_OPTIONS = {
@@ -39,25 +40,37 @@ const genRandomMarkers = n =>
 
 export default function Performance() {
   const api = useGoogleApiLoader();
-  const INITIAL_MARKERS_COUNT = 1000;
-  const [markers] = React.useState(() =>
+  const INITIAL_MARKERS_COUNT = 200;
+  const [markers, setMarkers] = React.useState(() =>
     genRandomMarkers(INITIAL_MARKERS_COUNT),
   );
 
   return (
-    <Ratio value={3 / 4}>
-      {api && (
-        <Map api={api} options={MAP_OPTIONS}>
-          <Overlay>
-            {markers.map((m, index) => (
-              <Marker key={index} lat={m.lat} lng={m.lng}>
-                <CircleMarker />
-              </Marker>
-            ))}
-          </Overlay>
-        </Map>
-      )}
-    </Ratio>
+    <div>
+      <Flex p={3}>
+        <Box pr={2}>Count:</Box>
+        <Select
+          options={['100', '200', '300', '500', '1000', '2000']}
+          value={`${markers.length}`}
+          onChange={v => {
+            setMarkers(genRandomMarkers(Number.parseFloat(v)));
+          }}
+        />
+      </Flex>
+      <Ratio value={3 / 4}>
+        {api && (
+          <Map api={api} options={MAP_OPTIONS}>
+            <Overlay>
+              {markers.map((m, index) => (
+                <Marker key={index} lat={m.lat} lng={m.lng}>
+                  <CircleMarker />
+                </Marker>
+              ))}
+            </Overlay>
+          </Map>
+        )}
+      </Ratio>
+    </div>
   );
 }
 
