@@ -132,8 +132,7 @@ export const Overlay = (props: OverlayProps) => {
               left: subPixelRound(pos.x),
               top: subPixelRound(pos.y),
               display: 'grid',
-              gridTemplateColumns: 0,
-              gridTemplateRows: 0,
+              gridTemplate: '0/0',
             }}
           >
             {ch}
