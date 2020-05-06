@@ -9,7 +9,7 @@ import type {
 
 type MapProps = {|
   // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
-  options: GoogleMapOptions,
+  options: GoogleMapOptions | (HTMLDivElement => GoogleMapOptions),
   // window.google.maps
   api: GoogleMapsApi,
   children?: React.Node,
@@ -59,7 +59,10 @@ export const Map = React.forwardRef<MapProps, GoogleMap>((props, ref) => {
       `);
     }
 
-    if (optionsRef.current !== props.options) {
+    if (
+      typeof props.options !== 'function' &&
+      optionsRef.current !== props.options
+    ) {
       warnOnce(`
         options prop has changed.
         If it's desired behaviour please use imperative api, i.e.
@@ -71,15 +74,26 @@ export const Map = React.forwardRef<MapProps, GoogleMap>((props, ref) => {
 
   React.useImperativeHandle(ref, () => map, [map]);
 
-  React.useEffect(() => {
-    if (element.current && !guardRef.current) {
-      const lmap = new props.api.Map(element.current, props.options ?? {});
-      setMap(lmap);
-      guardRef.current = true;
+  React.useEffect(
+    () => {
+      if (element.current && !guardRef.current) {
+        const lmap = new props.api.Map(
+          element.current,
+          typeof props.options === 'function'
+            ? props.options(element.current)
+            : props.options,
+        );
 
-      return () => {};
-    }
-  }, [props.api, props.options]);
+        guardRef.current = true;
+        setMap(lmap);
+
+        return () => {};
+      }
+    },
+    // eslint is wrong here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [props.api, props.options],
+  );
 
   const ctxValue = React.useMemo(() => ({ map, api: props.api }), [
     map,

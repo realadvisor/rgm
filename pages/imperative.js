@@ -27,9 +27,24 @@ const MAP_OPTIONS = {
   },
 };
 
+const getSize = elt => {
+  const rect = elt.getBoundingClientRect();
+  return {
+    width: rect.width,
+    height: rect.height,
+  };
+};
+
 export default function Imperative() {
   const api = useGoogleApiLoader();
   const [map, setMap] = React.useState(null);
+  const getOptions = React.useCallback(
+    elt =>
+      getSize(elt).width < 500
+        ? { ...MAP_OPTIONS, disableDefaultUI: true }
+        : MAP_OPTIONS,
+    [],
+  );
 
   return (
     <div>
@@ -66,7 +81,7 @@ export default function Imperative() {
         </button>
       </Flex>
       <Ratio value={3 / 4}>
-        {api && <Map ref={setMap} api={api} options={MAP_OPTIONS}></Map>}
+        {api && <Map ref={setMap} api={api} options={getOptions}></Map>}
       </Ratio>
     </div>
   );

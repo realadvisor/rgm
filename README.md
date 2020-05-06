@@ -39,7 +39,8 @@ _properties_:
 
 - **api** non nullable value of _window.google.maps_
 
-- **options** see [map#MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions)
+- **options** see [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions)
+  or _(elt:HTMLDivElement) => MapOptions_ where _elt_ is map holder element.
 
 - **ref** exposes instance of [google.maps.Map](https://developers.google.com/maps/documentation/javascript/reference/map)
 

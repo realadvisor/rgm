@@ -1,29 +1,29 @@
 {
   "dist/rgm.esm.js": {
-    "bundled": 6809,
-    "minified": 3066,
-    "gzipped": 1321,
+    "bundled": 6927,
+    "minified": 3129,
+    "gzipped": 1336,
     "treeshaked": {
       "rollup": {
-        "code": 598,
+        "code": 631,
         "import_statements": 170
       },
       "webpack": {
-        "code": 1684
+        "code": 1717
       }
     }
   },
   "dist/rgm.esm.production.js": {
-    "bundled": 5552,
-    "minified": 2278,
-    "gzipped": 991,
+    "bundled": 5631,
+    "minified": 2311,
+    "gzipped": 999,
     "treeshaked": {
       "rollup": {
-        "code": 598,
+        "code": 631,
         "import_statements": 170
       },
       "webpack": {
-        "code": 1675
+        "code": 1708
       }
     }
   }
