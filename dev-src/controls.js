@@ -564,6 +564,7 @@ export const Markdown = (props: {| children: string |}) => {
 
 export const MenuLink = (props: {| children: React.Node, href: string |}) => {
   const router = useRouter();
+  const pathname = router.pathname.replace(router.basePath, '');
 
   return (
     <div
@@ -573,7 +574,7 @@ export const MenuLink = (props: {| children: React.Node, href: string |}) => {
     >
       <span
         css={css`
-          visibility: ${router.pathname === props.href ? 'visible' : 'hidden'};
+          visibility: ${pathname === props.href ? 'visible' : 'hidden'};
         `}
       >
         ❯
@@ -581,7 +582,7 @@ export const MenuLink = (props: {| children: React.Node, href: string |}) => {
       <Link href={props.href} passHref>
         <a
           css={
-            router.pathname === props.href
+            pathname === props.href
               ? css`
                   color: #000;
                   text-decoration: none;
