@@ -83,6 +83,22 @@ const map_ = {
 };
 
 if (typeof window !== 'undefined') {
+  const head = document.getElementsByTagName('head')[0];
+
+  const insertBefore = head.insertBefore;
+
+  // Prevent google map load roboto font
+  // $FlowFixMe
+  head.insertBefore = function (newElement, referenceElement) {
+    if (
+      newElement.href &&
+      newElement.href.indexOf('//fonts.googleapis.com/css?family=Roboto') > -1
+    ) {
+      return;
+    }
+    insertBefore.call(head, newElement, referenceElement);
+  };
+
   window.gm_authFailure = () => {
     map_.error = new Error(
       'Gmap encountered auth error. See console for more details.',

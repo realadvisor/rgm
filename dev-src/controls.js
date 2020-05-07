@@ -347,7 +347,10 @@ export const Code = React.memo<{| children: string |}>(props => {
 
 export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
   const typography = React.useMemo(
-    () => new Typography({ googleFonts: [] }),
+    () =>
+      new Typography({
+        googleFonts: [],
+      }),
     [],
   );
 
@@ -390,6 +393,14 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
 
           html {
             overflow-y: scroll;
+          }
+
+          /* dont allow google to change fonts inside map */
+          .gm-style {
+            font: unset;
+            font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
+              'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+              'Droid Sans', 'Helvetica Neue', sans-serif;
           }
 
           *,
