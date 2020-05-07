@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/google-marker.js"],{
 
 /***/ "./dev-src/controls.js":
 /*!*****************************!*\
@@ -3136,23 +3136,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true!./":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true ***!
-  \**************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fgoogle-marker&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgoogle-marker.js&hotRouterUpdates=true!./":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fgoogle-marker&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgoogle-marker.js&hotRouterUpdates=true ***!
+  \***********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/",
+      "/google-marker",
       function () {
-        var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js");
+        var mod = __webpack_require__(/*! ./pages/google-marker.js */ "./pages/google-marker.js");
         if (true) {
-          module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function () {
-            if (!next.router.components["/"]) return;
-            var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js");
-            next.router.update("/", updatedPage);
+          module.hot.accept(/*! ./pages/google-marker.js */ "./pages/google-marker.js", function () {
+            if (!next.router.components["/google-marker"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/google-marker.js */ "./pages/google-marker.js");
+            next.router.update("/google-marker", updatedPage);
           });
         }
         return mod;
@@ -11030,40 +11030,41 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
-/*! exports provided: __N_SSG, default */
+/***/ "./pages/google-marker.js":
+/*!********************************!*\
+  !*** ./pages/google-marker.js ***!
+  \********************************/
+/*! exports provided: __N_SSG, GoogleMarker, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Rgm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleMarker", function() { return GoogleMarker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return GoogleMarkerPage; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rgm */ "./src/index.js");
 /* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
 /* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/index.js",
-    _this = undefined;
-
+var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/google-marker.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
 /**
- * <!-- {"order": 1} -->
+ * <!-- {"order": 2} -->
  *
- * # RGM - React Google Map
+ * # Native google marker
  *
- * Tiny but very powerful React Google Map.
- * It allows you to render any React component on the Google Map,
- * and provides easy access to native google map api.
+ * Get instances of [google.maps.Map](https://developers.google.com/maps/documentation/javascript/reference/map)
+ * class and instance of _google.maps_ using _useMap_ hook.
  *
- * minimal example.
+ * Then as like as in [example here](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
+ * just add marker using _React.useEffect_ hook
+ *
+ * You can ask why not to expose it with the library.
+ * See the [api surface of Google marker](https://developers.google.com/maps/documentation/javascript/reference/marker#Marker)
+ * The final component may be huge and not solve all the cases.
  */
 
 
@@ -11076,19 +11077,41 @@ var MAP_OPTIONS = {
   center: {
     lat: 59.936,
     lng: 30.314
-  },
-  gestureHandling: 'greedy',
-  clickableIcons: false
+  }
 };
 var __N_SSG = true;
-function Rgm() {
+var GoogleMarker = function GoogleMarker(_ref) {
+  var lat = _ref.lat,
+      lng = _ref.lng;
+
+  var _useMap = Object(rgm__WEBPACK_IMPORTED_MODULE_1__["useMap"])(),
+      api = _useMap.api,
+      map = _useMap.map;
+
+  react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
+    if (api) {
+      var marker = new api.Marker({
+        map: map,
+        position: {
+          lat: lat,
+          lng: lng
+        }
+      });
+      return function () {
+        marker.setMap(null);
+      };
+    }
+  }, [api, map, lat, lng]);
+  return null;
+};
+function GoogleMarkerPage() {
   var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_2__["useGoogleApiLoader"])();
   return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_3__["Ratio"], {
     value: 3 / 4,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 64,
       columnNumber: 5
     }
   }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_1__["Map"], {
@@ -11097,53 +11120,20 @@ function Rgm() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 66,
       columnNumber: 9
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_1__["Overlay"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 11
-    }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_1__["Marker"], {
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(GoogleMarker, {
     lat: MAP_OPTIONS.center.lat,
     lng: MAP_OPTIONS.center.lng,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 13
+      lineNumber: 67,
+      columnNumber: 11
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])(CircleMarker, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 15
-    }
-  })))));
+  })));
 }
-
-var _ref = false ? undefined : {
-  name: "12b2mk0-CircleMarker",
-  styles: "place-self:center center;width:50px;height:50px;border-radius:100%;background-color:white;border:3px solid red;display:flex;align-items:center;justify-content:center;;label:CircleMarker;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbURZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogMX0gLS0+XG4gKlxuICogIyBSR00gLSBSZWFjdCBHb29nbGUgTWFwXG4gKlxuICogVGlueSBidXQgdmVyeSBwb3dlcmZ1bCBSZWFjdCBHb29nbGUgTWFwLlxuICogSXQgYWxsb3dzIHlvdSB0byByZW5kZXIgYW55IFJlYWN0IGNvbXBvbmVudCBvbiB0aGUgR29vZ2xlIE1hcCxcbiAqIGFuZCBwcm92aWRlcyBlYXN5IGFjY2VzcyB0byBuYXRpdmUgZ29vZ2xlIG1hcCBhcGkuXG4gKlxuICogbWluaW1hbCBleGFtcGxlLlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyIH0gZnJvbSAncmdtJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbyB9IGZyb20gJy4uL2Rldi1zcmMvY29udHJvbHMnO1xuXG4vLyBodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9tYXBzL2RvY3VtZW50YXRpb24vamF2YXNjcmlwdC9yZWZlcmVuY2UvbWFwI01hcE9wdGlvbnNcbmNvbnN0IE1BUF9PUFRJT05TID0ge1xuICB6b29tOiA5LFxuICBjZW50ZXI6IHtcbiAgICBsYXQ6IDU5LjkzNixcbiAgICBsbmc6IDMwLjMxNCxcbiAgfSxcbiAgZ2VzdHVyZUhhbmRsaW5nOiAnZ3JlZWR5JyxcbiAgY2xpY2thYmxlSWNvbnM6IGZhbHNlLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUmdtKCkge1xuICBjb25zdCBhcGkgPSB1c2VHb29nbGVBcGlMb2FkZXIoKTtcblxuICByZXR1cm4gKFxuICAgIDxSYXRpbyB2YWx1ZT17MyAvIDR9PlxuICAgICAge2FwaSAmJiAoXG4gICAgICAgIDxNYXAgYXBpPXthcGl9IG9wdGlvbnM9e01BUF9PUFRJT05TfT5cbiAgICAgICAgICA8T3ZlcmxheT5cbiAgICAgICAgICAgIDxNYXJrZXIgbGF0PXtNQVBfT1BUSU9OUy5jZW50ZXIubGF0fSBsbmc9e01BUF9PUFRJT05TLmNlbnRlci5sbmd9PlxuICAgICAgICAgICAgICA8Q2lyY2xlTWFya2VyIC8+XG4gICAgICAgICAgICA8L01hcmtlcj5cbiAgICAgICAgICA8L092ZXJsYXk+XG4gICAgICAgIDwvTWFwPlxuICAgICAgKX1cbiAgICA8L1JhdGlvPlxuICApO1xufVxuXG5jb25zdCBDaXJjbGVNYXJrZXIgPSAoKSA9PiAoXG4gIDxkaXZcbiAgICBjc3M9e2Nzc2BcbiAgICAgIHBsYWNlLXNlbGY6IGNlbnRlciBjZW50ZXI7XG4gICAgICB3aWR0aDogNTBweDtcbiAgICAgIGhlaWdodDogNTBweDtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICAgIGJvcmRlcjogM3B4IHNvbGlkIHJlZDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYH1cbiAgPlxuICAgIFJHTVxuICA8L2Rpdj5cbik7XG5cbmV4cG9ydCBjb25zdCBnZXRTdGF0aWNQcm9wcyA9IGFzeW5jICgpID0+IHtcbiAgLy8gVGhlIGJlc3QgaXMgdG8gcGxhY2UgdGhpcyBtZXRob2QgYXQgX2FwcC5qcyBidXQgdGhpcyBkb2Vzbid0IHdvcmsgbm93XG4gIGNvbnN0IGRvYyA9IGF3YWl0IGltcG9ydCgnLi4vZGV2LXNyYy9kb2MnKTtcbiAgcmV0dXJuIGRvYy5nZXRTdGF0aWNQcm9wcygpO1xufTtcbiJdfQ== */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
-};
-
-var CircleMarker = function CircleMarker() {
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
-    css: _ref,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51,
-      columnNumber: 3
-    }
-  }, "RGM");
-};
 
 /***/ }),
 
@@ -11457,14 +11447,14 @@ var Overlay = function Overlay(props) {
 
 /***/ }),
 
-/***/ 1:
-/*!******************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true ***!
-  \******************************************************************************************************************************************/
+/***/ 2:
+/*!***************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fgoogle-marker&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgoogle-marker.js&hotRouterUpdates=true ***!
+  \***************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Findex.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fgoogle-marker&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgoogle-marker.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fgoogle-marker&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgoogle-marker.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -11480,5 +11470,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[2,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=google-marker.js.map
