@@ -357,11 +357,15 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
   const strTypography = typography
     .toString()
     .replace(/:first-child/g, ':first-of-type');
+
   return (
     <>
       <Head>
         <title>RGM - tiny react google map library</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <Link href="/favicon.ico" passHref>
+          <link rel="shortcut icon" />
+        </Link>
       </Head>
       <Global
         styles={css`
