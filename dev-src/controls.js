@@ -488,13 +488,16 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
               align-items: baseline;
             `}
           >
-            <h1
-              css={css`
-                margin-bottom: 0;
-              `}
-            >
-              RGM
-            </h1>
+            <Link href={'/'} passHref>
+              <h1
+                css={css`
+                  margin-bottom: 0;
+                  cursor: pointer;
+                `}
+              >
+                RGM
+              </h1>
+            </Link>
             <div
               css={css`
                 padding-left: 4px;
