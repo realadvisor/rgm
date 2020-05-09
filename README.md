@@ -89,9 +89,8 @@ GOOGLE_API_KEY=<YOUR GOOGLE API KEY> yarn dev
 
 _Why another library having that one of current library authors is also creator of [google-map-react](https://github.com/google-map-react/google-map-react)_
 
-Most modern react map libraries are trying to provide access to google map via declarative API.
-It needs a lot of hacks, code and opinionated decisions.
+React map libraries along with the ability to draw react on a map are also trying to provide access to google map via declarative API. It needs a lot of hacks, code and opinionated decisions.
 
-We created a library with minimal subset of needed properties, using it you can add minimal declarative api for your needs or use native api.
+We created a library with ability to draw react components on a map providing minimal subset of properties needed to use native api or create any additional declarative api.
 
 Soon will be 1 year as we are happy with it. Small amount of code makes it easy to support and extend.
