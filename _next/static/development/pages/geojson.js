@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/ts-example.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/geojson.js"],{
 
 /***/ "./dev-src/controls.js":
 /*!*****************************!*\
@@ -811,6 +811,24 @@ function _arrayWithHoles(arr) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+/* harmony import */ var _arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
@@ -837,6 +855,22 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
 }
 
 /***/ }),
@@ -896,6 +930,22 @@ function _nonIterableRest() {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
@@ -916,6 +966,30 @@ __webpack_require__.r(__webpack_exports__);
 
 function _slicedToArray(arr, i) {
   return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_3__["default"])();
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
+/* harmony import */ var _unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
+
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_3__["default"])();
 }
 
 /***/ }),
@@ -3136,23 +3210,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fts-example&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fts-example.tsx&hotRouterUpdates=true!./":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fts-example&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fts-example.tsx&hotRouterUpdates=true ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fgeojson&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgeojson.js&hotRouterUpdates=true!./":
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fgeojson&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgeojson.js&hotRouterUpdates=true ***!
+  \***********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/ts-example",
+      "/geojson",
       function () {
-        var mod = __webpack_require__(/*! ./pages/ts-example.tsx */ "./pages/ts-example.tsx");
+        var mod = __webpack_require__(/*! ./pages/geojson.js */ "./pages/geojson.js");
         if (true) {
-          module.hot.accept(/*! ./pages/ts-example.tsx */ "./pages/ts-example.tsx", function () {
-            if (!next.router.components["/ts-example"]) return;
-            var updatedPage = __webpack_require__(/*! ./pages/ts-example.tsx */ "./pages/ts-example.tsx");
-            next.router.update("/ts-example", updatedPage);
+          module.hot.accept(/*! ./pages/geojson.js */ "./pages/geojson.js", function () {
+            if (!next.router.components["/geojson"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/geojson.js */ "./pages/geojson.js");
+            next.router.update("/geojson", updatedPage);
           });
         }
         return mod;
@@ -11030,41 +11104,40 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/ts-example.tsx":
-/*!******************************!*\
-  !*** ./pages/ts-example.tsx ***!
-  \******************************/
+/***/ "./pages/geojson.js":
+/*!**************************!*\
+  !*** ./pages/geojson.js ***!
+  \**************************/
 /*! exports provided: __N_SSG, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TsRgm; });
-/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return GeoJSONPage; });
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rgm */ "./src/index.js");
+/* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rgm */ "./src/rgm.js");
 /* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
 /* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 
-
-var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/ts-example.tsx",
-    _this = undefined;
-
+var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/geojson.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
 /**
- * <!-- {"order": 10} -->
+ * <!-- {"order": 3} -->
  *
- * # Typescript
+ * # Show geojson
  *
- * TS usage example.
+ * Get instances of [google.maps.Map](https://developers.google.com/maps/documentation/javascript/reference/map)
+ * class and instance of _google.maps_ using _useMap_ hook.
  *
- * Minimal example with all existing api usage _(without Overlay debug prop)_.
+ * Then using [google api datalayer](https://developers.google.com/maps/documentation/javascript/datalayer) and
+ * [api reference](https://developers.google.com/maps/documentation/javascript/reference/data)
+ * just add geojson using _React.useEffect_ hook
+ *
  */
 
 
@@ -11073,130 +11146,94 @@ function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringif
 
 
 var MAP_OPTIONS = {
-  zoom: 9,
+  zoom: 13,
   center: {
-    lat: 59.936,
-    lng: 30.314
+    lat: 46.22212,
+    lng: 6.14156
   },
+  // disable cmd-zoom and 2 fingers zoom I personally dislike it
   gestureHandling: 'greedy',
   clickableIcons: false
 };
+var BG_STYLE = {
+  fillColor: 'transparent',
+  strokeColor: 'white',
+  strokeWeight: 6,
+  strokeOpacity: 1,
+  cursor: 'hand'
+};
+var FG_STYLE = {
+  fillColor: 'transparent',
+  strokeColor: 'blue',
+  strokeWeight: 2,
+  strokeOpacity: 1,
+  cursor: 'hand'
+}; // https://developers.google.com/maps/documentation/javascript/datalayer
+// https://developers.google.com/maps/documentation/javascript/reference/data
 
-var Child = function Child() {
+var GeoJson = function GeoJson(_ref) {
+  var children = _ref.children;
+
   var _useMap = Object(rgm__WEBPACK_IMPORTED_MODULE_2__["useMap"])(),
-      api = _useMap.api,
       map = _useMap.map;
 
   react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
-    console.log(map.getCenter().toJSON(), api.version);
-  }, [map]);
+    var style = BG_STYLE; // To prevent style blink we override style inside addListener
+
+    var addFeatureListener = map.data.addListener('addfeature', function (event) {
+      map.data.overrideStyle(event.feature, style);
+    });
+    var features = []; // Add background white shaped border for better visibility
+
+    features.push.apply(features, Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(map.data.addGeoJson(children))); // Add foreground  thinner border with primary color
+
+    style = FG_STYLE;
+    features.push.apply(features, Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(map.data.addGeoJson(children)));
+    addFeatureListener.remove();
+    return function () {
+      features.forEach(function (feature) {
+        return map.data.remove(feature);
+      });
+    };
+  }, [map, children]);
   return null;
 };
 
-var _ref = false ? undefined : {
-  name: "1i0b0cb-TsRgm",
-  styles: "margin:16px;;label:TsRgm;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvdHMtZXhhbXBsZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBOENnQiIsImZpbGUiOiIvVXNlcnMvaWNlL2V4dC9ucG0vcmdtL3BhZ2VzL3RzLWV4YW1wbGUudHN4Iiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiA8IS0tIHtcIm9yZGVyXCI6IDEwfSAtLT5cbiAqXG4gKiAjIFR5cGVzY3JpcHRcbiAqXG4gKiBUUyB1c2FnZSBleGFtcGxlLlxuICpcbiAqIE1pbmltYWwgZXhhbXBsZSB3aXRoIGFsbCBleGlzdGluZyBhcGkgdXNhZ2UgXyh3aXRob3V0IE92ZXJsYXkgZGVidWcgcHJvcClfLlxuICovXG5cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IE1hcCwgT3ZlcmxheSwgTWFya2VyLCB1c2VNYXAgfSBmcm9tICdyZ20nO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgeyB1c2VHb29nbGVBcGlMb2FkZXIgfSBmcm9tICcuLi9kZXYtc3JjL2hvb2tzJztcbmltcG9ydCB7IFJhdGlvIH0gZnJvbSAnLi4vZGV2LXNyYy9jb250cm9scyc7XG5cbi8vIGh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL21hcHMvZG9jdW1lbnRhdGlvbi9qYXZhc2NyaXB0L3JlZmVyZW5jZS9tYXAjTWFwT3B0aW9uc1xuY29uc3QgTUFQX09QVElPTlM6IGdvb2dsZS5tYXBzLk1hcE9wdGlvbnMgPSB7XG4gIHpvb206IDksXG4gIGNlbnRlcjoge1xuICAgIGxhdDogNTkuOTM2LFxuICAgIGxuZzogMzAuMzE0LFxuICB9LFxuICBnZXN0dXJlSGFuZGxpbmc6ICdncmVlZHknLFxuICBjbGlja2FibGVJY29uczogZmFsc2UsXG59O1xuXG5jb25zdCBDaGlsZCA9ICgpID0+IHtcbiAgY29uc3QgeyBhcGksIG1hcCB9ID0gdXNlTWFwKCk7XG5cbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBjb25zb2xlLmxvZyhtYXAuZ2V0Q2VudGVyKCkudG9KU09OKCksIGFwaS52ZXJzaW9uKTtcbiAgfSwgW21hcF0pO1xuXG4gIHJldHVybiBudWxsO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gVHNSZ20oKSB7XG4gIGNvbnN0IGFwaSA9IHVzZUdvb2dsZUFwaUxvYWRlcigpO1xuICBjb25zdCBbbWFwLCBzZXRNYXBdID0gUmVhY3QudXNlU3RhdGU8bnVsbCB8IGdvb2dsZS5tYXBzLk1hcDxIVE1MRGl2RWxlbWVudD4+KFxuICAgIG51bGwsXG4gICk7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgICAgPGJ1dHRvblxuICAgICAgICBjc3M9e2Nzc2BcbiAgICAgICAgICBtYXJnaW46IDE2cHg7XG4gICAgICAgIGB9XG4gICAgICAgIG9uQ2xpY2s9eygpID0+IHtcbiAgICAgICAgICBpZiAobWFwICE9IG51bGwpIHtcbiAgICAgICAgICAgIG1hcC5wYW5CeShNYXRoLnJhbmRvbSgpICogMzAwIC0gMTUwLCBNYXRoLnJhbmRvbSgpICogMzAwIC0gMTUwKTtcbiAgICAgICAgICB9XG4gICAgICAgIH19XG4gICAgICA+XG4gICAgICAgIENsaWNrXG4gICAgICA8L2J1dHRvbj5cbiAgICAgIDxSYXRpbyB2YWx1ZT17MyAvIDR9PlxuICAgICAgICB7YXBpICYmIChcbiAgICAgICAgICA8TWFwIHJlZj17c2V0TWFwfSBhcGk9e2FwaX0gb3B0aW9ucz17TUFQX09QVElPTlN9PlxuICAgICAgICAgICAgPE92ZXJsYXk+XG4gICAgICAgICAgICAgIDxNYXJrZXIgbGF0PXs1OS45MzZ9IGxuZz17MzAuMzE0fT5cbiAgICAgICAgICAgICAgICA8Q2lyY2xlTWFya2VyIC8+XG4gICAgICAgICAgICAgIDwvTWFya2VyPlxuICAgICAgICAgICAgPC9PdmVybGF5PlxuICAgICAgICAgICAgPENoaWxkIC8+XG4gICAgICAgICAgPC9NYXA+XG4gICAgICAgICl9XG4gICAgICA8L1JhdGlvPlxuICAgIDwvZGl2PlxuICApO1xufVxuXG5jb25zdCBDaXJjbGVNYXJrZXIgPSAoKSA9PiAoXG4gIDxkaXZcbiAgICBjc3M9e2Nzc2BcbiAgICAgIHBsYWNlLXNlbGY6IGNlbnRlciBjZW50ZXI7XG4gICAgICB3aWR0aDogNTBweDtcbiAgICAgIGhlaWdodDogNTBweDtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEwMCU7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICAgIGJvcmRlcjogM3B4IHNvbGlkIHJlZDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYH1cbiAgPlxuICAgIFRTXG4gIDwvZGl2PlxuKTtcblxuZXhwb3J0IGNvbnN0IGdldFN0YXRpY1Byb3BzID0gYXN5bmMgKCkgPT4ge1xuICAvLyBUaGUgYmVzdCBpcyB0byBwbGFjZSB0aGlzIG1ldGhvZCBhdCBfYXBwLmpzIGJ1dCB0aGlzIGRvZXNuJ3Qgd29yayBub3dcbiAgLy8gQHRzLWlnbm9yZVxuICBjb25zdCBkb2MgPSBhd2FpdCBpbXBvcnQoJy4uL2Rldi1zcmMvZG9jJyk7XG4gIHJldHVybiBkb2MuZ2V0U3RhdGljUHJvcHMoKTtcbn07XG4iXX0= */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
-};
-
 var __N_SSG = true;
-function TsRgm() {
+function GeoJSONPage() {
   var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_3__["useGoogleApiLoader"])();
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](null),
-      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
-      map = _React$useState2[0],
-      setMap = _React$useState2[1];
-
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 5
-    }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])("button", {
-    css: _ref,
-    onClick: function onClick() {
-      if (map != null) {
-        map.panBy(Math.random() * 300 - 150, Math.random() * 300 - 150);
-      }
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 7
-    }
-  }, "Click"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_4__["Ratio"], {
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_4__["Ratio"], {
     value: 3 / 4,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 7
+      lineNumber: 84,
+      columnNumber: 5
     }
   }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
-    ref: setMap,
     api: api,
     options: MAP_OPTIONS,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 86,
+      columnNumber: 9
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(GeoJson, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
       columnNumber: 11
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 13
-    }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
-    lat: 59.936,
-    lng: 30.314,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62,
-      columnNumber: 15
-    }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(CircleMarker, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63,
-      columnNumber: 17
-    }
-  }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(Child, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 13
-    }
-  }))));
+  }, geoJSON)));
 }
-
-var _ref2 = false ? undefined : {
-  name: "12b2mk0-CircleMarker",
-  styles: "place-self:center center;width:50px;height:50px;border-radius:100%;background-color:white;border:3px solid red;display:flex;align-items:center;justify-content:center;;label:CircleMarker;",
-  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvdHMtZXhhbXBsZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMkVZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvdHMtZXhhbXBsZS50c3giLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIDwhLS0ge1wib3JkZXJcIjogMTB9IC0tPlxuICpcbiAqICMgVHlwZXNjcmlwdFxuICpcbiAqIFRTIHVzYWdlIGV4YW1wbGUuXG4gKlxuICogTWluaW1hbCBleGFtcGxlIHdpdGggYWxsIGV4aXN0aW5nIGFwaSB1c2FnZSBfKHdpdGhvdXQgT3ZlcmxheSBkZWJ1ZyBwcm9wKV8uXG4gKi9cblxuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgTWFwLCBPdmVybGF5LCBNYXJrZXIsIHVzZU1hcCB9IGZyb20gJ3JnbSc7XG5pbXBvcnQgeyBjc3MgfSBmcm9tICdAZW1vdGlvbi9jb3JlJztcbmltcG9ydCB7IHVzZUdvb2dsZUFwaUxvYWRlciB9IGZyb20gJy4uL2Rldi1zcmMvaG9va3MnO1xuaW1wb3J0IHsgUmF0aW8gfSBmcm9tICcuLi9kZXYtc3JjL2NvbnRyb2xzJztcblxuLy8gaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vbWFwcy9kb2N1bWVudGF0aW9uL2phdmFzY3JpcHQvcmVmZXJlbmNlL21hcCNNYXBPcHRpb25zXG5jb25zdCBNQVBfT1BUSU9OUzogZ29vZ2xlLm1hcHMuTWFwT3B0aW9ucyA9IHtcbiAgem9vbTogOSxcbiAgY2VudGVyOiB7XG4gICAgbGF0OiA1OS45MzYsXG4gICAgbG5nOiAzMC4zMTQsXG4gIH0sXG4gIGdlc3R1cmVIYW5kbGluZzogJ2dyZWVkeScsXG4gIGNsaWNrYWJsZUljb25zOiBmYWxzZSxcbn07XG5cbmNvbnN0IENoaWxkID0gKCkgPT4ge1xuICBjb25zdCB7IGFwaSwgbWFwIH0gPSB1c2VNYXAoKTtcblxuICBSZWFjdC51c2VFZmZlY3QoKCkgPT4ge1xuICAgIGNvbnNvbGUubG9nKG1hcC5nZXRDZW50ZXIoKS50b0pTT04oKSwgYXBpLnZlcnNpb24pO1xuICB9LCBbbWFwXSk7XG5cbiAgcmV0dXJuIG51bGw7XG59O1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBUc1JnbSgpIHtcbiAgY29uc3QgYXBpID0gdXNlR29vZ2xlQXBpTG9hZGVyKCk7XG4gIGNvbnN0IFttYXAsIHNldE1hcF0gPSBSZWFjdC51c2VTdGF0ZTxudWxsIHwgZ29vZ2xlLm1hcHMuTWFwPEhUTUxEaXZFbGVtZW50Pj4oXG4gICAgbnVsbCxcbiAgKTtcblxuICByZXR1cm4gKFxuICAgIDxkaXY+XG4gICAgICA8YnV0dG9uXG4gICAgICAgIGNzcz17Y3NzYFxuICAgICAgICAgIG1hcmdpbjogMTZweDtcbiAgICAgICAgYH1cbiAgICAgICAgb25DbGljaz17KCkgPT4ge1xuICAgICAgICAgIGlmIChtYXAgIT0gbnVsbCkge1xuICAgICAgICAgICAgbWFwLnBhbkJ5KE1hdGgucmFuZG9tKCkgKiAzMDAgLSAxNTAsIE1hdGgucmFuZG9tKCkgKiAzMDAgLSAxNTApO1xuICAgICAgICAgIH1cbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgQ2xpY2tcbiAgICAgIDwvYnV0dG9uPlxuICAgICAgPFJhdGlvIHZhbHVlPXszIC8gNH0+XG4gICAgICAgIHthcGkgJiYgKFxuICAgICAgICAgIDxNYXAgcmVmPXtzZXRNYXB9IGFwaT17YXBpfSBvcHRpb25zPXtNQVBfT1BUSU9OU30+XG4gICAgICAgICAgICA8T3ZlcmxheT5cbiAgICAgICAgICAgICAgPE1hcmtlciBsYXQ9ezU5LjkzNn0gbG5nPXszMC4zMTR9PlxuICAgICAgICAgICAgICAgIDxDaXJjbGVNYXJrZXIgLz5cbiAgICAgICAgICAgICAgPC9NYXJrZXI+XG4gICAgICAgICAgICA8L092ZXJsYXk+XG4gICAgICAgICAgICA8Q2hpbGQgLz5cbiAgICAgICAgICA8L01hcD5cbiAgICAgICAgKX1cbiAgICAgIDwvUmF0aW8+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cbmNvbnN0IENpcmNsZU1hcmtlciA9ICgpID0+IChcbiAgPGRpdlxuICAgIGNzcz17Y3NzYFxuICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgIHdpZHRoOiA1MHB4O1xuICAgICAgaGVpZ2h0OiA1MHB4O1xuICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgICAgYm9yZGVyOiAzcHggc29saWQgcmVkO1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICBgfVxuICA+XG4gICAgVFNcbiAgPC9kaXY+XG4pO1xuXG5leHBvcnQgY29uc3QgZ2V0U3RhdGljUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIC8vIFRoZSBiZXN0IGlzIHRvIHBsYWNlIHRoaXMgbWV0aG9kIGF0IF9hcHAuanMgYnV0IHRoaXMgZG9lc24ndCB3b3JrIG5vd1xuICAvLyBAdHMtaWdub3JlXG4gIGNvbnN0IGRvYyA9IGF3YWl0IGltcG9ydCgnLi4vZGV2LXNyYy9kb2MnKTtcbiAgcmV0dXJuIGRvYy5nZXRTdGF0aWNQcm9wcygpO1xufTtcbiJdfQ== */",
-  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
-};
-
-var CircleMarker = function CircleMarker() {
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])("div", {
-    css: _ref2,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 3
-    }
-  }, "TS");
+var geoJSON = {
+  type: 'Feature',
+  geometry: {
+    type: 'MultiPolygon',
+    coordinates: [[[[6.166701, 46.224467], [6.165925, 46.222455], [6.1619, 46.215224], [6.155766, 46.217359], [6.151245, 46.216282], [6.151087, 46.215332], [6.150485, 46.215169], [6.1509, 46.214227], [6.150811, 46.214036], [6.14938, 46.214312], [6.149151, 46.214004], [6.1494, 46.213891], [6.148978, 46.213333], [6.149199, 46.213245], [6.149111, 46.213092], [6.148458, 46.213299], [6.148611, 46.213478], [6.148046, 46.213725], [6.14791, 46.213552], [6.146289, 46.214207], [6.146402, 46.214354], [6.146021, 46.214516], [6.145856, 46.214388], [6.145229, 46.214795], [6.145365, 46.214889], [6.144523, 46.215537], [6.140424, 46.215467], [6.140431, 46.214992], [6.140001, 46.214473], [6.140495, 46.21431], [6.140344, 46.213461], [6.139154, 46.211822], [6.138298, 46.212118], [6.137611, 46.212103], [6.137077, 46.212714], [6.136788, 46.212579], [6.136173, 46.21166], [6.136793, 46.21125], [6.136433, 46.210877], [6.135918, 46.210767], [6.136631, 46.210466], [6.136455, 46.210278], [6.135874, 46.210503], [6.135143, 46.210281], [6.135855, 46.209982], [6.135933, 46.208969], [6.135134, 46.20892], [6.135138, 46.20837], [6.1349, 46.208432], [6.134884, 46.208718], [6.133399, 46.209087], [6.133291, 46.20889], [6.132011, 46.209076], [6.131403, 46.209387], [6.131373, 46.209693], [6.130356, 46.210561], [6.129696, 46.210564], [6.12969, 46.210818], [6.129369, 46.21082], [6.129375, 46.211045], [6.129688, 46.211046], [6.129688, 46.211504], [6.12927, 46.211496], [6.129271, 46.212405], [6.129008, 46.212523], [6.129764, 46.213246], [6.129716, 46.213667], [6.128841, 46.213665], [6.127625, 46.214193], [6.126112, 46.214342], [6.125746, 46.214032], [6.123964, 46.214867], [6.124292, 46.215172], [6.121739, 46.215671], [6.119726, 46.216991], [6.120624, 46.217769], [6.122338, 46.216739], [6.123393, 46.21744], [6.124565, 46.217508], [6.125727, 46.218289], [6.126099, 46.218014], [6.127509, 46.219169], [6.128824, 46.220001], [6.129532, 46.219521], [6.129983, 46.219778], [6.129575, 46.22013], [6.130436, 46.220747], [6.130256, 46.220853], [6.130676, 46.221195], [6.130523, 46.221425], [6.130902, 46.221833], [6.13211, 46.221023], [6.13235, 46.221201], [6.132201, 46.221296], [6.133093, 46.221871], [6.132963, 46.221989], [6.133836, 46.222724], [6.132913, 46.223371], [6.133926, 46.224313], [6.132755, 46.22515], [6.131471, 46.22413], [6.131008, 46.224101], [6.129367, 46.225315], [6.128872, 46.225032], [6.127637, 46.22607], [6.127951, 46.226179], [6.128475, 46.225855], [6.130178, 46.227029], [6.12872, 46.228056], [6.127686, 46.227353], [6.126543, 46.22806], [6.127468, 46.228897], [6.127947, 46.2286], [6.128718, 46.228867], [6.131004, 46.230645], [6.131211, 46.230302], [6.132606, 46.230318], [6.133546, 46.231009], [6.133079, 46.231614], [6.132808, 46.231513], [6.132062, 46.232115], [6.132336, 46.232319], [6.131997, 46.232603], [6.132238, 46.232774], [6.131869, 46.233055], [6.132281, 46.233307], [6.132955, 46.23278], [6.134405, 46.233909], [6.135986, 46.234248], [6.136307, 46.234193], [6.137361, 46.233404], [6.13613, 46.232762], [6.136964, 46.231991], [6.138166, 46.231296], [6.135923, 46.230627], [6.136604, 46.230069], [6.13744, 46.228493], [6.137943, 46.228181], [6.139237, 46.228034], [6.13947, 46.228662], [6.138837, 46.228839], [6.138821, 46.22961], [6.138533, 46.230292], [6.142864, 46.2293], [6.143428, 46.230636], [6.143698, 46.230099], [6.145883, 46.228727], [6.145576, 46.227293], [6.146152, 46.226945], [6.146293, 46.227101], [6.146995, 46.226354], [6.148206, 46.226053], [6.148941, 46.227792], [6.166701, 46.224467]]]]
+  }
 };
 
 /***/ }),
@@ -11306,30 +11343,6 @@ var Map = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, ref)
 var useMap = function useMap() {
   return react__WEBPACK_IMPORTED_MODULE_1__["useContext"](MapContext);
 };
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! exports provided: Map, useMap, Marker, Overlay */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _google_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./google-map */ "./src/google-map.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return _google_map__WEBPACK_IMPORTED_MODULE_0__["Map"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMap", function() { return _google_map__WEBPACK_IMPORTED_MODULE_0__["useMap"]; });
-
-/* harmony import */ var _react_marker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react-marker */ "./src/react-marker.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return _react_marker__WEBPACK_IMPORTED_MODULE_1__["Marker"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Overlay", function() { return _react_marker__WEBPACK_IMPORTED_MODULE_1__["Overlay"]; });
-
-
-
 
 /***/ }),
 
@@ -11509,14 +11522,38 @@ var Overlay = function Overlay(props) {
 
 /***/ }),
 
-/***/ 3:
-/*!**********************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fts-example&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fts-example.tsx&hotRouterUpdates=true ***!
-  \**********************************************************************************************************************************************************/
+/***/ "./src/rgm.js":
+/*!********************!*\
+  !*** ./src/rgm.js ***!
+  \********************/
+/*! exports provided: Map, useMap, Marker, Overlay */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _google_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./google-map */ "./src/google-map.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return _google_map__WEBPACK_IMPORTED_MODULE_0__["Map"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMap", function() { return _google_map__WEBPACK_IMPORTED_MODULE_0__["useMap"]; });
+
+/* harmony import */ var _react_marker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react-marker */ "./src/react-marker.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return _react_marker__WEBPACK_IMPORTED_MODULE_1__["Marker"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Overlay", function() { return _react_marker__WEBPACK_IMPORTED_MODULE_1__["Overlay"]; });
+
+
+
+
+/***/ }),
+
+/***/ 7:
+/*!***************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fgeojson&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgeojson.js&hotRouterUpdates=true ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fts-example&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fts-example.tsx&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fts-example&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fts-example.tsx&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fgeojson&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgeojson.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fgeojson&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fgeojson.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -11532,5 +11569,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=ts-example.js.map
+},[[7,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=geojson.js.map
