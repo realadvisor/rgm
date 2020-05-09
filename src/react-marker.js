@@ -24,8 +24,9 @@ export const Overlay = (props: OverlayProps) => {
   const { api, map } = useMap();
   // because I have 2 ;-), doesnt matter here, will be set before 1st usage
   const pixelRatioRef = React.useRef(2);
+
   // $FlowFixMe no block level $FlowFixMe so splitted on 2 lines
-  const anyChildren = (React.Children.toArray(props.children ?? []): any);
+  const anyChildren = (React.Children.toArray(props.children || []): any);
 
   const children: $ReadOnlyArray<React.Element<typeof Marker>> = anyChildren;
 
