@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F","\u002Fvis-test-n-index","\u002Fvis-test-n-uniq","\u002Fevents","\u002Fimperative","\u002Fgoogle-marker","\u002Fperformance","\u002Freact-markers","\u002Fgeojson","\u002Fclusters","\u002Fts-example"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
