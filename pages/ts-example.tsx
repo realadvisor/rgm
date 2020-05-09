@@ -9,8 +9,7 @@
  */
 
 import * as React from 'react';
-// I haven't found why paths inside tsconfig.json doesn't work, NEED HELP!
-import { Map, Overlay, Marker, useMap } from '../src';
+import { Map, Overlay, Marker, useMap } from 'rgm';
 import { css } from '@emotion/core';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio } from '../dev-src/controls';
