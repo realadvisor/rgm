@@ -542,7 +542,10 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
           `}
         >
           EXAMPLES ARE PROVIDED UNDER THE{' '}
-          <a href="https://en.wikipedia.org/wiki/Beerware">BEER-WARE</a> LICENSE
+          <a href="https://github.com/realadvisor/rgm/blob/master/LICENSE-EXAMPLES">
+            BEER-WARE
+          </a>{' '}
+          LICENSE
         </div>
       </div>
     </>
