@@ -40,76 +40,61 @@ const warnOnce = (() => {
 
 const STYLE = { width: '100%', height: '100%' };
 
-export const Map = React.forwardRef<MapProps, GoogleMap>((props, ref) => {
-  const element = React.useRef(null);
-  const guardRef = React.useRef(false);
-  const [map, setMap] = React.useState<GoogleMap | null>(null);
+export const Map = React.forwardRef<MapProps, GoogleMap>(
+  ({ api, options, children }, ref) => {
+    const element = React.useRef(null);
+    const guardRef = React.useRef(false);
+    const [ctx, setCtx] = React.useState<MapContextType | null>(null);
 
-  if (process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const apiRef = React.useRef(props.api);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const optionsRef = React.useRef(props.options);
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const apiRef = React.useRef(api);
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const optionsRef = React.useRef(options);
 
-    if (apiRef.current !== props.api) {
-      warnOnce(`
+      if (apiRef.current !== api) {
+        warnOnce(`
         api prop has changed.
         If it's desired behaviour please remount your component
         using key={hash(api)} on your component.
       `);
-    }
+      }
 
-    if (
-      typeof props.options !== 'function' &&
-      optionsRef.current !== props.options
-    ) {
-      warnOnce(`
+      if (typeof options !== 'function' && optionsRef.current !== options) {
+        warnOnce(`
         options prop has changed.
         If it's desired behaviour please use imperative api, i.e.
 
         mapRef.current.apply(map =>  map.setOptions({...}));
       `);
+      }
     }
-  }
 
-  React.useImperativeHandle(ref, () => map, [map]);
+    React.useImperativeHandle(ref, () => (ctx ? ctx.map : null), [ctx]);
 
-  React.useEffect(
-    () => {
-      if (element.current && !guardRef.current) {
-        const lmap = new props.api.Map(
+    React.useEffect(() => {
+      if (!guardRef.current && element.current) {
+        const map = new api.Map(
           element.current,
-          typeof props.options === 'function'
-            ? props.options(element.current)
-            : props.options,
+          typeof options === 'function' ? options(element.current) : options,
         );
 
         guardRef.current = true;
-        setMap(lmap);
+        setCtx({ map, api });
 
         return () => {};
       }
-    },
-    // eslint is wrong here
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [props.api, props.options],
-  );
+    }, [api, options]);
 
-  const ctxValue = React.useMemo(() => (map ? { map, api: props.api } : null), [
-    map,
-    props.api,
-  ]);
-
-  return (
-    <>
-      <div style={STYLE} ref={element} />
-      {ctxValue && (
-        <MapContext.Provider value={ctxValue}>
-          {props.children}
-        </MapContext.Provider>
-      )}
-    </>
-  );
-});
+    return (
+      <>
+        <div style={STYLE} ref={element} />
+        {ctx && (
+          <MapContext.Provider value={ctx}>{children}</MapContext.Provider>
+        )}
+      </>
+    );
+  },
+);
 
 export const useMap = () => React.useContext(MapContext);

@@ -33,7 +33,7 @@ export const Overlay = (props: OverlayProps) => {
   const [overlay, setOverlay] = React.useState(null);
 
   const childrenLatLngRefs = React.useRef<
-    Array<$NonMaybeType<{| lat: number, lng: number |}>>,
+    $ReadOnlyArray<React.Element<typeof Marker>>,
   >([]);
 
   const childrenDivRefs = React.useRef([]);
@@ -42,13 +42,9 @@ export const Overlay = (props: OverlayProps) => {
     Math.round(v * pixelRatioRef.current) / pixelRatioRef.current;
 
   // We can't use useEffect here because it causes glitches
-  // when in draw we update commited markers with previous markers coordinates
-  // it is visible if make a lot of zoomin zoomout, as map draw is fully independent of react
+  // We need ref to access children in draw
   React.useLayoutEffect(() => {
-    childrenLatLngRefs.current = children.map(ch => ({
-      lat: ch.props.lat,
-      lng: ch.props.lng,
-    }));
+    childrenLatLngRefs.current = children;
   });
 
   // Create overlay https://developers.google.com/maps/documentation/javascript/examples/overlay-simple
@@ -87,7 +83,7 @@ export const Overlay = (props: OverlayProps) => {
 
         const latLngs = childrenLatLngRefs.current;
 
-        latLngs.forEach(({ lat, lng }, index) => {
+        latLngs.forEach(({ props: { lat, lng } }, index) => {
           const { current: childElt } = childrenDivRefs.current[index];
           if (childElt != null) {
             const pos = projection.fromLatLngToDivPixel(
@@ -121,7 +117,9 @@ export const Overlay = (props: OverlayProps) => {
         // Its not a side effect, its just a cache for refs
         // instead of creating it initially like Array(MAX_POSSIBLE_MARKERS), we just extend it here
         if (childrenDivRefs.current[index] == null) {
-          childrenDivRefs.current[index] = { current: null };
+          childrenDivRefs.current[index] = {
+            current: (null: null | HTMLDivElement),
+          };
         }
 
         return (
