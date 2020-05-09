@@ -1,6 +1,6 @@
 # RGM
 
-Tiny [1kb](.size-snapshot.json#L19) but very powerful React Google Map.
+Tiny [1kb less](size-snapshot.txt#L4-L5) but very powerful React Google Map.
 
 It allows you to render any React component on the Google Map, and provides easy access to native google map api.
 
