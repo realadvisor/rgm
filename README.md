@@ -71,8 +71,9 @@ _returns:_
 
 ## Types
 
-Covered with flowtype.
-For typescript usage you probably need to add `@types/googlemaps` into your project.
+Flowtype, Typescript.
+
+_For typescript usage you probably need to add [@types/googlemaps](https://www.npmjs.com/package/@types/googlemaps) into your project._
 
 ## Contribute
 
@@ -88,8 +89,9 @@ GOOGLE_API_KEY=<YOUR GOOGLE API KEY> yarn dev
 
 _Why another library having that one of current library authors is also creator of [google-map-react](https://github.com/google-map-react/google-map-react)_
 
-Most modern react map libraries are trying to provide all google map properties via declarative API.
-It is hard, it needs a lot of hacks and code.
+Most modern react map libraries are trying to provide access to google map via declarative API.
+It needs a lot of hacks, code and opinionated decisions.
 
-We created a map with minimal subset of needed properties, and soon will be 1 year as we are happy with it.
-Small amount of code makes it easy to support and extend.
+We created a library with minimal subset of needed properties, using it you can add minimal declarative api for your needs or use native api.
+
+Soon will be 1 year as we are happy with it. Small amount of code makes it easy to support and extend.
