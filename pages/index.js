@@ -9,11 +9,11 @@
  * It allows you to render any React component on the Google Map,
  * and provides easy access to native google map api.
  *
- * minimal example.
+ * Minimal example with all existing api usage _(without Overlay debug prop)_.
  */
 
 import * as React from 'react';
-import { Map, Overlay, Marker } from 'rgm';
+import { Map, Overlay, Marker, useMap } from 'rgm';
 import { css } from '@emotion/core';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio } from '../dev-src/controls';
@@ -41,11 +41,22 @@ export default function Rgm() {
               <CircleMarker />
             </Marker>
           </Overlay>
+          <Child />
         </Map>
       )}
     </Ratio>
   );
 }
+
+const Child = () => {
+  const { api, map } = useMap();
+
+  React.useEffect(() => {
+    console.info(map.getCenter().toJSON(), api.version);
+  }, [map, api]);
+
+  return null;
+};
 
 const CircleMarker = () => (
   <div
