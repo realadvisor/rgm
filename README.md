@@ -71,7 +71,8 @@ _returns:_
 
 ## Types
 
-Fully covered with flowtype. Help with typescript is needed.
+Covered with flowtype.
+For typescript usage you probably need to add `@types/googlemaps` into your project.
 
 ## Contribute
 

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "strict": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "rgm": ["./src"]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+  "include": ["./src/**/*.ts*", "./pages/**/*.ts*", "./tests/**/*.tsx"],
+  "exclude": ["node_modules"]
+}
