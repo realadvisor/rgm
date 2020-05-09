@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/performance.js"],{
 
 /***/ "./dev-src/controls.js":
 /*!*****************************!*\
@@ -513,6 +513,183 @@ var MenuLink = function MenuLink(props) {
 
 /***/ }),
 
+/***/ "./dev-src/hooks.js":
+/*!**************************!*\
+  !*** ./dev-src/hooks.js ***!
+  \**************************/
+/*! exports provided: useScript, useGoogleApiLoader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useScript", function() { return useScript; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGoogleApiLoader", function() { return useGoogleApiLoader; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var nanoevents__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nanoevents */ "./node_modules/nanoevents/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var cachedStates = new Map();
+var cachedElements = new Map();
+var useScript = function useScript(src) {
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2__["useState"]('loading'),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      state = _React$useState2[0],
+      setState = _React$useState2[1];
+
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
+    var mounted = true;
+
+    var handleLoad = function handleLoad() {
+      cachedStates.set(src, 'done');
+
+      if (mounted) {
+        setState('done');
+      }
+    };
+
+    var handleError = function handleError() {
+      cachedStates.set(src, 'failed');
+
+      if (mounted) {
+        setState('failed');
+      }
+    };
+
+    var cachedState = cachedStates.get(src);
+
+    if (cachedState == null) {
+      var newElement = document.createElement('script');
+      newElement.async = true;
+      newElement.defer = true; // $FlowFixMe
+
+      newElement.importance = 'low';
+      newElement.src = src;
+      newElement.addEventListener('load', handleLoad);
+      newElement.addEventListener('error', handleError);
+      cachedStates.set(src, 'loading');
+      cachedElements.set(src, newElement); // inject to start loading
+
+      if (document.body) {
+        document.body.appendChild(newElement);
+      }
+    }
+
+    if (cachedState === 'loading') {
+      var element = cachedElements.get(src);
+
+      if (element) {
+        element.addEventListener('load', handleLoad);
+        element.addEventListener('error', handleError);
+        return function () {
+          element.removeEventListener('load', handleLoad);
+          element.removeEventListener('error', handleError);
+        };
+      }
+    }
+
+    if (cachedState === 'done') {
+      setState('done');
+    }
+
+    if (cachedState === 'failed') {
+      setState('failed');
+    }
+
+    return function () {
+      mounted = false;
+    };
+  }, [src]);
+  return state;
+};
+var map_ = {
+  emitter: Object(nanoevents__WEBPACK_IMPORTED_MODULE_1__["createNanoEvents"])(),
+  api: null,
+  error: null
+};
+
+if (true) {
+  var head = document.getElementsByTagName('head')[0];
+  var insertBefore = head.insertBefore; // Prevent google map load roboto font
+  // $FlowFixMe
+
+  head.insertBefore = function (newElement, referenceElement) {
+    if (newElement.href && newElement.href.indexOf('//fonts.googleapis.com/css?family=Roboto') > -1) {
+      return;
+    }
+
+    insertBefore.call(head, newElement, referenceElement);
+  };
+
+  window.gm_authFailure = function () {
+    map_.error = new Error('Gmap encountered auth error. See console for more details.');
+    map_.api = null;
+    map_.emitter.emit('change');
+  };
+
+  window.rgm_mapLoaded = function () {
+    if (map_.error == null) {
+      map_.api = window.google.maps;
+    }
+
+    map_.emitter.emit('change');
+  };
+}
+
+var alertGuard_ = true;
+var useGoogleApiLoader = function useGoogleApiLoader() {
+  if ("AIzaSyCKtZKea2BE93LwKPFvhvpcQZBAMqm2Y7Q" == null) {
+    throw new Error('You must have GOOGLE_API_KEY environment variable defined');
+  }
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_2__["useState"](map_.api),
+      _React$useState4 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState3, 2),
+      api = _React$useState4[0],
+      setApi = _React$useState4[1];
+
+  var key = "AIzaSyCKtZKea2BE93LwKPFvhvpcQZBAMqm2Y7Q";
+
+  if (key == null) {
+    throw new Error('process.env.GOOGLE_API_KEY is not provided');
+  }
+
+  var url = "https://maps.googleapis.com/maps/api/js?key=".concat(key, "&libraries=places&callback=rgm_mapLoaded");
+  var state = useScript(url);
+  react__WEBPACK_IMPORTED_MODULE_2__["useEffect"](function () {
+    if (api == null && map_.api != null) {
+      setApi(map_.api);
+    }
+
+    if (state === 'failed') {
+      if (true) {
+        if (alertGuard_) {
+          alert('unable to load script');
+          alertGuard_ = false;
+        }
+      }
+    }
+
+    return map_.emitter.on('change', function () {
+      setApi(map_.api);
+
+      if ( true && map_.error != null) {
+        // In real app its on you how to process this error
+        // usually it means that no quota left or your devops is idiot or any other issue
+        // report this somehow if needed.
+        if (alertGuard_) {
+          alert(map_.error.message);
+          alertGuard_ = false;
+        }
+      }
+    });
+  }, [api, state]);
+  return api;
+};
+
+/***/ }),
+
 /***/ "./dev-src/icons.js":
 /*!**************************!*\
   !*** ./dev-src/icons.js ***!
@@ -596,6 +773,44 @@ var ratio = function ratio(r) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayLikeToArray; });
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithHoles; });
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
@@ -626,6 +841,61 @@ function _extends() {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArrayLimit; });
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":
 /*!*********************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js ***!
@@ -649,6 +919,53 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   }
 
   return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _slicedToArray; });
+/* harmony import */ var _arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableRest__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js");
+
+
+
+
+function _slicedToArray(arr, i) {
+  return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_3__["default"])();
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _unsupportedIterableToArray; });
+/* harmony import */ var _arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
 }
 
 /***/ }),
@@ -2875,6 +3192,36 @@ module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 /***/ }),
 
+/***/ "./node_modules/nanoevents/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/nanoevents/index.js ***!
+  \******************************************/
+/*! exports provided: createNanoEvents */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNanoEvents", function() { return createNanoEvents; });
+let createNanoEvents = () => ({
+  events: { },
+  emit (event, ...args) {
+    for (let i of this.events[event] || []) {
+      i(...args)
+    }
+  },
+  on (event, cb) {
+    (this.events[event] = this.events[event] || []).push(cb)
+    return () => (
+      this.events[event] = this.events[event].filter(i => i !== cb)
+    )
+  }
+})
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/native-url/dist/index.js":
 /*!***********************************************!*\
   !*** ./node_modules/native-url/dist/index.js ***!
@@ -2911,23 +3258,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true!./":
-/*!*******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true ***!
-  \*******************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/_app",
+      "/performance",
       function () {
-        var mod = __webpack_require__(/*! private-next-pages/_app.js */ "./pages/_app.js");
+        var mod = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
         if (true) {
-          module.hot.accept(/*! private-next-pages/_app.js */ "./pages/_app.js", function () {
-            if (!next.router.components["/_app"]) return;
-            var updatedPage = __webpack_require__(/*! private-next-pages/_app.js */ "./pages/_app.js");
-            next.router.update("/_app", updatedPage);
+          module.hot.accept(/*! ./pages/performance.js */ "./pages/performance.js", function () {
+            if (!next.router.components["/performance"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/performance.js */ "./pages/performance.js");
+            next.router.update("/performance", updatedPage);
           });
         }
         return mod;
@@ -9742,6 +10089,17 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
+/***/ "./node_modules/react-dom/index.js":
+/*!***********************************************************************************************!*\
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_2adc2403d89adc16ead0 ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_2adc2403d89adc16ead0 */ "dll-reference dll_2adc2403d89adc16ead0"))("./node_modules/react-dom/index.js");
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -11302,136 +11660,502 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/_app.js":
-/*!***********************!*\
-  !*** ./pages/_app.js ***!
-  \***********************/
-/*! exports provided: default */
+/***/ "./pages/performance.js":
+/*!******************************!*\
+  !*** ./pages/performance.js ***!
+  \******************************/
+/*! exports provided: __N_SSG, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-system */ "./node_modules/react-system/dist/system.esm.js");
-/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-var _this = undefined,
-    _jsxFileName = "/Users/ice/ext/npm/rgm/pages/_app.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
-
-
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Performance; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rgm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rgm */ "./src/rgm.js");
+/* harmony import */ var react_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-system */ "./node_modules/react-system/dist/system.esm.js");
+/* harmony import */ var _dev_src_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dev-src/hooks */ "./dev-src/hooks.js");
+/* harmony import */ var _dev_src_controls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dev-src/controls */ "./dev-src/controls.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 
 
-var App = function App(_ref) {
-  var _pageProps$pageDocs$f, _pageProps$pageDocs, _pageProps$pageDocs2, _pageProps$pageDocs3;
+var _jsxFileName = "/Users/ice/ext/npm/rgm/pages/performance.js",
+    _this2 = undefined;
 
-  var Component = _ref.Component,
-      pageProps = _ref.pageProps,
-      router = _ref.router;
-  var pathname = router.pathname.replace(router.basePath, '');
-  var doc = (_pageProps$pageDocs$f = (_pageProps$pageDocs = pageProps.pageDocs) === null || _pageProps$pageDocs === void 0 ? void 0 : _pageProps$pageDocs.find(function (pd) {
-    return pathname === pd.pathname;
-  })) !== null && _pageProps$pageDocs$f !== void 0 ? _pageProps$pageDocs$f : null;
-  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_2__["Layout"], {
-    nav: Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-      as: "h3",
-      mb: "0.75rem",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28,
-        columnNumber: 11
-      }
-    }, "Examples"), (_pageProps$pageDocs2 = pageProps.pageDocs) === null || _pageProps$pageDocs2 === void 0 ? void 0 : _pageProps$pageDocs2.filter(function (d) {
-      return d.order < 100;
-    }).map(function (d) {
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_2__["MenuLink"], {
-        key: d.pathname,
-        href: d.pathname,
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34,
-          columnNumber: 15
-        }
-      }, d.title);
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-      as: "h3",
-      mb: "0.75rem",
-      mt: "2rem",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38,
-        columnNumber: 11
-      }
-    }, "Tests"), (_pageProps$pageDocs3 = pageProps.pageDocs) === null || _pageProps$pageDocs3 === void 0 ? void 0 : _pageProps$pageDocs3.filter(function (d) {
-      return d.order >= 100;
-    }).map(function (d) {
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_2__["MenuLink"], {
-        key: d.pathname,
-        href: d.pathname,
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44,
-          columnNumber: 15
-        }
-      }, d.title);
-    })),
-    __self: _this,
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+/**
+ * <!-- {"order": 8 } -->
+ *
+ * # N markers
+ *
+ * Example of drawing N React markers.
+ *
+ */
+
+
+
+
+ // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
+
+
+var MAP_OPTIONS = {
+  zoom: 9,
+  center: {
+    lat: 59.936,
+    lng: 30.314
+  },
+  gestureHandling: 'greedy',
+  clickableIcons: false
+};
+
+var genRandomMarkers = function genRandomMarkers(n) {
+  return Array.from(Array(n), function () {
+    var r = Math.random() * 2 + 0.05;
+    var angle = Math.random() * 2 * Math.PI;
+    return {
+      lat: MAP_OPTIONS.center.lat + r * Math.cos(angle),
+      lng: MAP_OPTIONS.center.lng + r * Math.sin(angle)
+    };
+  });
+};
+
+var __N_SSG = true;
+function Performance() {
+  var _this = this;
+
+  var api = Object(_dev_src_hooks__WEBPACK_IMPORTED_MODULE_4__["useGoogleApiLoader"])();
+  var INITIAL_MARKERS_COUNT = 200;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](function () {
+    return genRandomMarkers(INITIAL_MARKERS_COUNT);
+  }),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      markers = _React$useState2[0],
+      setMarkers = _React$useState2[1];
+
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("div", {
+    __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 49,
       columnNumber: 5
     }
-  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_2__["Stack"], {
-    __self: _this,
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Flex"], {
+    p: 3,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 7
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_system__WEBPACK_IMPORTED_MODULE_3__["Box"], {
+    pr: 2,
+    __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51,
-      columnNumber: 7
+      columnNumber: 9
     }
-  }, doc && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_2__["Markdown"], {
-    __self: _this,
+  }, "Count:"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Select"], {
+    options: ['100', '200', '300', '500', '1000', '2000'],
+    value: "".concat(markers.length),
+    onChange: function onChange(v) {
+      setMarkers(genRandomMarkers(Number.parseFloat(v)));
+    },
+    __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52,
-      columnNumber: 17
-    }
-  }, doc.markdown), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(Component, {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
       columnNumber: 9
     }
-  }), doc && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_2__["Code"], {
-    __self: _this,
+  })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_dev_src_controls__WEBPACK_IMPORTED_MODULE_5__["Ratio"], {
+    value: 3 / 4,
+    __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 17
+      lineNumber: 60,
+      columnNumber: 7
     }
-  }, doc.source)));
+  }, api && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+    api: api,
+    options: MAP_OPTIONS,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 11
+    }
+  }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Overlay"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 13
+    }
+  }, markers.map(function (m, index) {
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(rgm__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
+      key: index,
+      lat: m.lat,
+      lng: m.lng,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65,
+        columnNumber: 17
+      }
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(CircleMarker, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66,
+        columnNumber: 19
+      }
+    }));
+  })))));
+}
+
+var _ref = false ? undefined : {
+  name: "1bqw4t9-CircleMarker",
+  styles: "place-self:center center;width:10px;height:10px;border-radius:100%;background-color:white;border:2px solid red;;label:CircleMarker;",
+  map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBOEVZIiwiZmlsZSI6Ii9Vc2Vycy9pY2UvZXh0L25wbS9yZ20vcGFnZXMvcGVyZm9ybWFuY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBAZmxvd1xuXG4vKipcbiAqIDwhLS0ge1wib3JkZXJcIjogOCB9IC0tPlxuICpcbiAqICMgTiBtYXJrZXJzXG4gKlxuICogRXhhbXBsZSBvZiBkcmF3aW5nIE4gUmVhY3QgbWFya2Vycy5cbiAqXG4gKi9cblxuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgTWFwLCBPdmVybGF5LCBNYXJrZXIgfSBmcm9tICdyZ20nO1xuaW1wb3J0IHsgY3NzIH0gZnJvbSAnQGVtb3Rpb24vY29yZSc7XG5pbXBvcnQgeyBGbGV4LCBCb3ggfSBmcm9tICdyZWFjdC1zeXN0ZW0nO1xuaW1wb3J0IHsgdXNlR29vZ2xlQXBpTG9hZGVyIH0gZnJvbSAnLi4vZGV2LXNyYy9ob29rcyc7XG5pbXBvcnQgeyBSYXRpbywgU2VsZWN0IH0gZnJvbSAnLi4vZGV2LXNyYy9jb250cm9scyc7XG5cbi8vIGh0dHBzOi8vZGV2ZWxvcGVycy5nb29nbGUuY29tL21hcHMvZG9jdW1lbnRhdGlvbi9qYXZhc2NyaXB0L3JlZmVyZW5jZS9tYXAjTWFwT3B0aW9uc1xuY29uc3QgTUFQX09QVElPTlMgPSB7XG4gIHpvb206IDksXG4gIGNlbnRlcjoge1xuICAgIGxhdDogNTkuOTM2LFxuICAgIGxuZzogMzAuMzE0LFxuICB9LFxuICBnZXN0dXJlSGFuZGxpbmc6ICdncmVlZHknLFxuICBjbGlja2FibGVJY29uczogZmFsc2UsXG59O1xuXG5jb25zdCBnZW5SYW5kb21NYXJrZXJzID0gbiA9PlxuICBBcnJheS5mcm9tKEFycmF5KG4pLCAoKSA9PiB7XG4gICAgY29uc3QgciA9IE1hdGgucmFuZG9tKCkgKiAyICsgMC4wNTtcbiAgICBjb25zdCBhbmdsZSA9IE1hdGgucmFuZG9tKCkgKiAyICogTWF0aC5QSTtcblxuICAgIHJldHVybiB7XG4gICAgICBsYXQ6IE1BUF9PUFRJT05TLmNlbnRlci5sYXQgKyByICogTWF0aC5jb3MoYW5nbGUpLFxuICAgICAgbG5nOiBNQVBfT1BUSU9OUy5jZW50ZXIubG5nICsgciAqIE1hdGguc2luKGFuZ2xlKSxcbiAgICB9O1xuICB9KTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUGVyZm9ybWFuY2UoKSB7XG4gIGNvbnN0IGFwaSA9IHVzZUdvb2dsZUFwaUxvYWRlcigpO1xuICBjb25zdCBJTklUSUFMX01BUktFUlNfQ09VTlQgPSAyMDA7XG4gIGNvbnN0IFttYXJrZXJzLCBzZXRNYXJrZXJzXSA9IFJlYWN0LnVzZVN0YXRlKCgpID0+XG4gICAgZ2VuUmFuZG9tTWFya2VycyhJTklUSUFMX01BUktFUlNfQ09VTlQpLFxuICApO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxGbGV4IHA9ezN9PlxuICAgICAgICA8Qm94IHByPXsyfT5Db3VudDo8L0JveD5cbiAgICAgICAgPFNlbGVjdFxuICAgICAgICAgIG9wdGlvbnM9e1snMTAwJywgJzIwMCcsICczMDAnLCAnNTAwJywgJzEwMDAnLCAnMjAwMCddfVxuICAgICAgICAgIHZhbHVlPXtgJHttYXJrZXJzLmxlbmd0aH1gfVxuICAgICAgICAgIG9uQ2hhbmdlPXt2ID0+IHtcbiAgICAgICAgICAgIHNldE1hcmtlcnMoZ2VuUmFuZG9tTWFya2VycyhOdW1iZXIucGFyc2VGbG9hdCh2KSkpO1xuICAgICAgICAgIH19XG4gICAgICAgIC8+XG4gICAgICA8L0ZsZXg+XG4gICAgICA8UmF0aW8gdmFsdWU9ezMgLyA0fT5cbiAgICAgICAge2FwaSAmJiAoXG4gICAgICAgICAgPE1hcCBhcGk9e2FwaX0gb3B0aW9ucz17TUFQX09QVElPTlN9PlxuICAgICAgICAgICAgPE92ZXJsYXk+XG4gICAgICAgICAgICAgIHttYXJrZXJzLm1hcCgobSwgaW5kZXgpID0+IChcbiAgICAgICAgICAgICAgICA8TWFya2VyIGtleT17aW5kZXh9IGxhdD17bS5sYXR9IGxuZz17bS5sbmd9PlxuICAgICAgICAgICAgICAgICAgPENpcmNsZU1hcmtlciAvPlxuICAgICAgICAgICAgICAgIDwvTWFya2VyPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvT3ZlcmxheT5cbiAgICAgICAgICA8L01hcD5cbiAgICAgICAgKX1cbiAgICAgIDwvUmF0aW8+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cbmNvbnN0IENpcmNsZU1hcmtlciA9ICgpID0+IChcbiAgPGRpdlxuICAgIGNzcz17Y3NzYFxuICAgICAgcGxhY2Utc2VsZjogY2VudGVyIGNlbnRlcjtcbiAgICAgIHdpZHRoOiAxMHB4O1xuICAgICAgaGVpZ2h0OiAxMHB4O1xuICAgICAgYm9yZGVyLXJhZGl1czogMTAwJTtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICAgICAgYm9yZGVyOiAycHggc29saWQgcmVkO1xuICAgIGB9XG4gIC8+XG4pO1xuXG5leHBvcnQgY29uc3QgZ2V0U3RhdGljUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIC8vIFRoZSBiZXN0IGlzIHRvIHBsYWNlIHRoaXMgbWV0aG9kIGF0IF9hcHAuanMgYnV0IHRoaXMgZG9lc24ndCB3b3JrIG5vd1xuICBjb25zdCBkb2MgPSBhd2FpdCBpbXBvcnQoJy4uL2Rldi1zcmMvZG9jJyk7XG4gIHJldHVybiBkb2MuZ2V0U3RhdGljUHJvcHMoKTtcbn07XG4iXX0= */",
+  toString: _EMOTION_STRINGIFIED_CSS_ERROR__
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+var CircleMarker = function CircleMarker() {
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])("div", {
+    css: _ref,
+    __self: _this2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 3
+    }
+  });
+};
 
 /***/ }),
 
-/***/ 0:
-/*!*****************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true ./node_modules/next/dist/client/router.js ***!
-  \*****************************************************************************************************************************************************************/
+/***/ "./src/google-map.js":
+/*!***************************!*\
+  !*** ./src/google-map.js ***!
+  \***************************/
+/*! exports provided: Map, useMap */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return Map; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMap", function() { return useMap; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+
+
+var _this = undefined,
+    _jsxFileName = "/Users/ice/ext/npm/rgm/src/google-map.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
+
+
+// $FlowFixMe
+var MapContext = react__WEBPACK_IMPORTED_MODULE_1__["createContext"](null);
+
+var warnOnce = function () {
+  var map = {};
+  return function (str) {
+    if (map[str] == null) {
+      map[str] = true;
+      console.warn(str);
+    }
+  };
+}();
+
+var STYLE = {
+  width: '100%',
+  height: '100%'
+};
+var Map = react__WEBPACK_IMPORTED_MODULE_1__["forwardRef"](function (props, ref) {
+  var element = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](null);
+  var guardRef = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](false);
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](null),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      map = _React$useState2[0],
+      setMap = _React$useState2[1];
+
+  if (true) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    var apiRef = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](props.api); // eslint-disable-next-line react-hooks/rules-of-hooks
+
+    var optionsRef = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](props.options);
+
+    if (apiRef.current !== props.api) {
+      warnOnce("\n        api prop has changed.\n        If it's desired behaviour please remount your component\n        using key={hash(api)} on your component.\n      ");
+    }
+
+    if (typeof props.options !== 'function' && optionsRef.current !== props.options) {
+      warnOnce("\n        options prop has changed.\n        If it's desired behaviour please use imperative api, i.e.\n\n        mapRef.current.apply(map =>  map.setOptions({...}));\n      ");
+    }
+  }
+
+  react__WEBPACK_IMPORTED_MODULE_1__["useImperativeHandle"](ref, function () {
+    return map;
+  }, [map]);
+  react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
+    if (element.current && !guardRef.current) {
+      var lmap = new props.api.Map(element.current, typeof props.options === 'function' ? props.options(element.current) : props.options);
+      guardRef.current = true;
+      setMap(lmap);
+      return function () {};
+    }
+  }, // eslint is wrong here
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [props.api, props.options]);
+  var ctxValue = react__WEBPACK_IMPORTED_MODULE_1__["useMemo"](function () {
+    return map ? {
+      map: map,
+      api: props.api
+    } : null;
+  }, [map, props.api]);
+  return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])("div", {
+    style: STYLE,
+    ref: element,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 7
+    }
+  }), ctxValue && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(MapContext.Provider, {
+    value: ctxValue,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 9
+    }
+  }, props.children));
+});
+var useMap = function useMap() {
+  return react__WEBPACK_IMPORTED_MODULE_1__["useContext"](MapContext);
+};
+
+/***/ }),
+
+/***/ "./src/react-marker.js":
+/*!*****************************!*\
+  !*** ./src/react-marker.js ***!
+  \*****************************/
+/*! exports provided: Marker, Overlay */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return Marker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Overlay", function() { return Overlay; });
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _google_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./google-map */ "./src/google-map.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+
+
+var _this = undefined,
+    _jsxFileName = "/Users/ice/ext/npm/rgm/src/react-marker.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
+
+
+
+
+var Marker = function Marker(props) {
+  return props.children;
+};
+var Overlay = function Overlay(props) {
+  var _useMap = Object(_google_map__WEBPACK_IMPORTED_MODULE_3__["useMap"])(),
+      api = _useMap.api,
+      map = _useMap.map; // because I have 2 ;-), doesnt matter here, will be set before 1st usage
+
+
+  var pixelRatioRef = react__WEBPACK_IMPORTED_MODULE_1__["useRef"](2); // $FlowFixMe no block level $FlowFixMe so splitted on 2 lines
+
+  var anyChildren = react__WEBPACK_IMPORTED_MODULE_1__["Children"].toArray(props.children || []);
+  var children = anyChildren;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](null),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+      overlay = _React$useState2[0],
+      setOverlay = _React$useState2[1];
+
+  var childrenLatLngRefs = react__WEBPACK_IMPORTED_MODULE_1__["useRef"]([]);
+  var childrenDivRefs = react__WEBPACK_IMPORTED_MODULE_1__["useRef"]([]);
+
+  var subPixelRound = function subPixelRound(v) {
+    return Math.round(v * pixelRatioRef.current) / pixelRatioRef.current;
+  }; // We can't use useEffect here because it causes glitches
+  // when in draw we update commited markers with previous markers coordinates
+  // it is visible if make a lot of zoomin zoomout, as map draw is fully independent of react
+
+
+  react__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"](function () {
+    childrenLatLngRefs.current = children.map(function (ch) {
+      return {
+        lat: ch.props.lat,
+        lng: ch.props.lng
+      };
+    });
+  }); // Create overlay https://developers.google.com/maps/documentation/javascript/examples/overlay-simple
+
+  react__WEBPACK_IMPORTED_MODULE_1__["useEffect"](function () {
+    if (api) {
+      pixelRatioRef.current = window.devicePixelRatio;
+      var overlayView = new api.OverlayView();
+      var elt = null;
+
+      overlayView.onAdd = function () {
+        elt = document.createElement('div');
+        var panes = overlayView.getPanes(); // on all other panes there is issues with events like hover etc
+
+        panes.floatPane.appendChild(elt);
+        setOverlay({
+          element: elt,
+          view: overlayView
+        });
+      };
+
+      overlayView.onRemove = function () {
+        if (elt != null) {
+          var _elt = elt,
+              parentNode = _elt.parentNode;
+
+          if (parentNode != null) {
+            // same as panes.overlayMouseTarget.removeChild
+            parentNode.removeChild(elt);
+          }
+
+          setOverlay(null);
+        }
+      };
+
+      overlayView.draw = function () {
+        var projection = overlayView.getProjection();
+        var latLngs = childrenLatLngRefs.current;
+        latLngs.forEach(function (_ref, index) {
+          var lat = _ref.lat,
+              lng = _ref.lng;
+          var childElt = childrenDivRefs.current[index].current;
+
+          if (childElt != null) {
+            var pos = projection.fromLatLngToDivPixel(new api.LatLng(lat, lng)); // Move react markers directly changing dom element position
+            // Element is created by us, not by library user, so no issues
+
+            childElt.style.left = subPixelRound(pos.x) + 'px';
+            childElt.style.top = subPixelRound(pos.y) + 'px';
+          }
+        });
+      };
+
+      overlayView.setMap(map);
+      return function () {
+        overlayView.setMap(null);
+      };
+    }
+  }, [api, map]);
+
+  if (overlay != null && children != null && api != null) {
+    var projection = overlay.view.getProjection();
+    return react_dom__WEBPACK_IMPORTED_MODULE_2__["createPortal"](children.map(function (ch, index) {
+      var pos = projection.fromLatLngToDivPixel(new api.LatLng(ch.props.lat, ch.props.lng)); // Its not a side effect, its just a cache for refs
+      // instead of creating it initially like Array(MAX_POSSIBLE_MARKERS), we just extend it here
+
+      if (childrenDivRefs.current[index] == null) {
+        childrenDivRefs.current[index] = {
+          current: null
+        };
+      }
+
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
+        key: ch.key,
+        ref: childrenDivRefs.current[index],
+        style: {
+          position: 'absolute',
+          left: subPixelRound(pos.x),
+          top: subPixelRound(pos.y),
+          display: 'grid',
+          gridTemplate: '0/0'
+        },
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128,
+          columnNumber: 11
+        }
+      }, ch, ( true) && props.debug === true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
+        style: {
+          position: 'absolute',
+          borderRadius: '100%',
+          width: 4,
+          height: 4,
+          left: -2,
+          top: -2,
+          opacity: 0.8,
+          boxShadow: '0 0 0 2px blue, 0 0 0 4px white, 0 0 0 6px blue'
+        },
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 143,
+          columnNumber: 17
+        }
+      }));
+    }), overlay.element);
+  }
+
+  return null;
+};
+
+/***/ }),
+
+/***/ "./src/rgm.js":
+/*!********************!*\
+  !*** ./src/rgm.js ***!
+  \********************/
+/*! exports provided: Map, useMap, Marker, Overlay */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _google_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./google-map */ "./src/google-map.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return _google_map__WEBPACK_IMPORTED_MODULE_0__["Map"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useMap", function() { return _google_map__WEBPACK_IMPORTED_MODULE_0__["useMap"]; });
+
+/* harmony import */ var _react_marker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react-marker */ "./src/react-marker.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Marker", function() { return _react_marker__WEBPACK_IMPORTED_MODULE_1__["Marker"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Overlay", function() { return _react_marker__WEBPACK_IMPORTED_MODULE_1__["Overlay"]; });
+
+
+
+
+/***/ }),
+
+/***/ 7:
+/*!***********************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true ***!
+  \***********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true!./");
-module.exports = __webpack_require__(/*! /Users/ice/ext/npm/rgm/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fperformance&absolutePagePath=%2FUsers%2Fice%2Fext%2Fnpm%2Frgm%2Fpages%2Fperformance.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -11447,5 +12171,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=_app.js.map
+},[[7,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=performance.js.map
