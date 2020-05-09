@@ -53,27 +53,25 @@ const GeoJson = ({ children }) => {
   const { map } = useMap();
 
   React.useEffect(() => {
-    if (map) {
-      let style = BG_STYLE;
-      // To prevent style blink we override style inside addListener
-      const addFeatureListener = map.data.addListener('addfeature', event => {
-        map.data.overrideStyle(event.feature, style);
-      });
+    let style = BG_STYLE;
+    // To prevent style blink we override style inside addListener
+    const addFeatureListener = map.data.addListener('addfeature', event => {
+      map.data.overrideStyle(event.feature, style);
+    });
 
-      const features = [];
-      // Add background white shaped border for better visibility
-      features.push(...map.data.addGeoJson(children));
+    const features = [];
+    // Add background white shaped border for better visibility
+    features.push(...map.data.addGeoJson(children));
 
-      // Add foreground  thinner border with primary color
-      style = FG_STYLE;
-      features.push(...map.data.addGeoJson(children));
+    // Add foreground  thinner border with primary color
+    style = FG_STYLE;
+    features.push(...map.data.addGeoJson(children));
 
-      addFeatureListener.remove();
+    addFeatureListener.remove();
 
-      return () => {
-        features.forEach(feature => map.data.remove(feature));
-      };
-    }
+    return () => {
+      features.forEach(feature => map.data.remove(feature));
+    };
   }, [map, children]);
 
   return null;

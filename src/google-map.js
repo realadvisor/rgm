@@ -17,7 +17,7 @@ type MapProps = {|
 
 type MapContextType = {|
   api: GoogleMapsApi,
-  map: GoogleMap | null,
+  map: GoogleMap,
 |};
 
 // $FlowFixMe
@@ -95,16 +95,20 @@ export const Map = React.forwardRef<MapProps, GoogleMap>((props, ref) => {
     [props.api, props.options],
   );
 
-  const ctxValue = React.useMemo(() => ({ map, api: props.api }), [
+  const ctxValue = React.useMemo(() => (map ? { map, api: props.api } : null), [
     map,
     props.api,
   ]);
 
   return (
-    <MapContext.Provider value={ctxValue}>
+    <>
       <div style={STYLE} ref={element} />
-      {map && props.children}
-    </MapContext.Provider>
+      {ctxValue && (
+        <MapContext.Provider value={ctxValue}>
+          {props.children}
+        </MapContext.Provider>
+      )}
+    </>
   );
 });
 

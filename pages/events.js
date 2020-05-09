@@ -53,11 +53,10 @@ export default function Events() {
 
   return (
     <div>
+      <Info>{bounds?.getCenter().toString() ?? ' '}</Info>
       <Ratio value={3 / 4}>
         {api && <Map ref={setMap} api={api} options={MAP_OPTIONS} />}
       </Ratio>
-
-      <Info>{bounds?.getCenter().toString() ?? ' '}</Info>
     </div>
   );
 }

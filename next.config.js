@@ -25,7 +25,7 @@ module.exports = {
   webpack: (
     config /*:: : {| resolve: {| alias: { [string]: string } |} |} */,
   ) => {
-    config.resolve.alias['rgm'] = path.resolve('./src/index.js');
+    config.resolve.alias['rgm'] = path.resolve('./src/rgm.js');
     return config;
   },
 };

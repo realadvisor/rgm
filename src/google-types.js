@@ -486,6 +486,7 @@ declare class OverlayView {
 }
 
 export type GoogleMapsApi = {
+  version: string,
   // coordinates
   LatLng: Class<LatLng>,
   LatLngBounds: Class<LatLngBounds>,
