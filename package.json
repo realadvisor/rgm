@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "dist/rgm.cjs.js",
   "module": "dist/rgm.esm.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/rgm.d.ts",
   "files": [
     "dist",
     "src"
@@ -17,8 +17,8 @@
     "start:doc": "echo 'open at http://localhost:3000/rgm' && serve ./ -p 3000",
     "deploy:doc": "yarn build:doc && touch ./rgm/.nojekyll && gh-pages -d rgm -t true",
     "build:code": "rollup -c",
-    "build:flow": "echo \"// @flow\n\nexport * from '../src'\" > dist/rgm.cjs.js.flow",
-    "build": "rimraf dist && npm run build:code && npm run build:flow && cp ./src/index.d.ts ./dist/index.d.ts"
+    "build:flow": "echo \"// @flow\n\nexport * from '../src/rgm'\" > dist/rgm.cjs.js.flow",
+    "build": "rimraf dist && npm run build:code && npm run build:flow && cp ./src/*.d.ts ./dist"
   },
   "dependencies": {},
   "peerDependencies": {

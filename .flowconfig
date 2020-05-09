@@ -11,7 +11,7 @@
 all=error
 
 [options]
-module.name_mapper='^rgm$' -> '<PROJECT_ROOT>/src'
+module.name_mapper='^rgm$' -> '<PROJECT_ROOT>/src/rgm'
 esproposal.optional_chaining=enable
 include_warnings=true
 babel_loose_array_spread=true

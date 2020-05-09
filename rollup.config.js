@@ -6,7 +6,7 @@ import gzipSize from 'gzip-size';
 import * as brotliSize from 'brotli-size';
 import pkg from './package.json';
 
-const input = './src/index.js';
+const input = './src/rgm.js';
 const name = 'rgm';
 const globals = { react: 'React', 'react-dom': 'ReactDOM' };
 const external = Object.keys(globals);

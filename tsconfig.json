@@ -9,7 +9,7 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "rgm": ["./src"]
+      "rgm": ["./src/rgm"]
     },
     "esModuleInterop": true,
     "resolveJsonModule": true,
