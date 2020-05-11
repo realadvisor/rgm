@@ -60,7 +60,11 @@ export const Map = React.forwardRef<MapProps, GoogleMap>(
       `);
       }
 
-      if (typeof options !== 'function' && optionsRef.current !== options) {
+      // JSON.stringify to work with React Refresh well
+      if (
+        typeof options !== 'function' &&
+        JSON.stringify(optionsRef.current) !== JSON.stringify(options)
+      ) {
         warnOnce(`
         options prop has changed.
         If it's desired behaviour please use imperative api, i.e.
@@ -76,7 +80,13 @@ export const Map = React.forwardRef<MapProps, GoogleMap>(
       if (!guardRef.current && element.current) {
         const map = new api.Map(
           element.current,
-          typeof options === 'function' ? options(element.current) : options,
+          // We clone options object because Google adding new fields into it
+          // this is not an expected behaviour in modern world ;-)
+          {
+            ...(typeof options === 'function'
+              ? options(element.current)
+              : options),
+          },
         );
 
         guardRef.current = true;
