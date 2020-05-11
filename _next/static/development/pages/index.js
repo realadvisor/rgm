@@ -685,7 +685,7 @@ var getMapApiUrl = function getMapApiUrl() {
     throw new Error('process.env.GOOGLE_API_KEY is not provided');
   }
 
-  var url = "https://maps.googleapis.com/maps/api/js?key=".concat(key, "&libraries=places&callback=rgm_mapLoaded");
+  var url = "https://maps.googleapis.com/maps/api/js?key=".concat(key, "&callback=rgm_mapLoaded");
   return url;
 };
 var useGoogleApiLoader = function useGoogleApiLoader() {
