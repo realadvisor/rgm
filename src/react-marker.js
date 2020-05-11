@@ -32,7 +32,7 @@ export const Overlay = (props: OverlayProps) => {
 
   const [overlay, setOverlay] = React.useState(null);
 
-  const childrenLatLngRefs = React.useRef<
+  const childrenRef = React.useRef<
     $ReadOnlyArray<React.Element<typeof Marker>>,
   >([]);
 
@@ -44,7 +44,7 @@ export const Overlay = (props: OverlayProps) => {
   // We can't use useEffect here because it causes glitches
   // We need ref to access children in draw
   React.useLayoutEffect(() => {
-    childrenLatLngRefs.current = children;
+    childrenRef.current = children;
   });
 
   // Create overlay https://developers.google.com/maps/documentation/javascript/examples/overlay-simple
@@ -81,7 +81,7 @@ export const Overlay = (props: OverlayProps) => {
       overlayView.draw = () => {
         var projection = overlayView.getProjection();
 
-        const latLngs = childrenLatLngRefs.current;
+        const latLngs = childrenRef.current;
 
         latLngs.forEach(({ props: { lat, lng } }, index) => {
           const { current: childElt } = childrenDivRefs.current[index];
