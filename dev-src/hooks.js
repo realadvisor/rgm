@@ -35,8 +35,7 @@ export const useScript = (src: string): State => {
       const newElement = document.createElement('script');
       newElement.async = true;
       newElement.defer = true;
-      // $FlowFixMe
-      newElement.importance = 'low';
+      newElement.setAttribute('importance', 'low');
       newElement.src = src;
       newElement.addEventListener('load', handleLoad);
       newElement.addEventListener('error', handleError);
@@ -117,19 +116,18 @@ if (typeof window !== 'undefined') {
 
 let alertGuard_ = true;
 
-export const useGoogleApiLoader = (): null | GoogleMapsApi => {
-  if (process.env.GOOGLE_API_KEY == null) {
-    throw new Error(
-      'You must have GOOGLE_API_KEY environment variable defined',
-    );
-  }
-  const [api, setApi] = React.useState(map_.api);
-
+export const getMapApiUrl = () => {
   const key = process.env.GOOGLE_API_KEY;
   if (key == null) {
     throw new Error('process.env.GOOGLE_API_KEY is not provided');
   }
-  const url = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places&callback=rgm_mapLoaded`;
+  const url = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=rgm_mapLoaded`;
+  return url;
+};
+
+export const useGoogleApiLoader = (): null | GoogleMapsApi => {
+  const [api, setApi] = React.useState(map_.api);
+  const url = getMapApiUrl();
   const state = useScript(url);
 
   React.useEffect(() => {

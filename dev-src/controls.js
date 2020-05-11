@@ -9,6 +9,7 @@ import Typography from 'typography';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { ratio } from './mixins';
 import { GithubIcon } from './icons';
+import { getMapApiUrl } from './hooks';
 
 export const Select = (props: {|
   value: string,
@@ -353,6 +354,7 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
       }),
     [],
   );
+  const mapPreloadUrl = getMapApiUrl();
 
   const strTypography = typography
     .toString()
@@ -366,6 +368,7 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
         <Link href="/favicon.ico" passHref>
           <link rel="shortcut icon" />
         </Link>
+        <link rel="preload" href={mapPreloadUrl} as="script" />
       </Head>
       <Global
         styles={css`
