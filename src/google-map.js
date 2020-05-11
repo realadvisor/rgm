@@ -33,7 +33,7 @@ const warnOnce = (() => {
   return (str: string) => {
     if (map[str] == null) {
       map[str] = true;
-      console.warn(str);
+      console.warn(str.replace(/^\s+/gm, ''));
     }
   };
 })();
@@ -43,7 +43,7 @@ const STYLE = { width: '100%', height: '100%' };
 export const Map = React.forwardRef<MapProps, GoogleMap>(
   ({ api, options, children }, ref) => {
     const element = React.useRef(null);
-    const guardRef = React.useRef(false);
+    const firstTimeRef = React.useRef(true);
     const [ctx, setCtx] = React.useState<MapContextType | null>(null);
 
     if (process.env.NODE_ENV !== 'production') {
@@ -54,32 +54,48 @@ export const Map = React.forwardRef<MapProps, GoogleMap>(
 
       if (apiRef.current !== api) {
         warnOnce(`
-        api prop has changed.
-        If it's desired behaviour please remount your component
-        using key={hash(api)} on your component.
-      `);
+          "api" prop of <Map> element has changed.
+
+          If it's desired behaviour please remount your component
+          using key={hash(api)} on your component.
+        `);
+        // Reinit map in case user has changed loader in dev
+        firstTimeRef.current = true;
       }
 
-      if (typeof options !== 'function' && optionsRef.current !== options) {
+      // JSON.stringify to work with React Refresh well
+      if (
+        typeof options !== 'function' &&
+        JSON.stringify(optionsRef.current) !== JSON.stringify(options)
+      ) {
         warnOnce(`
-        options prop has changed.
-        If it's desired behaviour please use imperative api, i.e.
+          "options" prop of <Map> element has changed.
+          This change doesn't somehow affect map options at production.
 
-        mapRef.current.apply(map =>  map.setOptions({...}));
-      `);
+          If it's desired behaviour please use imperative api, i.e. map.setOptions({...blabla});
+        `);
+        // Reinit map in case user changed options to find proper option
+        firstTimeRef.current = true;
       }
     }
 
     React.useImperativeHandle(ref, () => (ctx ? ctx.map : null), [ctx]);
 
     React.useEffect(() => {
-      if (!guardRef.current && element.current) {
+      if (firstTimeRef.current && element.current) {
         const map = new api.Map(
           element.current,
-          typeof options === 'function' ? options(element.current) : options,
+          // We clone options object because Google adding new fields into it
+          // this is not an expected behaviour in modern world ;-)
+          {
+            ...(typeof options === 'function'
+              ? options(element.current)
+              : options),
+          },
         );
 
-        guardRef.current = true;
+        firstTimeRef.current = false;
+
         setCtx({ map, api });
 
         return () => {};
