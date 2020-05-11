@@ -59,7 +59,7 @@ export const Map = React.forwardRef<MapProps, GoogleMap>(
           If it's desired behaviour please remount your component
           using key={hash(api)} on your component.
         `);
-        // Reinit map in case use has changed loader in dev
+        // Reinit map in case user has changed loader in dev
         firstTimeRef.current = true;
       }
 
