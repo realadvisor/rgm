@@ -70,9 +70,9 @@ export const Map = React.forwardRef<MapProps, GoogleMap>(
       ) {
         warnOnce(`
           "options" prop of <Map> element has changed.
+          This change doesn't somehow affect map options at production.
 
-          If it's desired behaviour please use imperative api, i.e.
-          mapRef.current.apply(map =>  map.setOptions({...}));
+          If it's desired behaviour please use imperative api, i.e. map.setOptions({...blabla});
         `);
         // Reinit map in case user changed options to find proper option
         firstTimeRef.current = true;
