@@ -1,76 +1,42 @@
 import fs from 'fs';
+import path from 'path';
 import replace from '@rollup/plugin-replace';
-import babel from 'rollup-plugin-babel';
+import { babel } from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import gzipSize from 'gzip-size';
 import * as brotliSize from 'brotli-size';
 import pkg from './package.json';
 
 const input = './src/rgm.js';
-const name = 'rgm';
-const globals = { react: 'React', 'react-dom': 'ReactDOM' };
-const external = Object.keys(globals);
+const external = id =>
+  id.startsWith('.') === false && path.isAbsolute(id) === false;
 
-const babelOptions = modern => ({
-  runtimeHelpers: true,
+const babelOptions = {
   configFile: false,
   babelrc: false,
-  presets: [
-    modern
-      ? '@babel/preset-modules'
-      : [
-          '@babel/env',
-          {
-            loose: true,
-          },
-        ],
-    '@babel/flow',
-    '@babel/react',
-  ],
-  plugins: [
-    [
-      'transform-inline-environment-variables',
-      {
-        include: ['DOCUMENTATION'],
-      },
-    ],
-  ],
-});
+  babelHelpers: 'bundled',
+  presets: ['@babel/preset-modules', '@babel/flow', '@babel/react'],
+};
 
 export default [
   {
     input,
-    output: { file: 'dist/rgm.umd.js', format: 'umd', name, globals },
-    external,
-    plugins: [
-      babel(babelOptions(false)),
-      replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
-    ],
-  },
-
-  {
-    input,
-    output: { file: 'dist/rgm.min.js', format: 'umd', name, globals },
-    external,
-    plugins: [
-      babel(babelOptions(false)),
-      replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
-      terser(),
-    ],
-  },
-
-  {
-    input,
     output: { file: pkg.main, format: 'cjs' },
     external,
-    plugins: [babel(babelOptions(false))],
+    plugins: [
+      babel(babelOptions),
+      replace({ 'process.env.DOCUMENTATION': 'undefined' }),
+    ],
   },
 
   {
     input,
     output: { file: pkg.module, format: 'esm' },
     external,
-    plugins: [babel(babelOptions(true))],
+    plugins: [
+      babel(babelOptions),
+      replace({ 'process.env.DOCUMENTATION': 'undefined' }),
+    ],
   },
 
   // to check esm production size
@@ -79,8 +45,11 @@ export default [
     output: { file: 'dist/rgm.esm.production.js', format: 'esm' },
     external,
     plugins: [
-      babel(babelOptions(true)),
-      replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+      babel(babelOptions),
+      replace({
+        'process.env.DOCUMENTATION': 'undefined',
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      }),
       terser(),
       {
         generateBundle(outputOptions, bundle) {
@@ -89,7 +58,6 @@ export default [
             const parsedSize = chunk.code.length;
             const gzippedSize = gzipSize.sync(chunk.code);
             const brotliedSize = brotliSize.sync(chunk.code);
-
             sizeInfo += `Size of ${name}
             =============================
             min: ${parsedSize} b
