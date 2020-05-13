@@ -18,7 +18,8 @@
     "deploy:doc": "yarn build:doc && touch ./rgm/.nojekyll && gh-pages -d rgm -t true",
     "build:code": "rollup -c",
     "build:flow": "echo \"// @flow\n\nexport * from '../src/rgm'\" > dist/rgm.cjs.js.flow",
-    "build": "rimraf dist && yarn build:code && yarn build:flow && cp ./src/*.d.ts ./dist"
+    "build": "rimraf dist && yarn build:code && yarn build:flow && cp ./src/*.d.ts ./dist",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": ">=16.13",
