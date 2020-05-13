@@ -4,6 +4,10 @@
   "description": "Tiny but very powerful React Google Map",
   "author": "TrySound, istarkov, realadvisor",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/realadvisor/rgm.git"
+  },
   "main": "dist/rgm.cjs.js",
   "module": "dist/rgm.esm.js",
   "typings": "dist/rgm.d.ts",
