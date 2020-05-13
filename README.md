@@ -8,7 +8,7 @@ It allows you to render any React component on the Google Map, and provides easy
 
 ## Example
 
-```javascript
+```jsx
 import { Map, Overlay, Marker } from 'rgm';
 ...
 
