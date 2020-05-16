@@ -19,6 +19,7 @@ import { Ratio } from '../dev-src/controls';
 import { getScreenOffset } from '../dev-src/geo-utils';
 // $FlowFixMe
 import places from '../data/places.json';
+import type { StaticProps } from '../dev-src/doc.js';
 
 const superclusterIndex = new Supercluster({
   log: false,
@@ -67,7 +68,7 @@ const zoomAt = (map, pt, zoom) => {
   map.panBy(x, y);
 };
 
-export default function Clusters() {
+export default function Clusters(): React.Node {
   const api = useGoogleApiLoader();
   const [map, setMap] = React.useState(null);
   const [clusters, setClusters] = React.useState<$ReadOnlyArray<Cluster>>([]);
@@ -190,7 +191,7 @@ const ClusterMarker = ({ count, onClick }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<StaticProps> => {
   // The best is to place this method at _app.js but this doesn't work now
   const doc = await import('../dev-src/doc');
   return doc.getStaticProps();

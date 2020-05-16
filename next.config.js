@@ -11,7 +11,11 @@ GOOGLE_API_KEY={YOUR_API_KEY_HERE} yarn dev
   `);
 }
 
-module.exports = {
+/*::
+type Config = {| resolve: {| alias: { [string]: string } |} |}
+*/
+
+module.exports = ({
   assetPrefix: process.env.DOCUMENTATION === 'true' ? '/rgm' : '',
   experimental: {
     basePath: process.env.DOCUMENTATION === 'true' ? '/rgm' : '',
@@ -22,10 +26,9 @@ module.exports = {
     DOCUMENTATION: process.env.DOCUMENTATION,
   },
 
-  webpack: (
-    config /*:: : {| resolve: {| alias: { [string]: string } |} |} */,
-  ) => {
+  webpack: (config /*: Config */) /*: Config */ => {
     config.resolve.alias['rgm'] = path.resolve('./src/rgm.js');
     return config;
   },
-};
+  // $FlowExpectedError
+} /*: any */);

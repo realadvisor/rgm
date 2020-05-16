@@ -1,6 +1,6 @@
 // @flow
 
-export const ratio = (r: number) => `
+export const ratio = (r: number): string => `
   position: relative;
   width: 100%;
   padding-top: ${r * 100}%;

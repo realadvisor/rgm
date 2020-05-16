@@ -1,4 +1,4 @@
-// @flow */
+// @flow
 
 import fs from 'fs';
 import path from 'path';
@@ -12,9 +12,11 @@ export type Doc = {|
   order: number,
 |};
 
-export const getStaticProps = (): {|
+export type StaticProps = {|
   props: {| pageDocs: $ReadOnlyArray<Doc> |},
-|} => {
+|};
+
+export const getStaticProps = (): StaticProps => {
   const md = new Remarkable('full', { html: true });
 
   const files = fs.readdirSync(path.join(process.cwd(), 'pages'));

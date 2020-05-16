@@ -10,7 +10,7 @@ type MarkerProps = {|
   children: React.Node,
 |};
 
-export const Marker = (props: MarkerProps) => {
+export const Marker = (props: MarkerProps): React.Node => {
   return props.children;
 };
 
@@ -20,7 +20,7 @@ type OverlayProps = {|
   debug?: boolean,
 |};
 
-export const Overlay = (props: OverlayProps) => {
+export const Overlay = (props: OverlayProps): React.Node => {
   const { api, map } = useMap();
   // because I have 2 ;-), doesnt matter here, will be set before 1st usage
   const pixelRatioRef = React.useRef(2);

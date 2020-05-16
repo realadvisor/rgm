@@ -20,6 +20,7 @@ import * as React from 'react';
 import { Map, useMap } from 'rgm';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio } from '../dev-src/controls';
+import type { StaticProps } from '../dev-src/doc.js';
 
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 const MAP_OPTIONS = {
@@ -35,7 +36,7 @@ type MarkerProps = {|
   lng: number,
 |};
 
-export const GoogleMarker = ({ lat, lng }: MarkerProps) => {
+export const GoogleMarker = ({ lat, lng }: MarkerProps): React.Node => {
   const { api, map } = useMap();
 
   React.useEffect(() => {
@@ -57,7 +58,7 @@ export const GoogleMarker = ({ lat, lng }: MarkerProps) => {
   return null;
 };
 
-export default function GoogleMarkerPage() {
+export default function GoogleMarkerPage(): React.Node {
   const api = useGoogleApiLoader();
 
   return (
@@ -74,7 +75,7 @@ export default function GoogleMarkerPage() {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<StaticProps> => {
   // The best is to place this method at _app.js but this doesn't work now
   const doc = await import('../dev-src/doc');
   return doc.getStaticProps();

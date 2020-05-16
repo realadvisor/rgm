@@ -15,10 +15,7 @@ module.name_mapper='^rgm$' -> '<PROJECT_ROOT>/src/rgm'
 esproposal.optional_chaining=enable
 include_warnings=true
 babel_loose_array_spread=true
-module.file_ext=.mjs
-module.file_ext=.cjs
-module.file_ext=.json
-module.file_ext=.js
+types_first=true
 
 
 [strict]

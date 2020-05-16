@@ -23,6 +23,7 @@ import * as React from 'react';
 import { Map } from 'rgm';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio, Info } from '../dev-src/controls';
+import type { StaticProps } from '../dev-src/doc.js';
 
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 const MAP_OPTIONS = {
@@ -33,7 +34,7 @@ const MAP_OPTIONS = {
   },
 };
 
-export default function Events() {
+export default function Events(): React.Node {
   const api = useGoogleApiLoader();
   const [bounds, setBounds] = React.useState(null);
   const [map, setMap] = React.useState(null);
@@ -61,7 +62,7 @@ export default function Events() {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<StaticProps> => {
   // The best is to place this method at _app.js but this doesn't work now
   const doc = await import('../dev-src/doc');
   return doc.getStaticProps();

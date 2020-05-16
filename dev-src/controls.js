@@ -15,7 +15,7 @@ export const Select = (props: {|
   value: string,
   onChange: string => void,
   options: $ReadOnlyArray<string>,
-|}) => {
+|}): React.Node => {
   return (
     // eslint-disable-next-line
     <select value={props.value} onChange={e => props.onChange(e.target.value)}>
@@ -33,7 +33,7 @@ export const Checkbox = (props: {|
   onChange: boolean => void,
   id: string,
   children: React.Node,
-|}) => {
+|}): React.Node => {
   return (
     <div
       css={css`
@@ -59,7 +59,7 @@ export const Checkbox = (props: {|
   );
 };
 
-export const Stack = (props: {| children: React.Node |}) => {
+export const Stack = (props: {| children: React.Node |}): React.Node => {
   return (
     <div
       css={css`
@@ -77,7 +77,7 @@ export const Stack = (props: {| children: React.Node |}) => {
   );
 };
 
-export const Info = (props: {| children: React.Node |}) => {
+export const Info = (props: {| children: React.Node |}): React.Node => {
   return (
     <div
       css={css`
@@ -90,7 +90,10 @@ export const Info = (props: {| children: React.Node |}) => {
   );
 };
 
-export const Ratio = (props: {| value: number, children: React.Node |}) => {
+export const Ratio = (props: {|
+  value: number,
+  children: React.Node,
+|}): React.Node => {
   return (
     <div
       css={css`
@@ -102,251 +105,257 @@ export const Ratio = (props: {| value: number, children: React.Node |}) => {
   );
 };
 
-export const Code = React.memo<{| children: string |}>(props => {
-  return (
-    <div
-      css={css`
-        pre[class*='language-'],
-        code[class*='language-'] {
-          color: #d4d4d4;
-          font-size: 0.8rem;
-          text-shadow: none;
-          font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-          direction: ltr;
-          text-align: left;
-          white-space: pre;
-          word-spacing: normal;
-          word-break: normal;
-          line-height: 1.5;
-          -moz-tab-size: 4;
-          -o-tab-size: 4;
-          tab-size: 4;
-          -webkit-hyphens: none;
-          -moz-hyphens: none;
-          -ms-hyphens: none;
-          hyphens: none;
-        }
-
-        pre[class*='language-']::selection,
-        code[class*='language-']::selection {
-          text-shadow: none;
-          background: #b3d4fc;
-        }
-
-        @media print {
+export const Code: React.AbstractComponent<{| children: string |}> = React.memo(
+  props => {
+    return (
+      <div
+        css={css`
           pre[class*='language-'],
           code[class*='language-'] {
+            color: #d4d4d4;
+            font-size: 0.8rem;
             text-shadow: none;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+              monospace;
+            direction: ltr;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            line-height: 1.5;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
           }
-        }
 
-        pre[class*='language-'] {
-          padding: 1em;
-          margin: 0;
-          overflow: auto;
-          background: #1e1e1e;
-        }
+          pre[class*='language-']::selection,
+          code[class*='language-']::selection {
+            text-shadow: none;
+            background: #b3d4fc;
+          }
 
-        :not(pre) > code[class*='language-'] {
-          padding: 0.1em 0.3em;
-          border-radius: 0.3em;
-          color: #db4c69;
-          background: #f9f2f4;
-        }
+          @media print {
+            pre[class*='language-'],
+            code[class*='language-'] {
+              text-shadow: none;
+            }
+          }
 
-        .namespace {
-          opacity: 0.7;
-        }
+          pre[class*='language-'] {
+            padding: 1em;
+            margin: 0;
+            overflow: auto;
+            background: #1e1e1e;
+          }
 
-        .token.comment,
-        .token.prolog,
-        .token.doctype,
-        .token.cdata {
-          color: #6a9955;
-        }
+          :not(pre) > code[class*='language-'] {
+            padding: 0.1em 0.3em;
+            border-radius: 0.3em;
+            color: #db4c69;
+            background: #f9f2f4;
+          }
 
-        .token.punctuation {
-          color: #d4d4d4;
-        }
+          .namespace {
+            opacity: 0.7;
+          }
 
-        .token.property,
-        .token.tag,
-        .token.boolean,
-        .token.number,
-        .token.constant,
-        .token.symbol,
-        .token.deleted {
-          color: #b5cea8;
-        }
+          .token.comment,
+          .token.prolog,
+          .token.doctype,
+          .token.cdata {
+            color: #6a9955;
+          }
 
-        .token.selector,
-        .token.attr-name,
-        .token.string,
-        .token.char,
-        .token.builtin,
-        .token.inserted {
-          color: #7dd823;
-        }
+          .token.punctuation {
+            color: #d4d4d4;
+          }
 
-        .token.operator,
-        .token.entity,
-        .token.url,
-        .language-css .token.string,
-        .style .token.string {
-          color: #d4d4d4;
-          background: #1e1e1e;
-        }
+          .token.property,
+          .token.tag,
+          .token.boolean,
+          .token.number,
+          .token.constant,
+          .token.symbol,
+          .token.deleted {
+            color: #b5cea8;
+          }
 
-        .token.atrule,
-        .token.attr-value,
-        .token.keyword {
-          color: #ff4d00;
-        }
+          .token.selector,
+          .token.attr-name,
+          .token.string,
+          .token.char,
+          .token.builtin,
+          .token.inserted {
+            color: #7dd823;
+          }
 
-        .token.function {
-          color: #ffe33d;
-        }
+          .token.operator,
+          .token.entity,
+          .token.url,
+          .language-css .token.string,
+          .style .token.string {
+            color: #d4d4d4;
+            background: #1e1e1e;
+          }
 
-        .token.regex,
-        .token.important,
-        .token.variable {
-          color: #d16969;
-        }
+          .token.atrule,
+          .token.attr-value,
+          .token.keyword {
+            color: #ff4d00;
+          }
 
-        .token.important,
-        .token.bold {
-          font-weight: bold;
-        }
+          .token.function {
+            color: #ffe33d;
+          }
 
-        .token.italic {
-          font-style: italic;
-        }
+          .token.regex,
+          .token.important,
+          .token.variable {
+            color: #d16969;
+          }
 
-        .token.constant {
-          color: #9cdcfe;
-        }
+          .token.important,
+          .token.bold {
+            font-weight: bold;
+          }
 
-        .token.class-name {
-          color: #4ec9b0;
-        }
+          .token.italic {
+            font-style: italic;
+          }
 
-        .token.parameter {
-          color: #9cdcfe;
-        }
+          .token.constant {
+            color: #9cdcfe;
+          }
 
-        .token.interpolation {
-          color: #9cdcfe;
-        }
+          .token.class-name {
+            color: #4ec9b0;
+          }
 
-        .token.punctuation.interpolation-punctuation {
-          color: #569cd6;
-        }
+          .token.parameter {
+            color: #9cdcfe;
+          }
 
-        .token.boolean {
-          color: #569cd6;
-        }
+          .token.interpolation {
+            color: #9cdcfe;
+          }
 
-        .token.property {
-          color: #9cdcfe;
-        }
+          .token.punctuation.interpolation-punctuation {
+            color: #569cd6;
+          }
 
-        .token.selector {
-          color: #d7ba7d;
-        }
+          .token.boolean {
+            color: #569cd6;
+          }
 
-        .token.tag {
-          color: #ff5bd7;
-        }
+          .token.property {
+            color: #9cdcfe;
+          }
 
-        .token.attr-name {
-          color: #9cdcfe;
-        }
+          .token.selector {
+            color: #d7ba7d;
+          }
 
-        .token.attr-value {
-          color: #ce9178;
-        }
+          .token.tag {
+            color: #ff5bd7;
+          }
 
-        .token.entity {
-          color: #4ec9b0;
-          cursor: unset;
-        }
+          .token.attr-name {
+            color: #9cdcfe;
+          }
 
-        .token.namespace {
-          color: #4ec9b0;
-        }
+          .token.attr-value {
+            color: #ce9178;
+          }
 
-        .token-line {
-          min-height: 12px;
-        }
+          .token.entity {
+            color: #4ec9b0;
+            cursor: unset;
+          }
 
-        pre[class*='language-javascript'],
-        code[class*='language-javascript'] {
-          color: #4ec9b0;
-        }
+          .token.namespace {
+            color: #4ec9b0;
+          }
 
-        pre[class*='language-css'],
-        code[class*='language-css'] {
-          color: #ce9178;
-        }
+          .token-line {
+            min-height: 12px;
+          }
 
-        pre[class*='language-html'],
-        code[class*='language-html'] {
-          color: #d4d4d4;
-        }
+          pre[class*='language-javascript'],
+          code[class*='language-javascript'] {
+            color: #4ec9b0;
+          }
 
-        .language-html .token.punctuation {
-          color: #808080;
-        }
-        /*********************************************************
+          pre[class*='language-css'],
+          code[class*='language-css'] {
+            color: #ce9178;
+          }
+
+          pre[class*='language-html'],
+          code[class*='language-html'] {
+            color: #d4d4d4;
+          }
+
+          .language-html .token.punctuation {
+            color: #808080;
+          }
+          /*********************************************************
 * Line highlighting
 */
-        pre[data-line] {
-          position: relative;
-        }
+          pre[data-line] {
+            position: relative;
+          }
 
-        pre[class*='language-'] > code[class*='language-'] {
-          position: relative;
-          z-index: 1;
-        }
+          pre[class*='language-'] > code[class*='language-'] {
+            position: relative;
+            z-index: 1;
+          }
 
-        .line-highlight {
-          position: absolute;
-          left: 0;
-          right: 0;
-          padding: inherit 0;
-          margin-top: 1em;
-          background: #f7ebc6;
-          box-shadow: inset 5px 0 0 #f7d87c;
-          z-index: 0;
-          pointer-events: none;
-          line-height: inherit;
-          white-space: pre;
-        }
-      `}
-    >
-      <Highlight
-        {...defaultProps}
-        code={props.children}
-        language="jsx"
-        theme={undefined}
+          .line-highlight {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: inherit 0;
+            margin-top: 1em;
+            background: #f7ebc6;
+            box-shadow: inset 5px 0 0 #f7d87c;
+            z-index: 0;
+            pointer-events: none;
+            line-height: inherit;
+            white-space: pre;
+          }
+        `}
       >
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-        )}
-      </Highlight>
-    </div>
-  );
-});
+        <Highlight
+          {...defaultProps}
+          code={props.children}
+          language="jsx"
+          theme={undefined}
+        >
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre className={className} style={style}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          )}
+        </Highlight>
+      </div>
+    );
+  },
+);
 
-export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
+export const Layout = (props: {|
+  children: React.Node,
+  nav: React.Node,
+|}): React.Node => {
   const typography = React.useMemo(
     () =>
       new Typography({
@@ -562,7 +571,7 @@ export const Layout = (props: {| children: React.Node, nav: React.Node |}) => {
   );
 };
 
-export const Markdown = (props: {| children: string |}) => {
+export const Markdown = (props: {| children: string |}): React.Node => {
   return (
     <div
       css={css`
@@ -575,7 +584,10 @@ export const Markdown = (props: {| children: string |}) => {
   );
 };
 
-export const MenuLink = (props: {| children: React.Node, href: string |}) => {
+export const MenuLink = (props: {|
+  children: React.Node,
+  href: string,
+|}): React.Node => {
   const router = useRouter();
   const pathname = router.pathname.replace(router.basePath, '');
 
