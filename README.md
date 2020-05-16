@@ -54,7 +54,7 @@ _properties_:
 
 ### Marker
 
-Wrapper around your component to pass _lat_, _lng_ into _Overlay_ in a type safe way wihout touching props of your component.
+Wrapper around your component to pass _lat_, _lng_ into _Overlay_ in a type safe way without touching props of your component.
 
 _properties_:
 
@@ -63,7 +63,7 @@ _properties_:
 
 ### useMap
 
-hook to get access to instaces of [google.maps.Map](https://developers.google.com/maps/documentation/javascript/reference/map) and _window.google.maps_.
+hook to get access to instances of [google.maps.Map](https://developers.google.com/maps/documentation/javascript/reference/map) and _window.google.maps_.
 
 _returns:_
 
