@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { css } from '@emotion/core';
 
-export const GithubIcon = ({ size }: {| size: number |}) => {
+export const GithubIcon = ({ size }: {| size: number |}): React.Node => {
   return (
     <svg
       css={css`

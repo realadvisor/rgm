@@ -17,6 +17,7 @@ import { Map, Overlay, Marker } from 'rgm';
 import { css } from '@emotion/core';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio } from '../dev-src/controls';
+import type { StaticProps } from '../dev-src/doc.js';
 
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 const MAP_OPTIONS = {
@@ -29,7 +30,7 @@ const MAP_OPTIONS = {
   clickableIcons: false,
 };
 
-export default function Rgm() {
+export default function Rgm(): React.Node {
   const api = useGoogleApiLoader();
 
   return (
@@ -65,7 +66,7 @@ const CircleMarker = () => (
   </div>
 );
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<StaticProps> => {
   // The best is to place this method at _app.js but this doesn't work now
   const doc = await import('../dev-src/doc');
   return doc.getStaticProps();

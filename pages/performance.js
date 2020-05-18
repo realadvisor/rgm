@@ -15,6 +15,7 @@ import { css } from '@emotion/core';
 import { Flex, Box } from 'react-system';
 import { useGoogleApiLoader } from '../dev-src/hooks';
 import { Ratio, Select } from '../dev-src/controls';
+import type { StaticProps } from '../dev-src/doc.js';
 
 // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions
 const MAP_OPTIONS = {
@@ -38,7 +39,7 @@ const genRandomMarkers = n =>
     };
   });
 
-export default function Performance() {
+export default function Performance(): React.Node {
   const api = useGoogleApiLoader();
   const INITIAL_MARKERS_COUNT = 200;
   const [markers, setMarkers] = React.useState(() =>
@@ -87,7 +88,7 @@ const CircleMarker = () => (
   />
 );
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<StaticProps> => {
   // The best is to place this method at _app.js but this doesn't work now
   const doc = await import('../dev-src/doc');
   return doc.getStaticProps();

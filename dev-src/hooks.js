@@ -116,7 +116,7 @@ if (typeof window !== 'undefined') {
 
 let alertGuard_ = true;
 
-export const getMapApiUrl = () => {
+export const getMapApiUrl = (): string => {
   const key = process.env.GOOGLE_API_KEY;
   if (key == null) {
     throw new Error('process.env.GOOGLE_API_KEY is not provided');

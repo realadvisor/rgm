@@ -20,7 +20,7 @@ type MapContextType = {|
   map: GoogleMap,
 |};
 
-// $FlowFixMe
+// $FlowExpectedError
 const MapContext = React.createContext<MapContextType>((null: any));
 
 export type GoogleMapRef = React.ElementRef<
@@ -40,77 +40,76 @@ const warnOnce = (() => {
 
 const STYLE = { width: '100%', height: '100%' };
 
-export const Map = React.forwardRef<MapProps, GoogleMap>(
-  ({ api, options, children }, ref) => {
-    const element = React.useRef(null);
-    const firstTimeRef = React.useRef(true);
-    const [ctx, setCtx] = React.useState<MapContextType | null>(null);
+export const Map: React.AbstractComponent<
+  MapProps,
+  GoogleMap,
+> = React.forwardRef(({ api, options, children }, ref) => {
+  const element = React.useRef(null);
+  const firstTimeRef = React.useRef(true);
+  const [ctx, setCtx] = React.useState<MapContextType | null>(null);
 
-    if (process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const apiRef = React.useRef(api);
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const optionsRef = React.useRef(options);
+  if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const apiRef = React.useRef(api);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const optionsRef = React.useRef(options);
 
-      if (apiRef.current !== api) {
-        warnOnce(`
+    if (apiRef.current !== api) {
+      warnOnce(`
           "api" prop of <Map> element has changed.
 
           If it's desired behaviour please remount your component
           using key={hash(api)} on your component.
         `);
-        // Reinit map in case user has changed loader in dev
-        firstTimeRef.current = true;
-      }
+      // Reinit map in case user has changed loader in dev
+      firstTimeRef.current = true;
+    }
 
-      // JSON.stringify to work with React Refresh well
-      if (
-        typeof options !== 'function' &&
-        JSON.stringify(optionsRef.current) !== JSON.stringify(options)
-      ) {
-        warnOnce(`
+    // JSON.stringify to work with React Refresh well
+    if (
+      typeof options !== 'function' &&
+      JSON.stringify(optionsRef.current) !== JSON.stringify(options)
+    ) {
+      warnOnce(`
           "options" prop of <Map> element has changed.
           This change doesn't somehow affect map options at production.
 
           If it's desired behaviour please use imperative api, i.e. map.setOptions({...blabla});
         `);
-        // Reinit map in case user changed options to find proper option
-        firstTimeRef.current = true;
-      }
+      // Reinit map in case user changed options to find proper option
+      firstTimeRef.current = true;
     }
+  }
 
-    React.useImperativeHandle(ref, () => (ctx ? ctx.map : null), [ctx]);
+  React.useImperativeHandle(ref, () => (ctx ? ctx.map : null), [ctx]);
 
-    React.useEffect(() => {
-      if (firstTimeRef.current && element.current) {
-        const map = new api.Map(
-          element.current,
-          // We clone options object because Google adding new fields into it
-          // this is not an expected behaviour in modern world ;-)
-          {
-            ...(typeof options === 'function'
-              ? options(element.current)
-              : options),
-          },
-        );
+  React.useEffect(() => {
+    if (firstTimeRef.current && element.current) {
+      const map = new api.Map(
+        element.current,
+        // We clone options object because Google adding new fields into it
+        // this is not an expected behaviour in modern world ;-)
+        {
+          ...(typeof options === 'function'
+            ? options(element.current)
+            : options),
+        },
+      );
 
-        firstTimeRef.current = false;
+      firstTimeRef.current = false;
 
-        setCtx({ map, api });
+      setCtx({ map, api });
 
-        return () => {};
-      }
-    }, [api, options]);
+      return () => {};
+    }
+  }, [api, options]);
 
-    return (
-      <>
-        <div style={STYLE} ref={element} />
-        {ctx && (
-          <MapContext.Provider value={ctx}>{children}</MapContext.Provider>
-        )}
-      </>
-    );
-  },
-);
+  return (
+    <>
+      <div style={STYLE} ref={element} />
+      {ctx && <MapContext.Provider value={ctx}>{children}</MapContext.Provider>}
+    </>
+  );
+});
 
-export const useMap = () => React.useContext(MapContext);
+export const useMap = (): MapContextType => React.useContext(MapContext);
