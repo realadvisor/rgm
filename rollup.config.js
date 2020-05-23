@@ -15,7 +15,11 @@ const babelOptions = {
   configFile: false,
   babelrc: false,
   babelHelpers: 'bundled',
-  presets: ['@babel/preset-modules', '@babel/flow', '@babel/react'],
+  presets: [
+    ['@babel/preset-env', { bugfixes: true, loose: true }],
+    '@babel/flow',
+    '@babel/react',
+  ],
 };
 
 export default [

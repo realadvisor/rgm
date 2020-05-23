@@ -1,5 +1,5 @@
 Size of rgm.esm.production.js
 =============================
-min: 1776 b
-gzip: 931 b
-brotli: 827 b
+min: 1789 b
+gzip: 941 b
+brotli: 831 b
