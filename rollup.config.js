@@ -15,7 +15,33 @@ const babelOptions = {
   configFile: false,
   babelrc: false,
   babelHelpers: 'bundled',
-  presets: ['@babel/preset-modules', '@babel/flow', '@babel/react'],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        bugfixes: true,
+        loose: true,
+        targets: {
+          browsers: [
+            // all browsers specified in esmodules: true
+            // 'edge>=16',
+            'firefox>=60',
+            'chrome>=61',
+            // 'safari>=10.1',
+            'opera>=48',
+            // 'ios_saf>=10.3',
+            'android>=61',
+            'op_mob>=48',
+            'and_chr>=61',
+            'and_ff>=60',
+            'samsung>=8.2',
+          ],
+        },
+      },
+    ],
+    '@babel/flow',
+    '@babel/react',
+  ],
 };
 
 export default [

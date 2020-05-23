@@ -3,10 +3,9 @@ module.exports = {
     node: 1,
     browser: 1,
     es6: 1,
-    'jest/globals': true,
   },
   parser: 'babel-eslint',
-  plugins: ['react', 'flowtype', 'react-hooks', 'jsx-a11y', 'jest'],
+  plugins: ['react', 'flowtype', 'react-hooks', 'jsx-a11y'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
