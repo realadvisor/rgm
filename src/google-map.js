@@ -89,11 +89,11 @@ export const Map: React.AbstractComponent<
         element.current,
         // We clone options object because Google adding new fields into it
         // this is not an expected behaviour in modern world ;-)
-        {
-          ...(typeof options === 'function'
-            ? options(element.current)
-            : options),
-        },
+        // Object.assign is used for edge 18 at least until caniuse data is not updated
+        Object.assign(
+          {},
+          typeof options === 'function' ? options(element.current) : options,
+        ),
       );
 
       firstTimeRef.current = false;
