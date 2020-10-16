@@ -59,7 +59,7 @@ declare class AutocompleteSessionToken {
   constructor(): AutocompleteSessionToken;
 }
 
-type AutocompletionRequest = {
+export type AutocompletionRequest = {
   bounds?: LatLngBounds | LatLngBoundsLiteral,
   componentRestrictions?: ComponentRestrictions,
   input: string,
@@ -91,7 +91,7 @@ type PredictionTerm = {
   ...
 };
 
-type AutocompletePrediction = {
+export type AutocompletePrediction = {
   description: string,
   matched_substrings: $ReadOnlyArray<PredictionSubstring>,
   place_id: string,
@@ -166,7 +166,7 @@ type GeocoderComponentRestrictions = {
   ...
 };
 
-type GeocoderRequest = {
+export type GeocoderRequest = {
   address?: string,
   bounds?: LatLngBounds | LatLngBoundsLiteral,
   componentRestrictions?: GeocoderComponentRestrictions,
@@ -202,7 +202,7 @@ type GeocoderGeometry = {
   ...
 };
 
-type GeocoderResult = {
+export type GeocoderResult = {
   address_components: $ReadOnlyArray<GeocoderAddressComponent>,
   formatted_address: string,
   geometry: GeocoderGeometry,
